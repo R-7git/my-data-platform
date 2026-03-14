@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = 'dockerhub-pass' // Create this ID in Jenkins Credentials (Username/Password)
-        DOCKER_USER = 'your-docker-id'
+        DOCKER_USER = 'rs121093'
         IMAGE_NAME = 'my-data-platform-airflow'
     }
 
