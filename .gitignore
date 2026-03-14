@@ -1,0 +1,15 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Terraform
+.terraform/
+terraform.tfstate*
+
+# IDE & OS
+.DS_Store
+.vscode/
+
+# Logs
+logs/

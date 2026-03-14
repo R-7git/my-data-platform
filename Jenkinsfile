@@ -24,12 +24,14 @@ pipeline {
             }
         }
 
-        stage('Build Airflow Image') {
+                stage('Build Airflow Image') {
             steps {
-                // Build for your specific architecture (M2/AMD64)
-                sh "docker build -t ${DOCKER_USER}/${IMAGE_NAME}:latest ."
+                // Point to the Dockerfile inside the docker/ directory
+                // Use -f to specify the path to the Dockerfile
+                sh "docker build -t ${DOCKER_USER}/${IMAGE_NAME}:latest -f docker/Dockerfile ."
             }
         }
+
 
         stage('Push to Docker Hub') {
             steps {
