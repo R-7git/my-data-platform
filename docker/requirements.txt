@@ -1,14 +1,10 @@
-# The Core Orchestrator
-apache-airflow==2.8.1
-
-# The Transformation Engine
-dbt-core>=1.7.0
-dbt-snowflake>=1.7.0
-
-# The "Enterprise" Integration Layer for Airflow + dbt
-astronomer-cosmos>=1.2.5
-
-# Data Generation & Cloud Hooks
-faker>=22.0.0
-apache-airflow-providers-amazon  # For MinIO/S3 interaction
-apache-airflow-providers-snowflake # For the "Bridge" connection
+ansible==12.3.0
+ansible-core==2.19.7
+cffi==2.0.0
+cryptography==46.0.5
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+packaging==26.0
+pycparser==3.0
+PyYAML==6.0.3
+resolvelib==1.2.1
