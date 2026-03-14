@@ -5,7 +5,7 @@ USER root
 # 2. Install System Dependencies
 RUN apt-get update && \
     apt-get install -y git wget unzip && \
-    # FIX: Full path to the ARM64 zip file
+    # FIX: You MUST use the full URL below
     wget https://releases.hashicorp.com && \
     unzip terraform_1.7.0_linux_arm64.zip && \
     mv terraform /usr/local/bin/ && \
