@@ -19,3 +19,5 @@ RUN pip install --no-cache-dir -r /requirements.txt
 
 # 5. Copy dbt project
 COPY --chown=airflow:root dbt_project /opt/airflow/dbt_project
+
+
