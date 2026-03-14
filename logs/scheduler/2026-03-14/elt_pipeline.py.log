@@ -6599,3 +6599,367 @@ SyntaxError: unexpected EOF while parsing
 [2026-03-14T11:22:12.037+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:22:12.037+0000] {dag.py:3036} INFO - Sync 1 DAGs
 [2026-03-14T11:22:12.050+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:22:12.050+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
 [2026-03-14T11:22:12.058+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.184 seconds
+[2026-03-14T11:22:42.324+0000] {processor.py:161} INFO - Started process (PID=1509) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:22:42.329+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T11:22:42.333+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:22:42.333+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:22:42.436+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:22:42.460+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:22:42.460+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T11:22:42.479+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:22:42.479+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T11:22:42.496+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.192 seconds
+[2026-03-14T11:23:12.770+0000] {processor.py:161} INFO - Started process (PID=1519) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:23:12.773+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T11:23:12.781+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:23:12.781+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:23:12.964+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:23:13.038+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:23:13.037+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T11:23:13.067+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:23:13.067+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T11:23:13.080+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.418 seconds
+[2026-03-14T11:23:43.181+0000] {processor.py:161} INFO - Started process (PID=1534) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:23:43.184+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T11:23:43.185+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:23:43.185+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:23:43.283+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:23:43.323+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:23:43.323+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T11:23:43.342+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:23:43.342+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T11:23:43.360+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.182 seconds
+[2026-03-14T11:24:13.532+0000] {processor.py:161} INFO - Started process (PID=1539) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:24:13.538+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T11:24:13.545+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:24:13.544+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:24:13.687+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:24:13.736+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:24:13.735+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T11:24:13.751+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:24:13.751+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T11:24:13.761+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.242 seconds
+[2026-03-14T11:24:44.016+0000] {processor.py:161} INFO - Started process (PID=1549) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:24:44.030+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T11:24:44.034+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:24:44.034+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:24:44.144+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T11:24:44.166+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:24:44.166+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T11:24:44.180+0000] {logging_mixin.py:188} INFO - [2026-03-14T11:24:44.180+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T11:24:44.189+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.187 seconds
+[2026-03-14T12:44:18.930+0000] {processor.py:161} INFO - Started process (PID=1559) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T12:44:18.935+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T12:44:18.943+0000] {logging_mixin.py:188} INFO - [2026-03-14T12:44:18.941+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T12:44:19.069+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T12:44:19.093+0000] {logging_mixin.py:188} INFO - [2026-03-14T12:44:19.093+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T12:44:19.107+0000] {logging_mixin.py:188} INFO - [2026-03-14T12:44:19.107+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T12:44:19.118+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.203 seconds
+[2026-03-14T13:26:04.589+0000] {processor.py:161} INFO - Started process (PID=1571) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:26:04.597+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T13:26:04.608+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:26:04.606+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:26:04.718+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:26:04.740+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:26:04.740+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T13:26:04.759+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:26:04.759+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T13:26:04.769+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.200 seconds
+[2026-03-14T13:43:21.331+0000] {processor.py:161} INFO - Started process (PID=1581) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:43:21.337+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T13:43:21.343+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:43:21.343+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:43:21.444+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:43:21.465+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:43:21.464+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T13:43:21.476+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:43:21.476+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T13:43:21.485+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.168 seconds
+[2026-03-14T13:57:37.171+0000] {processor.py:161} INFO - Started process (PID=1593) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:57:37.176+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T13:57:37.182+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:57:37.182+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:57:37.267+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:57:37.287+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:57:37.287+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T13:57:37.300+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:57:37.300+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T13:57:37.310+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.149 seconds
+[2026-03-14T13:58:07.620+0000] {processor.py:161} INFO - Started process (PID=1603) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:58:07.625+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T13:58:07.630+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:58:07.629+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:58:07.743+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:58:07.767+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:58:07.767+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T13:58:07.781+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:58:07.781+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T13:58:07.791+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.179 seconds
+[2026-03-14T13:58:38.152+0000] {processor.py:161} INFO - Started process (PID=1613) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:58:38.162+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T13:58:38.175+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:58:38.174+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:58:38.294+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:58:38.318+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:58:38.318+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T13:58:38.336+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:58:38.336+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T13:58:38.346+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.224 seconds
+[2026-03-14T13:59:08.698+0000] {processor.py:161} INFO - Started process (PID=1623) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:59:08.704+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T13:59:08.709+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:59:08.708+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:59:08.819+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:59:08.849+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:59:08.849+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T13:59:08.863+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:59:08.863+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T13:59:08.872+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.193 seconds
+[2026-03-14T13:59:39.140+0000] {processor.py:161} INFO - Started process (PID=1633) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:59:39.144+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T13:59:39.148+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:59:39.147+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:59:39.245+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T13:59:39.268+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:59:39.268+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T13:59:39.285+0000] {logging_mixin.py:188} INFO - [2026-03-14T13:59:39.285+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T13:59:39.308+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.178 seconds
+[2026-03-14T14:00:09.610+0000] {processor.py:161} INFO - Started process (PID=1643) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:00:09.617+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:00:09.621+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:00:09.621+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:00:09.731+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:00:09.756+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:00:09.755+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:00:09.769+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:00:09.769+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:00:09.780+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.184 seconds
+[2026-03-14T14:00:40.031+0000] {processor.py:161} INFO - Started process (PID=1653) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:00:40.039+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:00:40.045+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:00:40.043+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:00:40.143+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:00:40.169+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:00:40.168+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:00:40.184+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:00:40.184+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:00:40.194+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.177 seconds
+[2026-03-14T14:01:10.468+0000] {processor.py:161} INFO - Started process (PID=1663) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:01:10.475+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:01:10.481+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:01:10.481+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:01:10.604+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:01:10.633+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:01:10.632+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:01:10.651+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:01:10.650+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:01:10.661+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.211 seconds
+[2026-03-14T14:01:40.906+0000] {processor.py:161} INFO - Started process (PID=1673) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:01:40.956+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:01:40.968+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:01:40.967+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:01:41.089+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:01:41.110+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:01:41.110+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:01:41.125+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:01:41.125+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:01:41.134+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.237 seconds
+[2026-03-14T14:02:11.374+0000] {processor.py:161} INFO - Started process (PID=1683) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:02:11.380+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:02:11.389+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:02:11.388+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:02:11.489+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:02:11.615+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:02:11.614+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:02:11.701+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:02:11.701+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:02:11.718+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.352 seconds
+[2026-03-14T14:02:41.859+0000] {processor.py:161} INFO - Started process (PID=1698) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:02:41.862+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:02:41.864+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:02:41.864+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:02:41.944+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:02:41.972+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:02:41.971+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:02:41.988+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:02:41.988+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:02:41.999+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.147 seconds
+[2026-03-14T14:03:12.202+0000] {processor.py:161} INFO - Started process (PID=1703) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:03:12.208+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:03:12.212+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:03:12.212+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:03:12.312+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:03:12.331+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:03:12.331+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:03:12.347+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:03:12.347+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:03:12.355+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.163 seconds
+[2026-03-14T14:03:42.621+0000] {processor.py:161} INFO - Started process (PID=1713) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:03:42.628+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:03:42.636+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:03:42.635+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:03:42.756+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:03:42.781+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:03:42.781+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:03:42.793+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:03:42.793+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:03:42.802+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.207 seconds
+[2026-03-14T14:04:12.968+0000] {processor.py:161} INFO - Started process (PID=1723) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:04:12.972+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:04:12.987+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:04:12.981+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:04:13.101+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:04:13.125+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:04:13.125+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:04:13.138+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:04:13.138+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:04:13.147+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.188 seconds
+[2026-03-14T14:04:43.422+0000] {processor.py:161} INFO - Started process (PID=1733) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:04:43.427+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:04:43.433+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:04:43.433+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:04:43.524+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:04:43.544+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:04:43.543+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:04:43.558+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:04:43.558+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:04:43.567+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.153 seconds
+[2026-03-14T14:05:13.823+0000] {processor.py:161} INFO - Started process (PID=1743) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:05:13.829+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:05:13.833+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:05:13.833+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:05:13.931+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:05:13.957+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:05:13.957+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:05:13.970+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:05:13.970+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:05:13.980+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.171 seconds
+[2026-03-14T14:05:44.207+0000] {processor.py:161} INFO - Started process (PID=1753) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:05:44.213+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:05:44.224+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:05:44.223+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:05:44.327+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:05:44.351+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:05:44.351+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:05:44.366+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:05:44.366+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:05:44.379+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.189 seconds
+[2026-03-14T14:06:14.655+0000] {processor.py:161} INFO - Started process (PID=1763) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:06:14.661+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:06:14.671+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:06:14.666+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:06:14.775+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:06:14.798+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:06:14.798+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:06:14.815+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:06:14.815+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:06:14.824+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.192 seconds
+[2026-03-14T14:06:45.056+0000] {processor.py:161} INFO - Started process (PID=1773) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:06:45.060+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:06:45.064+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:06:45.064+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:06:45.207+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:06:45.235+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:06:45.235+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:06:45.252+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:06:45.252+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:06:45.266+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.220 seconds
+[2026-03-14T14:07:15.497+0000] {processor.py:161} INFO - Started process (PID=1783) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:07:15.501+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:07:15.511+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:07:15.510+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:07:15.634+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:07:15.664+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:07:15.664+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:07:15.679+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:07:15.679+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:07:15.690+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.206 seconds
+[2026-03-14T14:07:45.941+0000] {processor.py:161} INFO - Started process (PID=1793) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:07:45.946+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:07:45.950+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:07:45.949+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:07:46.115+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:07:46.137+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:07:46.136+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:07:46.152+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:07:46.152+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:07:46.163+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.234 seconds
+[2026-03-14T14:08:16.468+0000] {processor.py:161} INFO - Started process (PID=1803) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:08:16.473+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:08:16.482+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:08:16.478+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:08:16.572+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:08:16.594+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:08:16.594+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:08:16.606+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:08:16.606+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:08:16.615+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.155 seconds
+[2026-03-14T14:08:46.818+0000] {processor.py:161} INFO - Started process (PID=1813) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:08:46.823+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:08:46.824+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:08:46.824+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:08:46.918+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:08:46.962+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:08:46.962+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:08:46.992+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:08:46.991+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:08:47.002+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.189 seconds
+[2026-03-14T14:09:17.146+0000] {processor.py:161} INFO - Started process (PID=1823) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:09:17.150+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:09:17.154+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:09:17.153+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:09:17.260+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:09:17.300+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:09:17.300+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:09:17.318+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:09:17.318+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:09:17.327+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.191 seconds
+[2026-03-14T14:09:47.618+0000] {processor.py:161} INFO - Started process (PID=1833) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:09:47.623+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:09:47.628+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:09:47.627+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:09:47.745+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:09:47.775+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:09:47.775+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:09:47.789+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:09:47.789+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:09:47.799+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.190 seconds
+[2026-03-14T14:10:18.039+0000] {processor.py:161} INFO - Started process (PID=1843) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:10:18.046+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:10:18.053+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:10:18.050+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:10:18.303+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:10:18.326+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:10:18.326+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:10:18.341+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:10:18.341+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:10:18.350+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.329 seconds
+[2026-03-14T14:10:48.573+0000] {processor.py:161} INFO - Started process (PID=1853) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:10:48.577+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:10:48.588+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:10:48.585+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:10:48.683+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:10:48.705+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:10:48.705+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:10:48.723+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:10:48.723+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:10:48.733+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.175 seconds
+[2026-03-14T14:11:18.971+0000] {processor.py:161} INFO - Started process (PID=1863) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:11:18.977+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:11:18.984+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:11:18.983+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:11:19.164+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:11:19.189+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:11:19.189+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:11:19.210+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:11:19.210+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:11:19.219+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.263 seconds
+[2026-03-14T14:11:49.431+0000] {processor.py:161} INFO - Started process (PID=1873) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:11:49.440+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:11:49.446+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:11:49.445+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:11:49.545+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:11:49.567+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:11:49.567+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:11:49.589+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:11:49.588+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:11:49.599+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.178 seconds
+[2026-03-14T14:12:19.849+0000] {processor.py:161} INFO - Started process (PID=1883) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:12:19.856+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:12:19.864+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:12:19.863+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:12:19.980+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:12:20.006+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:12:20.006+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:12:20.024+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:12:20.023+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:12:20.032+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.201 seconds
+[2026-03-14T14:12:50.345+0000] {processor.py:161} INFO - Started process (PID=1893) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:12:50.354+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:12:50.358+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:12:50.358+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:12:50.534+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:12:50.557+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:12:50.557+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:12:50.571+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:12:50.571+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:12:50.587+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.264 seconds
+[2026-03-14T14:13:20.835+0000] {processor.py:161} INFO - Started process (PID=1903) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:13:20.846+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:13:20.861+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:13:20.857+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:13:20.984+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:13:21.018+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:13:21.018+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:13:21.035+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:13:21.034+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:13:21.045+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.228 seconds
+[2026-03-14T14:13:51.264+0000] {processor.py:161} INFO - Started process (PID=1913) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:13:51.273+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:13:51.279+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:13:51.279+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:13:51.376+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:13:51.397+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:13:51.397+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:13:51.411+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:13:51.411+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:13:51.420+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.169 seconds
+[2026-03-14T14:14:21.700+0000] {processor.py:161} INFO - Started process (PID=1923) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:14:21.714+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:14:21.719+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:14:21.719+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:14:21.838+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:14:21.856+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:14:21.856+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:14:21.871+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:14:21.871+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:14:21.879+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.195 seconds
+[2026-03-14T14:14:52.111+0000] {processor.py:161} INFO - Started process (PID=1933) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:14:52.119+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:14:52.128+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:14:52.124+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:14:52.218+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:14:52.239+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:14:52.239+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:14:52.252+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:14:52.252+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:14:52.261+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.162 seconds
+[2026-03-14T14:15:22.539+0000] {processor.py:161} INFO - Started process (PID=1943) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:15:22.554+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:15:22.561+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:15:22.561+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:15:22.672+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:15:22.691+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:15:22.691+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:15:22.702+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:15:22.702+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:15:22.718+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.201 seconds
+[2026-03-14T14:15:52.952+0000] {processor.py:161} INFO - Started process (PID=1953) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:15:52.959+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:15:52.966+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:15:52.965+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:15:53.073+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:15:53.095+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:15:53.095+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:15:53.108+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:15:53.108+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:15:53.118+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.185 seconds
+[2026-03-14T14:16:23.316+0000] {processor.py:161} INFO - Started process (PID=1963) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:16:23.328+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:16:23.334+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:16:23.333+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:16:23.418+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:16:23.439+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:16:23.439+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:16:23.454+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:16:23.454+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:16:23.464+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.158 seconds
+[2026-03-14T14:16:53.653+0000] {processor.py:161} INFO - Started process (PID=1973) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:16:53.659+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:16:53.664+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:16:53.663+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:16:53.776+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:16:53.796+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:16:53.796+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:16:53.814+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:16:53.814+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:16:53.823+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.185 seconds
+[2026-03-14T14:17:24.038+0000] {processor.py:161} INFO - Started process (PID=1983) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:17:24.047+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:17:24.068+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:17:24.067+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:17:24.162+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:17:24.182+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:17:24.182+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:17:24.197+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:17:24.197+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:17:24.205+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.179 seconds
+[2026-03-14T14:17:54.526+0000] {processor.py:161} INFO - Started process (PID=1993) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:17:54.531+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:17:54.542+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:17:54.540+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:17:54.731+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:17:54.753+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:17:54.753+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:17:54.765+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:17:54.765+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:17:54.774+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.256 seconds
+[2026-03-14T14:18:25.052+0000] {processor.py:161} INFO - Started process (PID=2003) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:18:25.059+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:18:25.075+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:18:25.074+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:18:25.182+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:18:25.206+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:18:25.206+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:18:25.221+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:18:25.221+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:18:25.231+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.203 seconds
+[2026-03-14T14:18:55.433+0000] {processor.py:161} INFO - Started process (PID=2013) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:18:55.438+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:18:55.444+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:18:55.443+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:18:55.563+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:18:55.587+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:18:55.587+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:18:55.602+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:18:55.601+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:18:55.612+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.186 seconds
+[2026-03-14T14:19:25.906+0000] {processor.py:161} INFO - Started process (PID=2023) to work on /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:19:25.911+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/elt_pipeline.py for tasks to queue
+[2026-03-14T14:19:25.919+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:19:25.918+0000] {dagbag.py:538} INFO - Filling up the DagBag from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:19:26.016+0000] {processor.py:840} INFO - DAG(s) '2_enterprise_elt_pipeline' retrieved from /opt/airflow/dags/elt_pipeline.py
+[2026-03-14T14:19:26.039+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:19:26.038+0000] {dag.py:3036} INFO - Sync 1 DAGs
+[2026-03-14T14:19:26.056+0000] {logging_mixin.py:188} INFO - [2026-03-14T14:19:26.056+0000] {dag.py:3823} INFO - Setting next_dagrun for 2_enterprise_elt_pipeline to 2026-03-14 00:00:00+00:00, run_after=2026-03-15 00:00:00+00:00
+[2026-03-14T14:19:26.066+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/elt_pipeline.py took 0.175 seconds

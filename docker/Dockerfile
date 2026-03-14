@@ -2,14 +2,14 @@
 FROM apache/airflow:2.8.1
 
 USER root
+
 # 2. Install System Dependencies
 RUN apt-get update && \
     apt-get install -y git wget unzip && \
-    # FIX: You MUST use the full URL below
-    wget https://releases.hashicorp.com && \
-    unzip terraform_1.7.0_linux_arm64.zip && \
+    wget https://releases.hashicorp.com/terraform/1.7.0/terraform_1.7.0_linux_amd64.zip && \
+    unzip terraform_1.7.0_linux_amd64.zip && \
     mv terraform /usr/local/bin/ && \
-    rm terraform_1.7.0_linux_arm64.zip
+    rm terraform_1.7.0_linux_amd64.zip
 
 # 3. Switch back to airflow user
 USER airflow
