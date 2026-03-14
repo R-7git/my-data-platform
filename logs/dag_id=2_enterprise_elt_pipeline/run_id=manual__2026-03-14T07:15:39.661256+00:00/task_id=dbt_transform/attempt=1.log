@@ -1,0 +1,30 @@
+[2026-03-14T07:15:49.014+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.dbt_transform manual__2026-03-14T07:15:39.661256+00:00 [queued]>
+[2026-03-14T07:15:49.018+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.dbt_transform manual__2026-03-14T07:15:39.661256+00:00 [queued]>
+[2026-03-14T07:15:49.018+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-03-14T07:15:49.023+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_transform> on 2026-03-14 07:15:39.661256+00:00
+[2026-03-14T07:15:49.027+0000] {standard_task_runner.py:60} INFO - Started process 1552 to run task
+[2026-03-14T07:15:49.029+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'dbt_transform', 'manual__2026-03-14T07:15:39.661256+00:00', '--job-id', '115', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmp032fv5yd']
+[2026-03-14T07:15:49.030+0000] {standard_task_runner.py:88} INFO - Job 115: Subtask dbt_transform
+[2026-03-14T07:15:49.051+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.dbt_transform manual__2026-03-14T07:15:39.661256+00:00 [running]> on host c4724fa4fb48
+[2026-03-14T07:15:49.084+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='dbt_transform' AIRFLOW_CTX_EXECUTION_DATE='2026-03-14T07:15:39.661256+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-14T07:15:39.661256+00:00'
+[2026-03-14T07:15:49.085+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-03-14T07:15:49.085+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dbt run --project-dir /opt/***/dbt_project --profiles-dir /opt/***/dbt_project']
+[2026-03-14T07:15:49.095+0000] {subprocess.py:86} INFO - Output:
+[2026-03-14T07:15:49.933+0000] {subprocess.py:93} INFO - [0m07:15:49  Running with dbt=1.8.7
+[2026-03-14T07:15:50.495+0000] {subprocess.py:93} INFO - [0m07:15:50  Registered adapter: snowflake=1.8.4
+[2026-03-14T07:15:50.792+0000] {subprocess.py:93} INFO - [0m07:15:50  Found 1 model, 5 data tests, 1 source, 454 macros
+[2026-03-14T07:15:50.793+0000] {subprocess.py:93} INFO - [0m07:15:50
+[2026-03-14T07:15:52.128+0000] {subprocess.py:93} INFO - [0m07:15:52  Concurrency: 1 threads (target='dev')
+[2026-03-14T07:15:52.129+0000] {subprocess.py:93} INFO - [0m07:15:52
+[2026-03-14T07:15:52.137+0000] {subprocess.py:93} INFO - [0m07:15:52  1 of 1 START sql incremental model ANALYTICS.stg_customers ..................... [RUN]
+[2026-03-14T07:15:54.941+0000] {subprocess.py:93} INFO - [0m07:15:54  1 of 1 OK created sql incremental model ANALYTICS.stg_customers ................ [[32mSUCCESS 0[0m in 2.80s]
+[2026-03-14T07:15:54.948+0000] {subprocess.py:93} INFO - [0m07:15:54
+[2026-03-14T07:15:54.949+0000] {subprocess.py:93} INFO - [0m07:15:54  Finished running 1 incremental model in 0 hours 0 minutes and 4.15 seconds (4.15s).
+[2026-03-14T07:15:54.987+0000] {subprocess.py:93} INFO - [0m07:15:54
+[2026-03-14T07:15:54.988+0000] {subprocess.py:93} INFO - [0m07:15:54  [32mCompleted successfully[0m
+[2026-03-14T07:15:54.988+0000] {subprocess.py:93} INFO - [0m07:15:54
+[2026-03-14T07:15:54.988+0000] {subprocess.py:93} INFO - [0m07:15:54  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2026-03-14T07:15:56.262+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-03-14T07:15:56.320+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=2_enterprise_elt_pipeline, task_id=dbt_transform, execution_date=20260314T071539, start_date=20260314T071549, end_date=20260314T071556
+[2026-03-14T07:15:56.354+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-14T07:15:56.375+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

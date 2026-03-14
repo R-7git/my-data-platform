@@ -1,0 +1,132 @@
+[2026-03-14T00:03:20.497+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.copy_into_table scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T00:03:20.519+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.copy_into_table scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T00:03:20.520+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2026-03-14T00:03:20.555+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): copy_into_table> on 2026-03-13 00:00:00+00:00
+[2026-03-14T00:03:20.584+0000] {standard_task_runner.py:60} INFO - Started process 853 to run task
+[2026-03-14T00:03:20.592+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'copy_into_table', 'scheduled__2026-03-13T00:00:00+00:00', '--job-id', '42', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmphmt98eg4']
+[2026-03-14T00:03:20.603+0000] {standard_task_runner.py:88} INFO - Job 42: Subtask copy_into_table
+[2026-03-14T00:03:20.780+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.copy_into_table scheduled__2026-03-13T00:00:00+00:00 [running]> on host 94439bb4e033
+[2026-03-14T00:03:21.331+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='copy_into_table' AIRFLOW_CTX_EXECUTION_DATE='2026-03-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-13T00:00:00+00:00'
+[2026-03-14T00:03:21.360+0000] {base.py:83} INFO - Using connection ID 'snowflake_default' for task execution.
+[2026-03-14T00:03:21.362+0000] {connection.py:370} INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.8.18, Platform: Linux-6.12.72-linuxkit-aarch64-with-glibc2.34
+[2026-03-14T00:03:21.365+0000] {connection.py:1171} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-14T00:03:21.817+0000] {cursor.py:1028} INFO - query: [ALTER SESSION SET autocommit=False]
+[2026-03-14T00:03:21.915+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T00:03:21.936+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T00:03:21.940+0000] {sql.py:450} INFO - Running statement: COPY INTO RAW_LAKE.LANDING.CUSTOMERS 
+            FROM @RAW_LAKE.LANDING.MY_INTERNAL_STAGE/extract_20260314_000312.csv.gz
+            FILE_FORMAT = (TYPE = CSV SKIP_HEADER = 1);, parameters: None
+[2026-03-14T00:03:21.941+0000] {cursor.py:1028} INFO - query: [COPY INTO RAW_LAKE.LANDING.CUSTOMERS FROM @RAW_LAKE.LANDING.MY_INTERNAL_STAGE/ex...]
+[2026-03-14T00:03:23.292+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T00:03:23.295+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T00:03:23.296+0000] {sql.py:459} INFO - Rows affected: 1
+[2026-03-14T00:03:23.297+0000] {snowflake.py:400} INFO - Rows affected: 1
+[2026-03-14T00:03:23.298+0000] {snowflake.py:401} INFO - Snowflake query id: 01c302c3-3202-7087-0014-7c6a0003f00a
+[2026-03-14T00:03:23.298+0000] {cursor.py:1028} INFO - query: [COMMIT]
+[2026-03-14T00:03:23.501+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T00:03:23.502+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T00:03:23.503+0000] {connection.py:718} INFO - closed
+[2026-03-14T00:03:23.564+0000] {connection.py:724} INFO - No async queries seem to be running, deleting session
+[2026-03-14T00:03:23.628+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-03-14T00:03:23.672+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=2_enterprise_elt_pipeline, task_id=copy_into_table, execution_date=20260313T000000, start_date=20260314T000320, end_date=20260314T000323
+[2026-03-14T00:03:23.752+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-14T00:03:23.807+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-03-14T06:51:40.150+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.copy_into_table scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T06:51:40.155+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.copy_into_table scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T06:51:40.155+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-03-14T06:51:40.161+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): copy_into_table> on 2026-03-13 00:00:00+00:00
+[2026-03-14T06:51:40.168+0000] {standard_task_runner.py:60} INFO - Started process 795 to run task
+[2026-03-14T06:51:40.170+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'copy_into_table', 'scheduled__2026-03-13T00:00:00+00:00', '--job-id', '85', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmp026iz8uj']
+[2026-03-14T06:51:40.173+0000] {standard_task_runner.py:88} INFO - Job 85: Subtask copy_into_table
+[2026-03-14T06:51:40.210+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.copy_into_table scheduled__2026-03-13T00:00:00+00:00 [running]> on host c4724fa4fb48
+[2026-03-14T06:51:40.261+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='copy_into_table' AIRFLOW_CTX_EXECUTION_DATE='2026-03-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-13T00:00:00+00:00'
+[2026-03-14T06:51:40.269+0000] {base.py:83} INFO - Using connection ID 'snowflake_default' for task execution.
+[2026-03-14T06:51:40.269+0000] {connection.py:370} INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.8.18, Platform: Linux-6.12.72-linuxkit-aarch64-with-glibc2.34
+[2026-03-14T06:51:40.270+0000] {connection.py:1171} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-14T06:51:40.608+0000] {cursor.py:1028} INFO - query: [ALTER SESSION SET autocommit=False]
+[2026-03-14T06:51:40.707+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T06:51:40.707+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T06:51:40.708+0000] {sql.py:450} INFO - Running statement: COPY INTO RAW_LAKE.LANDING.CUSTOMERS 
+            FROM @RAW_LAKE.LANDING.MY_INTERNAL_STAGE/extract_20260314_065134.csv.gz
+            FILE_FORMAT = (TYPE = CSV SKIP_HEADER = 1);, parameters: None
+[2026-03-14T06:51:40.709+0000] {cursor.py:1028} INFO - query: [COPY INTO RAW_LAKE.LANDING.CUSTOMERS FROM @RAW_LAKE.LANDING.MY_INTERNAL_STAGE/ex...]
+[2026-03-14T06:51:41.859+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T06:51:41.859+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T06:51:41.860+0000] {sql.py:459} INFO - Rows affected: 1
+[2026-03-14T06:51:41.860+0000] {snowflake.py:400} INFO - Rows affected: 1
+[2026-03-14T06:51:41.861+0000] {snowflake.py:401} INFO - Snowflake query id: 01c3045b-3202-7087-0014-7c6a0004341a
+[2026-03-14T06:51:41.861+0000] {cursor.py:1028} INFO - query: [COMMIT]
+[2026-03-14T06:51:42.130+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T06:51:42.131+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T06:51:42.132+0000] {connection.py:718} INFO - closed
+[2026-03-14T06:51:42.192+0000] {connection.py:724} INFO - No async queries seem to be running, deleting session
+[2026-03-14T06:51:42.287+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-03-14T06:51:42.304+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=2_enterprise_elt_pipeline, task_id=copy_into_table, execution_date=20260313T000000, start_date=20260314T065140, end_date=20260314T065142
+[2026-03-14T06:51:42.337+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-14T06:51:42.353+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-03-14T07:01:24.144+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.copy_into_table scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T07:01:24.151+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.copy_into_table scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T07:01:24.152+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-03-14T07:01:24.161+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): copy_into_table> on 2026-03-13 00:00:00+00:00
+[2026-03-14T07:01:24.170+0000] {standard_task_runner.py:60} INFO - Started process 1087 to run task
+[2026-03-14T07:01:24.177+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'copy_into_table', 'scheduled__2026-03-13T00:00:00+00:00', '--job-id', '99', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmp3kf16fhf']
+[2026-03-14T07:01:24.179+0000] {standard_task_runner.py:88} INFO - Job 99: Subtask copy_into_table
+[2026-03-14T07:01:24.218+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.copy_into_table scheduled__2026-03-13T00:00:00+00:00 [running]> on host c4724fa4fb48
+[2026-03-14T07:01:24.265+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='copy_into_table' AIRFLOW_CTX_EXECUTION_DATE='2026-03-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-13T00:00:00+00:00'
+[2026-03-14T07:01:24.271+0000] {base.py:83} INFO - Using connection ID 'snowflake_default' for task execution.
+[2026-03-14T07:01:24.272+0000] {connection.py:370} INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.8.18, Platform: Linux-6.12.72-linuxkit-aarch64-with-glibc2.34
+[2026-03-14T07:01:24.272+0000] {connection.py:1171} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-14T07:01:24.588+0000] {cursor.py:1028} INFO - query: [ALTER SESSION SET autocommit=False]
+[2026-03-14T07:01:24.684+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T07:01:24.685+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T07:01:24.685+0000] {sql.py:450} INFO - Running statement: COPY INTO RAW_LAKE.LANDING.CUSTOMERS 
+            FROM @RAW_LAKE.LANDING.MY_INTERNAL_STAGE/extract_20260314_070118.csv.gz
+            FILE_FORMAT = (TYPE = CSV SKIP_HEADER = 1);, parameters: None
+[2026-03-14T07:01:24.686+0000] {cursor.py:1028} INFO - query: [COPY INTO RAW_LAKE.LANDING.CUSTOMERS FROM @RAW_LAKE.LANDING.MY_INTERNAL_STAGE/ex...]
+[2026-03-14T07:01:25.696+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T07:01:25.696+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T07:01:25.696+0000] {sql.py:459} INFO - Rows affected: 1
+[2026-03-14T07:01:25.696+0000] {snowflake.py:400} INFO - Rows affected: 1
+[2026-03-14T07:01:25.697+0000] {snowflake.py:401} INFO - Snowflake query id: 01c30465-3202-7172-0014-7c6a00044182
+[2026-03-14T07:01:25.697+0000] {cursor.py:1028} INFO - query: [COMMIT]
+[2026-03-14T07:01:26.011+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T07:01:26.012+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T07:01:26.013+0000] {connection.py:718} INFO - closed
+[2026-03-14T07:01:26.075+0000] {connection.py:724} INFO - No async queries seem to be running, deleting session
+[2026-03-14T07:01:26.145+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-03-14T07:01:26.153+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=2_enterprise_elt_pipeline, task_id=copy_into_table, execution_date=20260313T000000, start_date=20260314T070124, end_date=20260314T070126
+[2026-03-14T07:01:26.178+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-14T07:01:26.193+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-03-14T07:10:37.166+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.copy_into_table scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T07:10:37.177+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.copy_into_table scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T07:10:37.178+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-03-14T07:10:37.185+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): copy_into_table> on 2026-03-13 00:00:00+00:00
+[2026-03-14T07:10:37.200+0000] {standard_task_runner.py:60} INFO - Started process 1374 to run task
+[2026-03-14T07:10:37.207+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'copy_into_table', 'scheduled__2026-03-13T00:00:00+00:00', '--job-id', '106', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmp3bx3q85h']
+[2026-03-14T07:10:37.211+0000] {standard_task_runner.py:88} INFO - Job 106: Subtask copy_into_table
+[2026-03-14T07:10:37.254+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.copy_into_table scheduled__2026-03-13T00:00:00+00:00 [running]> on host c4724fa4fb48
+[2026-03-14T07:10:37.314+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='copy_into_table' AIRFLOW_CTX_EXECUTION_DATE='2026-03-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-13T00:00:00+00:00'
+[2026-03-14T07:10:37.321+0000] {base.py:83} INFO - Using connection ID 'snowflake_default' for task execution.
+[2026-03-14T07:10:37.321+0000] {connection.py:370} INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.8.18, Platform: Linux-6.12.72-linuxkit-aarch64-with-glibc2.34
+[2026-03-14T07:10:37.322+0000] {connection.py:1171} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-14T07:10:37.846+0000] {cursor.py:1028} INFO - query: [ALTER SESSION SET autocommit=False]
+[2026-03-14T07:10:37.972+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T07:10:37.974+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T07:10:37.974+0000] {sql.py:450} INFO - Running statement: COPY INTO RAW_LAKE.LANDING.CUSTOMERS 
+            FROM @RAW_LAKE.LANDING.MY_INTERNAL_STAGE/extract_20260314_071032.csv.gz
+            FILE_FORMAT = (TYPE = CSV SKIP_HEADER = 1);, parameters: None
+[2026-03-14T07:10:37.974+0000] {cursor.py:1028} INFO - query: [COPY INTO RAW_LAKE.LANDING.CUSTOMERS FROM @RAW_LAKE.LANDING.MY_INTERNAL_STAGE/ex...]
+[2026-03-14T07:10:39.008+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T07:10:39.009+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T07:10:39.010+0000] {sql.py:459} INFO - Rows affected: 1
+[2026-03-14T07:10:39.010+0000] {snowflake.py:400} INFO - Rows affected: 1
+[2026-03-14T07:10:39.011+0000] {snowflake.py:401} INFO - Snowflake query id: 01c3046e-3202-7087-0014-7c6a000438c6
+[2026-03-14T07:10:39.011+0000] {cursor.py:1028} INFO - query: [COMMIT]
+[2026-03-14T07:10:39.295+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T07:10:39.296+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T07:10:39.297+0000] {connection.py:718} INFO - closed
+[2026-03-14T07:10:39.358+0000] {connection.py:724} INFO - No async queries seem to be running, deleting session
+[2026-03-14T07:10:39.452+0000] {python.py:201} INFO - Done. Returned value was: None
+[2026-03-14T07:10:39.478+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=2_enterprise_elt_pipeline, task_id=copy_into_table, execution_date=20260313T000000, start_date=20260314T071037, end_date=20260314T071039
+[2026-03-14T07:10:39.520+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-14T07:10:39.568+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

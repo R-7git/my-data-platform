@@ -1,0 +1,37 @@
+[2026-03-13T11:10:53.687+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage manual__2026-03-13T11:10:50.802207+00:00 [queued]>
+[2026-03-13T11:10:53.691+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage manual__2026-03-13T11:10:50.802207+00:00 [queued]>
+[2026-03-13T11:10:53.691+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2026-03-13T11:10:53.697+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): load_to_snowflake_stage> on 2026-03-13 11:10:50.802207+00:00
+[2026-03-13T11:10:53.701+0000] {standard_task_runner.py:60} INFO - Started process 211 to run task
+[2026-03-13T11:10:53.704+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'load_to_snowflake_stage', 'manual__2026-03-13T11:10:50.802207+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmpl6e2258a']
+[2026-03-13T11:10:53.709+0000] {standard_task_runner.py:88} INFO - Job 5: Subtask load_to_snowflake_stage
+[2026-03-13T11:10:53.740+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage manual__2026-03-13T11:10:50.802207+00:00 [running]> on host 94439bb4e033
+[2026-03-13T11:10:53.786+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='load_to_snowflake_stage' AIRFLOW_CTX_EXECUTION_DATE='2026-03-13T11:10:50.802207+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-13T11:10:50.802207+00:00'
+[2026-03-13T11:10:53.854+0000] {logging_mixin.py:188} INFO - Uploading /tmp/extract_20260313_111052.csv to Snowflake Stage...
+[2026-03-13T11:10:53.876+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/elt_pipeline.py", line 52, in load_to_snowflake_stage
+    hook.run(f"PUT file://{local_path} @RAW_LAKE.LANDING.MY_INTERNAL_STAGE AUTO_COMPRESS=TRUE")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/snowflake/hooks/snowflake.py", line 382, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/snowflake/hooks/snowflake.py", line 275, in get_conn
+    conn_config = self._get_conn_params()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/snowflake/hooks/snowflake.py", line 183, in _get_conn_params
+    conn = self.get_connection(self.snowflake_conn_id)  # type: ignore[attr-defined]
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/hooks/base.py", line 82, in get_connection
+    conn = Connection.get_connection_from_secrets(conn_id)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/connection.py", line 479, in get_connection_from_secrets
+    raise AirflowNotFoundException(f"The conn_id `{conn_id}` isn't defined")
+airflow.exceptions.AirflowNotFoundException: The conn_id `snowflake_default` isn't defined
+[2026-03-13T11:10:53.878+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=2_enterprise_elt_pipeline, task_id=load_to_snowflake_stage, execution_date=20260313T111050, start_date=20260313T111053, end_date=20260313T111053
+[2026-03-13T11:10:53.885+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 5 for task load_to_snowflake_stage (The conn_id `snowflake_default` isn't defined; 211)
+[2026-03-13T11:10:53.927+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-03-13T11:10:53.942+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

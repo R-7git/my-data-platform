@@ -1,0 +1,280 @@
+[2026-03-14T00:03:13.774+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T00:03:13.779+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T00:03:13.780+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2026-03-14T00:03:13.790+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): load_to_snowflake_stage> on 2026-03-13 00:00:00+00:00
+[2026-03-14T00:03:13.798+0000] {standard_task_runner.py:60} INFO - Started process 846 to run task
+[2026-03-14T00:03:13.801+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'load_to_snowflake_stage', 'scheduled__2026-03-13T00:00:00+00:00', '--job-id', '41', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmpxb1w1t_m']
+[2026-03-14T00:03:13.805+0000] {standard_task_runner.py:88} INFO - Job 41: Subtask load_to_snowflake_stage
+[2026-03-14T00:03:13.847+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [running]> on host 94439bb4e033
+[2026-03-14T00:03:13.918+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='load_to_snowflake_stage' AIRFLOW_CTX_EXECUTION_DATE='2026-03-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-13T00:00:00+00:00'
+[2026-03-14T00:03:14.009+0000] {logging_mixin.py:188} INFO - Uploading /tmp/extract_20260314_000312.csv to Snowflake Stage...
+[2026-03-14T00:03:14.016+0000] {base.py:83} INFO - Using connection ID 'snowflake_default' for task execution.
+[2026-03-14T00:03:14.016+0000] {connection.py:370} INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.8.18, Platform: Linux-6.12.72-linuxkit-aarch64-with-glibc2.34
+[2026-03-14T00:03:14.017+0000] {connection.py:1171} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-14T00:03:14.787+0000] {cursor.py:1028} INFO - query: [ALTER SESSION SET autocommit=False]
+[2026-03-14T00:03:14.920+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T00:03:14.922+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T00:03:14.923+0000] {sql.py:450} INFO - Running statement: PUT file:///tmp/extract_20260314_000312.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE AUTO_COMPRESS=TRUE, parameters: None
+[2026-03-14T00:03:14.923+0000] {cursor.py:1028} INFO - query: [PUT file:///tmp/extract_20260314_000312.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE ...]
+[2026-03-14T00:03:15.166+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T00:03:15.673+0000] {sql.py:459} INFO - Rows affected: 1
+[2026-03-14T00:03:15.675+0000] {snowflake.py:400} INFO - Rows affected: 1
+[2026-03-14T00:03:15.675+0000] {snowflake.py:401} INFO - Snowflake query id: 01c302c3-3202-7087-0014-7c6a0003f006
+[2026-03-14T00:03:15.676+0000] {cursor.py:1028} INFO - query: [COMMIT]
+[2026-03-14T00:03:15.761+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T00:03:15.762+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T00:03:15.762+0000] {connection.py:718} INFO - closed
+[2026-03-14T00:03:15.823+0000] {connection.py:724} INFO - No async queries seem to be running, deleting session
+[2026-03-14T00:03:15.886+0000] {python.py:201} INFO - Done. Returned value was: extract_20260314_000312.csv
+[2026-03-14T00:03:15.951+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=2_enterprise_elt_pipeline, task_id=load_to_snowflake_stage, execution_date=20260313T000000, start_date=20260314T000313, end_date=20260314T000315
+[2026-03-14T00:03:16.017+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-14T00:03:16.082+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-03-14T06:25:48.441+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T06:25:48.445+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T06:25:48.445+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-03-14T06:25:48.451+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): load_to_snowflake_stage> on 2026-03-13 00:00:00+00:00
+[2026-03-14T06:25:48.462+0000] {standard_task_runner.py:60} INFO - Started process 221 to run task
+[2026-03-14T06:25:48.472+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'load_to_snowflake_stage', 'scheduled__2026-03-13T00:00:00+00:00', '--job-id', '72', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmp6pcq8okl']
+[2026-03-14T06:25:48.475+0000] {standard_task_runner.py:88} INFO - Job 72: Subtask load_to_snowflake_stage
+[2026-03-14T06:25:48.523+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [running]> on host c4724fa4fb48
+[2026-03-14T06:25:48.582+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='load_to_snowflake_stage' AIRFLOW_CTX_EXECUTION_DATE='2026-03-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-13T00:00:00+00:00'
+[2026-03-14T06:25:48.712+0000] {logging_mixin.py:188} INFO - Uploading /tmp/extract_20260314_062547.csv to Snowflake Stage...
+[2026-03-14T06:25:48.721+0000] {base.py:83} INFO - Using connection ID 'snowflake_default' for task execution.
+[2026-03-14T06:25:48.721+0000] {connection.py:370} INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.8.18, Platform: Linux-6.12.72-linuxkit-aarch64-with-glibc2.34
+[2026-03-14T06:25:48.722+0000] {connection.py:1171} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-14T06:25:49.602+0000] {cursor.py:1028} INFO - query: [ALTER SESSION SET autocommit=False]
+[2026-03-14T06:25:49.721+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T06:25:49.723+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T06:25:49.725+0000] {sql.py:450} INFO - Running statement: PUT file:///tmp/extract_20260314_062547.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE AUTO_COMPRESS=TRUE, parameters: None
+[2026-03-14T06:25:49.726+0000] {cursor.py:1028} INFO - query: [PUT file:///tmp/extract_20260314_062547.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE ...]
+[2026-03-14T06:25:49.828+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T06:25:49.833+0000] {connection.py:718} INFO - closed
+[2026-03-14T06:25:49.888+0000] {connection.py:724} INFO - No async queries seem to be running, deleting session
+[2026-03-14T06:25:49.950+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/elt_pipeline.py", line 53, in load_to_snowflake_stage
+    hook.run(f"PUT file://{local_path} @RAW_LAKE.LANDING.MY_INTERNAL_STAGE AUTO_COMPRESS=TRUE")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/snowflake/hooks/snowflake.py", line 388, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/cursor.py", line 1132, in execute
+    Error.errorhandler_wrapper(self.connection, self, error_class, errvalue)
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 290, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 345, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 221, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 002003 (02000): 01c30441-3202-7087-0014-7c6a0003ffd6: SQL compilation error:
+Database 'RAW_LAKE' does not exist or not authorized.
+[2026-03-14T06:25:49.962+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=2_enterprise_elt_pipeline, task_id=load_to_snowflake_stage, execution_date=20260313T000000, start_date=20260314T062548, end_date=20260314T062549
+[2026-03-14T06:25:49.971+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 72 for task load_to_snowflake_stage (002003 (02000): 01c30441-3202-7087-0014-7c6a0003ffd6: SQL compilation error:
+Database 'RAW_LAKE' does not exist or not authorized.; 221)
+[2026-03-14T06:25:50.014+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-03-14T06:25:50.036+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-14T06:40:43.275+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T06:40:43.279+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T06:40:43.279+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-03-14T06:40:43.283+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): load_to_snowflake_stage> on 2026-03-13 00:00:00+00:00
+[2026-03-14T06:40:43.288+0000] {standard_task_runner.py:60} INFO - Started process 542 to run task
+[2026-03-14T06:40:43.291+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'load_to_snowflake_stage', 'scheduled__2026-03-13T00:00:00+00:00', '--job-id', '78', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmpip8yh0he']
+[2026-03-14T06:40:43.293+0000] {standard_task_runner.py:88} INFO - Job 78: Subtask load_to_snowflake_stage
+[2026-03-14T06:40:43.319+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [running]> on host c4724fa4fb48
+[2026-03-14T06:40:43.369+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='load_to_snowflake_stage' AIRFLOW_CTX_EXECUTION_DATE='2026-03-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-13T00:00:00+00:00'
+[2026-03-14T06:40:43.447+0000] {logging_mixin.py:188} INFO - Uploading /tmp/extract_20260314_064042.csv to Snowflake Stage...
+[2026-03-14T06:40:43.455+0000] {base.py:83} INFO - Using connection ID 'snowflake_default' for task execution.
+[2026-03-14T06:40:43.455+0000] {connection.py:370} INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.8.18, Platform: Linux-6.12.72-linuxkit-aarch64-with-glibc2.34
+[2026-03-14T06:40:43.456+0000] {connection.py:1171} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-14T06:40:44.088+0000] {cursor.py:1028} INFO - query: [ALTER SESSION SET autocommit=False]
+[2026-03-14T06:40:44.186+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T06:40:44.186+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T06:40:44.186+0000] {sql.py:450} INFO - Running statement: PUT file:///tmp/extract_20260314_064042.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE AUTO_COMPRESS=TRUE, parameters: None
+[2026-03-14T06:40:44.186+0000] {cursor.py:1028} INFO - query: [PUT file:///tmp/extract_20260314_064042.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE ...]
+[2026-03-14T06:40:44.272+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T06:40:44.276+0000] {connection.py:718} INFO - closed
+[2026-03-14T06:40:44.330+0000] {connection.py:724} INFO - No async queries seem to be running, deleting session
+[2026-03-14T06:40:44.395+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/elt_pipeline.py", line 53, in load_to_snowflake_stage
+    hook.run(f"PUT file://{local_path} @RAW_LAKE.LANDING.MY_INTERNAL_STAGE AUTO_COMPRESS=TRUE")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/snowflake/hooks/snowflake.py", line 388, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/cursor.py", line 1132, in execute
+    Error.errorhandler_wrapper(self.connection, self, error_class, errvalue)
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 290, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 345, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 221, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 002003 (02000): 01c30450-3202-7087-0014-7c6a000432b6: SQL compilation error:
+Stage 'RAW_LAKE.LANDING.MY_INTERNAL_STAGE' does not exist or not authorized.
+[2026-03-14T06:40:44.399+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=2_enterprise_elt_pipeline, task_id=load_to_snowflake_stage, execution_date=20260313T000000, start_date=20260314T064043, end_date=20260314T064044
+[2026-03-14T06:40:44.406+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 78 for task load_to_snowflake_stage (002003 (02000): 01c30450-3202-7087-0014-7c6a000432b6: SQL compilation error:
+Stage 'RAW_LAKE.LANDING.MY_INTERNAL_STAGE' does not exist or not authorized.; 542)
+[2026-03-14T06:40:44.416+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-03-14T06:40:44.431+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-14T06:51:35.960+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T06:51:35.969+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T06:51:35.969+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-03-14T06:51:35.976+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): load_to_snowflake_stage> on 2026-03-13 00:00:00+00:00
+[2026-03-14T06:51:35.980+0000] {standard_task_runner.py:60} INFO - Started process 788 to run task
+[2026-03-14T06:51:35.982+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'load_to_snowflake_stage', 'scheduled__2026-03-13T00:00:00+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmpfhjq3qhf']
+[2026-03-14T06:51:35.984+0000] {standard_task_runner.py:88} INFO - Job 84: Subtask load_to_snowflake_stage
+[2026-03-14T06:51:36.014+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [running]> on host c4724fa4fb48
+[2026-03-14T06:51:36.060+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='load_to_snowflake_stage' AIRFLOW_CTX_EXECUTION_DATE='2026-03-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-13T00:00:00+00:00'
+[2026-03-14T06:51:36.116+0000] {logging_mixin.py:188} INFO - Uploading /tmp/extract_20260314_065134.csv to Snowflake Stage...
+[2026-03-14T06:51:36.123+0000] {base.py:83} INFO - Using connection ID 'snowflake_default' for task execution.
+[2026-03-14T06:51:36.124+0000] {connection.py:370} INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.8.18, Platform: Linux-6.12.72-linuxkit-aarch64-with-glibc2.34
+[2026-03-14T06:51:36.124+0000] {connection.py:1171} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-14T06:51:36.732+0000] {cursor.py:1028} INFO - query: [ALTER SESSION SET autocommit=False]
+[2026-03-14T06:51:36.828+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T06:51:36.829+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T06:51:36.829+0000] {sql.py:450} INFO - Running statement: PUT file:///tmp/extract_20260314_065134.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE AUTO_COMPRESS=TRUE, parameters: None
+[2026-03-14T06:51:36.830+0000] {cursor.py:1028} INFO - query: [PUT file:///tmp/extract_20260314_065134.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE ...]
+[2026-03-14T06:51:36.987+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T06:51:38.370+0000] {sql.py:459} INFO - Rows affected: 1
+[2026-03-14T06:51:38.371+0000] {snowflake.py:400} INFO - Rows affected: 1
+[2026-03-14T06:51:38.372+0000] {snowflake.py:401} INFO - Snowflake query id: 01c3045b-3202-7087-0014-7c6a0004340e
+[2026-03-14T06:51:38.372+0000] {cursor.py:1028} INFO - query: [COMMIT]
+[2026-03-14T06:51:38.470+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T06:51:38.471+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T06:51:38.471+0000] {connection.py:718} INFO - closed
+[2026-03-14T06:51:38.531+0000] {connection.py:724} INFO - No async queries seem to be running, deleting session
+[2026-03-14T06:51:38.631+0000] {python.py:201} INFO - Done. Returned value was: extract_20260314_065134.csv
+[2026-03-14T06:51:38.660+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=2_enterprise_elt_pipeline, task_id=load_to_snowflake_stage, execution_date=20260313T000000, start_date=20260314T065135, end_date=20260314T065138
+[2026-03-14T06:51:38.718+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-14T06:51:38.751+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-03-14T06:59:22.668+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T06:59:22.672+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T06:59:22.672+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-03-14T06:59:22.677+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): load_to_snowflake_stage> on 2026-03-13 00:00:00+00:00
+[2026-03-14T06:59:22.682+0000] {standard_task_runner.py:60} INFO - Started process 1020 to run task
+[2026-03-14T06:59:22.684+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'load_to_snowflake_stage', 'scheduled__2026-03-13T00:00:00+00:00', '--job-id', '93', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmpy4vdtox7']
+[2026-03-14T06:59:22.687+0000] {standard_task_runner.py:88} INFO - Job 93: Subtask load_to_snowflake_stage
+[2026-03-14T06:59:22.714+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [running]> on host c4724fa4fb48
+[2026-03-14T06:59:22.760+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='load_to_snowflake_stage' AIRFLOW_CTX_EXECUTION_DATE='2026-03-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-13T00:00:00+00:00'
+[2026-03-14T06:59:22.813+0000] {logging_mixin.py:188} INFO - Uploading /tmp/extract_20260314_065921.csv to Snowflake Stage...
+[2026-03-14T06:59:22.818+0000] {base.py:83} INFO - Using connection ID 'snowflake_default' for task execution.
+[2026-03-14T06:59:22.818+0000] {connection.py:370} INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.8.18, Platform: Linux-6.12.72-linuxkit-aarch64-with-glibc2.34
+[2026-03-14T06:59:22.818+0000] {connection.py:1171} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-14T06:59:23.331+0000] {cursor.py:1028} INFO - query: [ALTER SESSION SET autocommit=False]
+[2026-03-14T06:59:23.429+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T06:59:23.430+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T06:59:23.430+0000] {sql.py:450} INFO - Running statement: PUT file:///tmp/extract_20260314_065921.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE AUTO_COMPRESS=TRUE, parameters: None
+[2026-03-14T06:59:23.430+0000] {cursor.py:1028} INFO - query: [PUT file:///tmp/extract_20260314_065921.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE ...]
+[2026-03-14T06:59:23.517+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T06:59:23.524+0000] {connection.py:718} INFO - closed
+[2026-03-14T06:59:23.578+0000] {connection.py:724} INFO - No async queries seem to be running, deleting session
+[2026-03-14T06:59:23.654+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/elt_pipeline.py", line 53, in load_to_snowflake_stage
+    hook.run(f"PUT file://{local_path} @RAW_LAKE.LANDING.MY_INTERNAL_STAGE AUTO_COMPRESS=TRUE")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/snowflake/hooks/snowflake.py", line 388, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/cursor.py", line 1132, in execute
+    Error.errorhandler_wrapper(self.connection, self, error_class, errvalue)
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 290, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 345, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 221, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 002003 (02000): 01c30463-3202-7087-0014-7c6a00043626: SQL compilation error:
+Database 'RAW_LAKE' does not exist or not authorized.
+[2026-03-14T06:59:23.670+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=2_enterprise_elt_pipeline, task_id=load_to_snowflake_stage, execution_date=20260313T000000, start_date=20260314T065922, end_date=20260314T065923
+[2026-03-14T06:59:23.681+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 93 for task load_to_snowflake_stage (002003 (02000): 01c30463-3202-7087-0014-7c6a00043626: SQL compilation error:
+Database 'RAW_LAKE' does not exist or not authorized.; 1020)
+[2026-03-14T06:59:23.732+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-03-14T06:59:23.756+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-03-14T07:01:19.941+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T07:01:19.945+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T07:01:19.946+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-03-14T07:01:19.956+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): load_to_snowflake_stage> on 2026-03-13 00:00:00+00:00
+[2026-03-14T07:01:19.962+0000] {standard_task_runner.py:60} INFO - Started process 1073 to run task
+[2026-03-14T07:01:19.964+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'load_to_snowflake_stage', 'scheduled__2026-03-13T00:00:00+00:00', '--job-id', '96', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmp7svxgedt']
+[2026-03-14T07:01:19.966+0000] {standard_task_runner.py:88} INFO - Job 96: Subtask load_to_snowflake_stage
+[2026-03-14T07:01:19.997+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [running]> on host c4724fa4fb48
+[2026-03-14T07:01:20.041+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='load_to_snowflake_stage' AIRFLOW_CTX_EXECUTION_DATE='2026-03-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-13T00:00:00+00:00'
+[2026-03-14T07:01:20.119+0000] {logging_mixin.py:188} INFO - Uploading /tmp/extract_20260314_070118.csv to Snowflake Stage...
+[2026-03-14T07:01:20.125+0000] {base.py:83} INFO - Using connection ID 'snowflake_default' for task execution.
+[2026-03-14T07:01:20.126+0000] {connection.py:370} INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.8.18, Platform: Linux-6.12.72-linuxkit-aarch64-with-glibc2.34
+[2026-03-14T07:01:20.126+0000] {connection.py:1171} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-14T07:01:20.680+0000] {cursor.py:1028} INFO - query: [ALTER SESSION SET autocommit=False]
+[2026-03-14T07:01:20.779+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T07:01:20.780+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T07:01:20.780+0000] {sql.py:450} INFO - Running statement: PUT file:///tmp/extract_20260314_070118.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE AUTO_COMPRESS=TRUE, parameters: None
+[2026-03-14T07:01:20.781+0000] {cursor.py:1028} INFO - query: [PUT file:///tmp/extract_20260314_070118.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE ...]
+[2026-03-14T07:01:20.922+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T07:01:21.556+0000] {sql.py:459} INFO - Rows affected: 1
+[2026-03-14T07:01:21.557+0000] {snowflake.py:400} INFO - Rows affected: 1
+[2026-03-14T07:01:21.558+0000] {snowflake.py:401} INFO - Snowflake query id: 01c30465-3202-7087-0014-7c6a000436da
+[2026-03-14T07:01:21.559+0000] {cursor.py:1028} INFO - query: [COMMIT]
+[2026-03-14T07:01:21.717+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T07:01:21.719+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T07:01:21.720+0000] {connection.py:718} INFO - closed
+[2026-03-14T07:01:22.218+0000] {connection.py:724} INFO - No async queries seem to be running, deleting session
+[2026-03-14T07:01:22.284+0000] {python.py:201} INFO - Done. Returned value was: extract_20260314_070118.csv
+[2026-03-14T07:01:22.305+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=2_enterprise_elt_pipeline, task_id=load_to_snowflake_stage, execution_date=20260313T000000, start_date=20260314T070119, end_date=20260314T070122
+[2026-03-14T07:01:22.334+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-14T07:01:22.364+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-03-14T07:10:33.491+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T07:10:33.495+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [queued]>
+[2026-03-14T07:10:33.496+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-03-14T07:10:33.501+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): load_to_snowflake_stage> on 2026-03-13 00:00:00+00:00
+[2026-03-14T07:10:33.506+0000] {standard_task_runner.py:60} INFO - Started process 1367 to run task
+[2026-03-14T07:10:33.508+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'load_to_snowflake_stage', 'scheduled__2026-03-13T00:00:00+00:00', '--job-id', '105', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmpusxhvdtn']
+[2026-03-14T07:10:33.511+0000] {standard_task_runner.py:88} INFO - Job 105: Subtask load_to_snowflake_stage
+[2026-03-14T07:10:33.537+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage scheduled__2026-03-13T00:00:00+00:00 [running]> on host c4724fa4fb48
+[2026-03-14T07:10:33.581+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='load_to_snowflake_stage' AIRFLOW_CTX_EXECUTION_DATE='2026-03-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-13T00:00:00+00:00'
+[2026-03-14T07:10:33.637+0000] {logging_mixin.py:188} INFO - Uploading /tmp/extract_20260314_071032.csv to Snowflake Stage...
+[2026-03-14T07:10:33.643+0000] {base.py:83} INFO - Using connection ID 'snowflake_default' for task execution.
+[2026-03-14T07:10:33.643+0000] {connection.py:370} INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.8.18, Platform: Linux-6.12.72-linuxkit-aarch64-with-glibc2.34
+[2026-03-14T07:10:33.644+0000] {connection.py:1171} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-14T07:10:34.582+0000] {cursor.py:1028} INFO - query: [ALTER SESSION SET autocommit=False]
+[2026-03-14T07:10:34.684+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T07:10:34.686+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T07:10:34.687+0000] {sql.py:450} INFO - Running statement: PUT file:///tmp/extract_20260314_071032.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE AUTO_COMPRESS=TRUE, parameters: None
+[2026-03-14T07:10:34.687+0000] {cursor.py:1028} INFO - query: [PUT file:///tmp/extract_20260314_071032.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE ...]
+[2026-03-14T07:10:34.844+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T07:10:35.326+0000] {sql.py:459} INFO - Rows affected: 1
+[2026-03-14T07:10:35.327+0000] {snowflake.py:400} INFO - Rows affected: 1
+[2026-03-14T07:10:35.328+0000] {snowflake.py:401} INFO - Snowflake query id: 01c3046e-3202-7172-0014-7c6a00044372
+[2026-03-14T07:10:35.328+0000] {cursor.py:1028} INFO - query: [COMMIT]
+[2026-03-14T07:10:35.414+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-14T07:10:35.415+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-14T07:10:35.415+0000] {connection.py:718} INFO - closed
+[2026-03-14T07:10:35.472+0000] {connection.py:724} INFO - No async queries seem to be running, deleting session
+[2026-03-14T07:10:35.781+0000] {python.py:201} INFO - Done. Returned value was: extract_20260314_071032.csv
+[2026-03-14T07:10:35.823+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=2_enterprise_elt_pipeline, task_id=load_to_snowflake_stage, execution_date=20260313T000000, start_date=20260314T071033, end_date=20260314T071035
+[2026-03-14T07:10:35.878+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-14T07:10:35.911+0000] {taskinstance.py:3280} INFO - 1 downstream tasks scheduled from follow-on schedule check

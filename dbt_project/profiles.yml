@@ -1,0 +1,21 @@
+snowflake_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      # 1. YOUR ACCOUNT: e.g. xy12345.us-east-1 (Do NOT include https://)
+      account: "BKVGNQZ-UO15536"
+
+      # 2. YOUR CREDENTIALS
+      user: "ROSHAN"
+      password: "Rosh20090798395@"
+
+      # 3. THE CONTEXT (Must match what we set up in Snowflake)
+      role: "ACCOUNTADMIN"
+      database: "RAW_LAKE"
+      warehouse: "ELT_WH"
+      schema: "ANALYTICS"  # <--- dbt will automatically create this new schema
+
+      # 4. CONFIG
+      threads: 1
+      client_session_keep_alive: False

@@ -1,0 +1,52 @@
+[2026-03-13T14:37:10.381+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage manual__2026-03-13T14:37:08.373637+00:00 [queued]>
+[2026-03-13T14:37:10.387+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage manual__2026-03-13T14:37:08.373637+00:00 [queued]>
+[2026-03-13T14:37:10.388+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2026-03-13T14:37:10.394+0000] {taskinstance.py:2191} INFO - Executing <Task(_PythonDecoratedOperator): load_to_snowflake_stage> on 2026-03-13 14:37:08.373637+00:00
+[2026-03-13T14:37:10.401+0000] {standard_task_runner.py:60} INFO - Started process 571 to run task
+[2026-03-13T14:37:10.403+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'load_to_snowflake_stage', 'manual__2026-03-13T14:37:08.373637+00:00', '--job-id', '21', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmprovh5vjz']
+[2026-03-13T14:37:10.405+0000] {standard_task_runner.py:88} INFO - Job 21: Subtask load_to_snowflake_stage
+[2026-03-13T14:37:10.431+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.load_to_snowflake_stage manual__2026-03-13T14:37:08.373637+00:00 [running]> on host 94439bb4e033
+[2026-03-13T14:37:10.471+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='load_to_snowflake_stage' AIRFLOW_CTX_EXECUTION_DATE='2026-03-13T14:37:08.373637+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-13T14:37:08.373637+00:00'
+[2026-03-13T14:37:10.527+0000] {logging_mixin.py:188} INFO - Uploading /tmp/extract_20260313_143709.csv to Snowflake Stage...
+[2026-03-13T14:37:10.533+0000] {base.py:83} INFO - Using connection ID 'snowflake_default' for task execution.
+[2026-03-13T14:37:10.534+0000] {connection.py:370} INFO - Snowflake Connector for Python Version: 3.6.0, Python Version: 3.8.18, Platform: Linux-6.12.72-linuxkit-aarch64-with-glibc2.34
+[2026-03-13T14:37:10.534+0000] {connection.py:1171} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2026-03-13T14:37:11.323+0000] {cursor.py:1028} INFO - query: [ALTER SESSION SET autocommit=False]
+[2026-03-13T14:37:11.484+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-13T14:37:11.485+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2026-03-13T14:37:11.486+0000] {sql.py:450} INFO - Running statement: PUT file:///tmp/extract_20260313_143709.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE AUTO_COMPRESS=TRUE, parameters: None
+[2026-03-13T14:37:11.486+0000] {cursor.py:1028} INFO - query: [PUT file:///tmp/extract_20260313_143709.csv @RAW_LAKE.LANDING.MY_INTERNAL_STAGE ...]
+[2026-03-13T14:37:11.621+0000] {cursor.py:1041} INFO - query execution done
+[2026-03-13T14:37:11.627+0000] {connection.py:718} INFO - closed
+[2026-03-13T14:37:11.760+0000] {connection.py:724} INFO - No async queries seem to be running, deleting session
+[2026-03-13T14:37:11.864+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/decorators/base.py", line 241, in execute
+    return_value = super().execute(context)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/elt_pipeline.py", line 52, in load_to_snowflake_stage
+    hook.run(f"PUT file://{local_path} @RAW_LAKE.LANDING.MY_INTERNAL_STAGE AUTO_COMPRESS=TRUE")
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/snowflake/hooks/snowflake.py", line 388, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/common/sql/hooks/sql.py", line 455, in _run_command
+    cur.execute(sql_statement)
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/cursor.py", line 1132, in execute
+    Error.errorhandler_wrapper(self.connection, self, error_class, errvalue)
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 290, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 345, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/home/airflow/.local/lib/python3.8/site-packages/snowflake/connector/errors.py", line 221, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 002003 (02000): 01c3008d-3202-7050-0014-7c6a00036d8e: SQL compilation error:
+Stage 'RAW_LAKE.LANDING.MY_INTERNAL_STAGE' does not exist or not authorized.
+[2026-03-13T14:37:11.880+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=2_enterprise_elt_pipeline, task_id=load_to_snowflake_stage, execution_date=20260313T143708, start_date=20260313T143710, end_date=20260313T143711
+[2026-03-13T14:37:11.890+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 21 for task load_to_snowflake_stage (002003 (02000): 01c3008d-3202-7050-0014-7c6a00036d8e: SQL compilation error:
+Stage 'RAW_LAKE.LANDING.MY_INTERNAL_STAGE' does not exist or not authorized.; 571)
+[2026-03-13T14:37:11.934+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-03-13T14:37:11.954+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

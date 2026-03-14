@@ -1,0 +1,48 @@
+[2026-03-14T07:01:26.855+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.dbt_transform manual__2026-03-14T07:01:18.157487+00:00 [queued]>
+[2026-03-14T07:01:26.861+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 2_enterprise_elt_pipeline.dbt_transform manual__2026-03-14T07:01:18.157487+00:00 [queued]>
+[2026-03-14T07:01:26.861+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 2
+[2026-03-14T07:01:26.868+0000] {taskinstance.py:2191} INFO - Executing <Task(BashOperator): dbt_transform> on 2026-03-14 07:01:18.157487+00:00
+[2026-03-14T07:01:26.872+0000] {standard_task_runner.py:60} INFO - Started process 1094 to run task
+[2026-03-14T07:01:26.874+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '2_enterprise_elt_pipeline', 'dbt_transform', 'manual__2026-03-14T07:01:18.157487+00:00', '--job-id', '101', '--raw', '--subdir', 'DAGS_FOLDER/elt_pipeline.py', '--cfg-path', '/tmp/tmp9iio714w']
+[2026-03-14T07:01:26.876+0000] {standard_task_runner.py:88} INFO - Job 101: Subtask dbt_transform
+[2026-03-14T07:01:26.899+0000] {task_command.py:423} INFO - Running <TaskInstance: 2_enterprise_elt_pipeline.dbt_transform manual__2026-03-14T07:01:18.157487+00:00 [running]> on host c4724fa4fb48
+[2026-03-14T07:01:26.934+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='data_engineer' AIRFLOW_CTX_DAG_ID='2_enterprise_elt_pipeline' AIRFLOW_CTX_TASK_ID='dbt_transform' AIRFLOW_CTX_EXECUTION_DATE='2026-03-14T07:01:18.157487+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-14T07:01:18.157487+00:00'
+[2026-03-14T07:01:26.935+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-03-14T07:01:26.936+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'dbt run --project-dir /opt/***/dbt_project --profiles-dir /opt/***/dbt_project']
+[2026-03-14T07:01:26.950+0000] {subprocess.py:86} INFO - Output:
+[2026-03-14T07:01:28.099+0000] {subprocess.py:93} INFO - [0m07:01:28  Running with dbt=1.8.7
+[2026-03-14T07:01:28.930+0000] {subprocess.py:93} INFO - [0m07:01:28  Registered adapter: snowflake=1.8.4
+[2026-03-14T07:01:29.027+0000] {subprocess.py:93} INFO - [0m07:01:29  Unable to do partial parsing because profile has changed
+[2026-03-14T07:01:29.874+0000] {subprocess.py:93} INFO - [0m07:01:29  [[33mWARNING[0m]: Deprecated functionality
+[2026-03-14T07:01:29.876+0000] {subprocess.py:93} INFO - The `tests` config has been renamed to `data_tests`. Please see
+[2026-03-14T07:01:29.878+0000] {subprocess.py:93} INFO - https://docs.getdbt.com/docs/build/data-tests#new-data_tests-syntax for more
+[2026-03-14T07:01:29.880+0000] {subprocess.py:93} INFO - information.
+[2026-03-14T07:01:30.234+0000] {subprocess.py:93} INFO - [0m07:01:30  Found 1 model, 5 data tests, 1 source, 454 macros
+[2026-03-14T07:01:30.236+0000] {subprocess.py:93} INFO - [0m07:01:30
+[2026-03-14T07:01:32.174+0000] {subprocess.py:93} INFO - [0m07:01:32  Concurrency: 1 threads (target='dev')
+[2026-03-14T07:01:32.175+0000] {subprocess.py:93} INFO - [0m07:01:32
+[2026-03-14T07:01:32.182+0000] {subprocess.py:93} INFO - [0m07:01:32  1 of 1 START sql incremental model ANALYTICS.stg_customers ..................... [RUN]
+[2026-03-14T07:01:32.765+0000] {subprocess.py:93} INFO - [0m07:01:32  1 of 1 ERROR creating sql incremental model ANALYTICS.stg_customers ............ [[31mERROR[0m in 0.58s]
+[2026-03-14T07:01:32.772+0000] {subprocess.py:93} INFO - [0m07:01:32
+[2026-03-14T07:01:32.772+0000] {subprocess.py:93} INFO - [0m07:01:32  Finished running 1 incremental model in 0 hours 0 minutes and 2.53 seconds (2.53s).
+[2026-03-14T07:01:32.824+0000] {subprocess.py:93} INFO - [0m07:01:32
+[2026-03-14T07:01:32.824+0000] {subprocess.py:93} INFO - [0m07:01:32  [31mCompleted with 1 error and 0 warnings:[0m
+[2026-03-14T07:01:32.825+0000] {subprocess.py:93} INFO - [0m07:01:32
+[2026-03-14T07:01:32.825+0000] {subprocess.py:93} INFO - [0m07:01:32    Database Error in model stg_customers (models/marts/stg_customers.sql)
+[2026-03-14T07:01:32.825+0000] {subprocess.py:93} INFO -   000904 (42000): SQL compilation error: error line 6 at position 4
+[2026-03-14T07:01:32.825+0000] {subprocess.py:93} INFO -   invalid identifier 'CUSTOMER_ID'
+[2026-03-14T07:01:32.826+0000] {subprocess.py:93} INFO -   compiled code at target/run/my_transformation/models/marts/stg_customers.sql
+[2026-03-14T07:01:32.826+0000] {subprocess.py:93} INFO - [0m07:01:32
+[2026-03-14T07:01:32.826+0000] {subprocess.py:93} INFO - [0m07:01:32  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2026-03-14T07:01:34.376+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-03-14T07:01:34.406+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/bash.py", line 212, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-03-14T07:01:34.411+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=2_enterprise_elt_pipeline, task_id=dbt_transform, execution_date=20260314T070118, start_date=20260314T070126, end_date=20260314T070134
+[2026-03-14T07:01:34.425+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 101 for task dbt_transform (Bash command failed. The command returned a non-zero exit code 1.; 1094)
+[2026-03-14T07:01:34.444+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-03-14T07:01:34.461+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

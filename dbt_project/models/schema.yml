@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Cleaned customer data with standardized formats."
+    columns:
+      # Test 1: The Primary Key Rule
+      - name: customer_id
+        description: "Unique identifier for a customer."
+        tests:
+          - unique:
+              severity: error # Stop the pipeline immediately
+          - not_null
+
+      # Test 2: The Data Standard Rule
+      - name: state
+        description: "2-letter US State code."
+        tests:
+          - accepted_values:
+              values: ['NY', 'CA', 'TX', 'FL']
+              severity: warn # Just warn me, don't stop the pipeline
+
+      # Test 3: The Format Rule (Regex)
+      - name: email
+        tests:
+          - not_null

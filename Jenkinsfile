@@ -1,0 +1,56 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKERHUB_CREDENTIALS = 'dockerhub-pass' // Create this ID in Jenkins Credentials (Username/Password)
+        DOCKER_USER = 'your-docker-id'
+        IMAGE_NAME = 'my-data-platform-airflow'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Terraform Plan') {
+            steps {
+                dir('terraform') {
+                    // Requires Terraform installed on Jenkins agent
+                    sh 'terraform init'
+                    sh 'terraform plan'
+                }
+            }
+        }
+
+        stage('Build Airflow Image') {
+            steps {
+                // Build for your specific architecture (M2/AMD64)
+                sh "docker build -t ${DOCKER_USER}/${IMAGE_NAME}:latest ."
+            }
+        }
+
+        stage('Push to Docker Hub') {
+            steps {
+                script {
+                    docker.withRegistry('', "${DOCKERHUB_CREDENTIALS}") {
+                        sh "docker push ${DOCKER_USER}/${IMAGE_NAME}:latest"
+                    }
+                }
+            }
+        }
+
+        stage('Cleanup') {
+            steps {
+                sh "docker image prune -f"
+            }
+        }
+    }
+
+    post {
+        failure {
+            echo "Deployment Failed. Check Slack Alerts."
+        }
+    }
+}

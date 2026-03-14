@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: landing_zone      # <--- CHANGED from 'raw_lake' to 'landing_zone' to match your SQL
+    database: RAW_LAKE
+    schema: LANDING
+    tables:
+      - name: customers
