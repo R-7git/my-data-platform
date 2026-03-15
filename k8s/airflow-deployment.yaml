@@ -15,14 +15,16 @@ spec:
       containers:
       - name: airflow
         image: rs121093/my-data-platform-airflow:latest
+        # --- FIXED: Explicitly start the webserver ---
+        command: ["/usr/bin/dumb-init", "--", "/home/airflow/entrypoint.sh"]
+        args: ["webserver"]
+        # ---------------------------------------------
         ports:
         - containerPort: 8080
         env:
         - name: AIRFLOW__CORE__EXECUTOR
           value: "LocalExecutor"
-        # --- FIXED CONNECTION STRING ---
-        # 1. We use host.docker.internal to reach the host machine
-        # 2. We use port 5434 because that is what you mapped in docker-compose
+        # Using 5432 to match your currently running ms-postgres-1 container
         - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
           value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5432/airflow"
         - name: AIRFLOW__CORE__LOAD_EXAMPLES
