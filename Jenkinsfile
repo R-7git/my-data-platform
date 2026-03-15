@@ -35,37 +35,15 @@ pipeline {
         stage('Build Airflow Image') {
             steps {
                 script {
-                    // Build local image using your Dockerfile
                     sh "docker build -t ${IMAGE_NAME}:latest -f docker/Dockerfile ."
-                    
-                    // Tag for Public Docker Hub
                     sh "docker tag ${IMAGE_NAME}:latest ${DOCKER_USER}/${IMAGE_NAME}:latest"
                 }
             }
         }
 
-        /* 
-        STAGE BYPASSED: Artifactory is currently undergoing maintenance/resource issues.
-        Proceeding directly to Docker Hub and K8s Deployment.
-        
-        stage('Push to Artifactory') {
-            steps {
-                script {
-                    withCredentials([usernamePassword(credentialsId: "${JFROG_CREDS_ID}", 
-                                     passwordVariable: 'JF_PASS', 
-                                     usernameVariable: 'JF_USER')]) {
-                        sh "echo ${JF_PASS} | docker login ${ARTIFACTORY_URL} -u ${JF_USER} --password-stdin"
-                        sh "docker push ${ARTIFACTORY_URL}/${JFROG_REPO}/${IMAGE_NAME}:${env.BUILD_NUMBER}"
-                    }
-                }
-            }
-        }
-        */
-
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    // Push the latest tag to your public repository
                     docker.withRegistry('', "${DOCKERHUB_CREDENTIALS}") {
                         sh "docker push ${DOCKER_USER}/${IMAGE_NAME}:latest"
                     }
@@ -81,15 +59,24 @@ pipeline {
             }
         }
 
-        stage('Deploy to K8s') {
+        stage('Deploy to K8s & Auto-Trigger DAG') {
             steps {
                 dir('k8s') {
-                    // Update Kubernetes with your manifests
+                    // 1. Update Kubernetes manifests
                     sh "kubectl apply -f airflow-deployment.yaml"
                     sh "kubectl apply -f airflow-service.yaml"
                     
-                    // Force K8s to pull the fresh image we just pushed to Docker Hub
+                    // 2. Force K8s to pull the new image
                     sh "kubectl rollout restart deployment/airflow-platform"
+
+                    // 3. Wait for the new pod to be ready before triggering (approx 30s)
+                    sh "sleep 30"
+                    
+                    // 4. AUTO-TRIGGER: Tells the pod to start the ELT pipeline immediately
+                    sh """
+                    kubectl exec deployment/airflow-platform -c webserver -- \
+                    airflow dags trigger 2_enterprise_elt_pipeline
+                    """
                 }
             }
         }
@@ -103,10 +90,10 @@ pipeline {
 
     post {
         success {
-            echo "SUCCESS: Build ${env.BUILD_NUMBER} deployed to K8s via Docker Hub!"
+            echo "SUCCESS: Build ${env.BUILD_NUMBER} deployed and DAG triggered!"
         }
         failure {
-            echo "FAILURE: Pipeline failed. Review the Jenkins console output."
+            echo "FAILURE: Pipeline failed. Check Jenkins logs."
         }
     }
 }

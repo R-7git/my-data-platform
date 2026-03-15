@@ -14,7 +14,7 @@ ACCESS_KEY = 'minioadmin'
 SECRET_KEY = 'minioadmin'
 BUCKET_NAME = 'raw-data-lake'
 
-def generate_and_upload_customers(num_records=5000):
+def generate_and_upload_customers(num_records=7000):
     """
     Simulates an extraction from a CRM system.
     """
@@ -66,3 +66,4 @@ def generate_and_upload_customers(num_records=5000):
 
 if __name__ == "__main__":
     generate_and_upload_customers()
+
