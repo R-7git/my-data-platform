@@ -14,20 +14,20 @@ services:
     environment:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
     entrypoint: >
-      /bin/bash -c "
+      /bin/bash -c '
       set -e;
-      echo 'Detecting container architecture...';
-      REAL_ARCH=\$(uname -m);
-      if [ \"\$REAL_ARCH\" = \"x86_64\" ]; then TARGET=amd64; else TARGET=arm64; fi;
-      echo 'Architecture: '\$REAL_ARCH', downloading kubectl for '\$TARGET;
-      
-      KUBECTL_VERSION=\$(curl -L -s https://dl.k8s.io/release/stable.txt);
-      curl -Lo /usr/local/bin/kubectl https://dl.k8s.io/release/\$KUBECTL_VERSION/bin/linux/\$TARGET/kubectl;
+      echo "Detecting container architecture...";
+      REAL_ARCH=$(uname -m);
+      if [ "$REAL_ARCH" = "x86_64" ]; then TARGET=amd64; else TARGET=arm64; fi;
+      echo "Architecture: $REAL_ARCH, downloading kubectl for $TARGET";
+
+      KUBECTL_VERSION=$(curl -L -s https://dl.k8s.io/release/stable.txt);
+      curl -Lo /usr/local/bin/kubectl https://dl.k8s.io/release/$KUBECTL_VERSION/bin/linux/$TARGET/kubectl;
       chmod +x /usr/local/bin/kubectl;
 
-      echo 'kubectl installed at /usr/local/bin/kubectl';
+      echo "kubectl installed at /usr/local/bin/kubectl";
       exec /usr/bin/tini -- /usr/local/bin/jenkins.sh
-      "
+      '
 
   prometheus:
     image: prom/prometheus:latest
