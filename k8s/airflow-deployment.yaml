@@ -12,13 +12,21 @@ spec:
       labels:
         app: airflow
     spec:
+      # --- NEW: Run Database Migration First ---
+      initContainers:
+      - name: init-db
+        image: rs121093/my-data-platform-airflow:latest
+        command: ["airflow"]
+        args: ["db", "upgrade"]
+        env:
+        - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+          value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5432/airflow"
+      # -----------------------------------------
       containers:
       - name: airflow
         image: rs121093/my-data-platform-airflow:latest
-        # --- FIXED: Use the 'airflow' binary directly ---
         command: ["airflow"]
         args: ["webserver"]
-        # ---------------------------------------------
         ports:
         - containerPort: 8080
         env:
