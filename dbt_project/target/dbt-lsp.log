@@ -2295,3 +2295,27 @@ describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
 10:36:11.738505 [info ]: Started building task graph
 10:36:11.738539 [info ]: Finished building task graph [  0.00s]
 10:36:11.742013 [info ]: Cached model count updated: 1 models (accurate)
+14:09:06.681628 [info ]: Cached model count updated: 1 models (accurate)
+14:09:06.720588 [info ]: Waiting for lease on 'target' directory
+14:09:06.968095 [info ]: Started loading project
+14:09:07.041728 [info ]: Loading profiles.yml
+14:09:07.186549 [info ]: Started parsing
+14:09:07.249413 [info ]: Finished loading project [  0.28s]
+14:09:07.265737 [debug]: Finished parsing models/staging/schema.yml [  0.01s]
+14:09:07.318510 [debug]: Finished parsing models/marts/stg_customers.sql [  0.03s]
+14:09:07.328640 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+14:09:07.329392 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+14:09:07.331633 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+14:09:07.337184 [info ]: Finished parsing [  0.15s]
+14:09:07.341497 [info ]: Cached model count updated: 1 models (estimate)
+14:09:07.341514 [info ]: Cached model count updated: 1 models (accurate)
+14:09:07.342732 [info ]: Started scheduling
+14:09:07.344173 [info ]: Finished scheduling [  0.00s]
+14:09:07.344186 [debug]: Incremental compilation - 0 nodes selected: {}
+14:09:07.344536 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+14:09:07.344886 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+14:09:07.348924 [info ]: Started deferring state
+14:09:07.349093 [info ]: Finished deferring state [  0.00s]
+14:09:07.466985 [info ]: Started building task graph
+14:09:07.468990 [info ]: Finished building task graph [  0.00s]
+14:09:07.486239 [info ]: Cached model count updated: 1 models (accurate)
