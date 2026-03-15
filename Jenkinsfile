@@ -66,13 +66,14 @@ pipeline {
                     sh "kubectl apply -f airflow-deployment.yaml"
                     sh "kubectl apply -f airflow-service.yaml"
                     
-                    // 2. Force K8s to pull the new image
+                    // 2. Restart to pull the new image
                     sh "kubectl rollout restart deployment/airflow-platform"
 
-                    // 3. Wait for the new pod to be ready before triggering (approx 30s)
-                    sh "sleep 30"
+                    // 3. Wait for the new pod to reach "Ready" status (better than just sleeping)
+                    sh "kubectl rollout status deployment/airflow-platform --timeout=90s"
                     
-                    // 4. AUTO-TRIGGER: Tells the pod to start the ELT pipeline immediately
+                    // 4. AUTO-TRIGGER: targeting the deployment directly
+                    // Uses container 'webserver' as defined in your multi-container pod
                     sh """
                     kubectl exec deployment/airflow-platform -c webserver -- \
                     airflow dags trigger 2_enterprise_elt_pipeline
