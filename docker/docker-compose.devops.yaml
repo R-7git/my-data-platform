@@ -1,5 +1,5 @@
 services:
-  # 1. CI/CD Orchestrator - Stable and persistent
+  # 1. CI/CD Orchestrator
   jenkins:
     image: jenkins/jenkins:lts
     container_name: devops-jenkins
@@ -11,17 +11,15 @@ services:
     volumes:
       - jenkins_data:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock
-      # PERSISTENCE: Mounts your local Mac/Linux K8s config
       - ~/.kube:/root/.kube:ro
     environment:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
     entrypoint: >
       /bin/bash -c "
       if [ ! -f /usr/local/bin/kubectl ]; then
-        echo 'Installing kubectl...'
-        curl -fsSL https://dl.k8s.io -o /usr/local/bin/kubectl
-        chmod +x /usr/local/bin/kubectl
-      fi
+        curl -fsSL https://dl.k8s.io -o /usr/local/bin/kubectl;
+        chmod +x /usr/local/bin/kubectl;
+      fi;
       exec /usr/bin/tini -- /usr/local/bin/jenkins.sh
       "
 
