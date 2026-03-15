@@ -7,14 +7,16 @@ RUN apt-get update && apt-get install -y \
     curl wget unzip ca-certificates gnupg \
     && rm -rf /var/lib/apt/lists/*
 
-# 2. Install kubectl (Direct link for Linux ARM64)
-RUN curl -Lo /usr/local/bin/kubectl "https://dl.k8s.io" && \
+# 2. Install kubectl (Explicitly versioned)
+RUN curl -LO "https://dl.k8s.io" && \
+    mv kubectl /usr/local/bin/kubectl && \
     chmod +x /usr/local/bin/kubectl
 
-# 3. Install Terraform (Direct link for Linux ARM64)
-RUN wget "https://releases.hashicorp.com" -O /tmp/terraform.zip && \
-    unzip /tmp/terraform.zip -d /usr/local/bin/ && \
-    rm /tmp/terraform.zip
+# 3. Install Terraform (Explicitly versioned)
+RUN wget "https://releases.hashicorp.com" && \
+    unzip terraform_1.5.7_linux_arm64.zip -d /usr/local/bin/ && \
+    rm terraform_1.7.0_linux_arm64.zip || true && \
+    rm terraform_1.5.7_linux_arm64.zip || true
 
 # 4. Entrypoint to handle Docker Socket and start Jenkins
 ENTRYPOINT ["/bin/bash", "-c", "chmod 666 /var/run/docker.sock || true; exec /usr/bin/tini -- /usr/local/bin/jenkins.sh"]
