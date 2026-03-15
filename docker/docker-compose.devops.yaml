@@ -1,5 +1,5 @@
 services:
-  # 1. CI/CD Orchestrator - Optimized for Mac M2 (arm64)
+  # 1. CI/CD Orchestrator - Universal Architecture Fix
   jenkins:
     image: jenkins/jenkins:lts
     container_name: devops-jenkins
@@ -16,15 +16,20 @@ services:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
     entrypoint: >
       /bin/bash -c "
-      if [ ! -f /usr/local/bin/kubectl ]; then
-        echo 'Downloading arm64 kubectl for Mac M2...';
-        curl -fsSL 'https://dl.k8s.io' -o /usr/local/bin/kubectl;
-        chmod +x /usr/local/bin/kubectl;
-      fi;
+      # 1. Detect actual container architecture
+      BIN_ARCH=\$(uname -m);
+      if [ \"\$BIN_ARCH\" = \"x86_64\" ]; then TARGET_ARCH=\"amd64\"; else TARGET_ARCH=\"arm64\"; fi;
+      
+      # 2. Download matching kubectl if missing or wrong arch
+      echo \"Detected architecture: \$BIN_ARCH. Downloading kubectl for \$TARGET_ARCH...\";
+      curl -fsSL \"https://dl.k8s.io\$TARGET_ARCH/kubectl\" -o /usr/local/bin/kubectl;
+      chmod +x /usr/local/bin/kubectl;
+      
+      # 3. Start Jenkins
       exec /usr/bin/tini -- /usr/local/bin/jenkins.sh
       "
 
-  # 2. Monitoring - Metrics Collector
+  # [Remaining services: prometheus, node-exporter, grafana, jfrog stay the same]
   prometheus:
     image: prom/prometheus:latest
     container_name: devops-prometheus
@@ -35,7 +40,6 @@ services:
     depends_on:
       - node-exporter
 
-  # 3. Monitoring - Hardware Sensor
   node-exporter:
     image: prom/node-exporter:latest
     container_name: devops-node-exporter
@@ -43,7 +47,6 @@ services:
     ports:
       - "9100:9100"
 
-  # 4. Monitoring - Dashboard
   grafana:
     image: grafana/grafana:latest
     container_name: devops-grafana
@@ -54,7 +57,6 @@ services:
     depends_on:
       - prometheus
 
-  # 5. Artifact Repository
   jfrog:
     image: releases-docker.jfrog.io/jfrog/artifactory-oss:latest
     container_name: devops-artifactory
