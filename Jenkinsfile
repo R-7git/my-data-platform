@@ -2,6 +2,10 @@ pipeline {
     agent any
 
     environment {
+        // --- TOOL PATHS ---
+        // Ensures Jenkins can find the terraform and ansible binaries in /usr/local/bin
+        PATH = "/usr/local/bin:${env.PATH}"
+
         // --- DOCKER HUB CONFIG ---
         DOCKERHUB_CREDENTIALS = 'dockerhub-pass'
         DOCKER_USER = 'rs121093'
@@ -23,6 +27,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 dir('terraform') {
+                    // This will now work because terraform is in /usr/local/bin
                     sh 'terraform init'
                     sh 'terraform plan'
                 }
@@ -31,13 +36,8 @@ pipeline {
 
         stage('Build Airflow Image') {
             steps {
-                // 1. Build local image
                 sh "docker build -t ${IMAGE_NAME}:latest -f docker/Dockerfile ."
-                
-                // 2. Tag for Docker Hub
                 sh "docker tag ${IMAGE_NAME}:latest ${DOCKER_USER}/${IMAGE_NAME}:latest"
-                
-                // 3. Tag for JFrog with Build Number
                 sh "docker tag ${IMAGE_NAME}:latest ${ARTIFACTORY_URL}/${JFROG_REPO}/${IMAGE_NAME}:${env.BUILD_NUMBER}"
             }
         }
@@ -66,21 +66,18 @@ pipeline {
             }
         }
 
-        // --- NEW: ANSIBLE CONFIGURATION STAGE ---
         stage('Configure Server (Ansible)') {
             steps {
                 dir('ansible') {
-                    // Ensures the target directories and docker environment are ready
+                    // This will now work because ansible is installed in Jenkins
                     sh "ansible-playbook -i inventory.ini setup_data_node.yml"
                 }
             }
         }
 
-        // --- NEW: KUBERNETES DEPLOYMENT STAGE ---
         stage('Deploy to K8s') {
             steps {
                 dir('k8s') {
-                    // Apply manifests and force a fresh pull of the 'latest' image
                     sh "kubectl apply -f airflow-deployment.yaml"
                     sh "kubectl apply -f airflow-service.yaml"
                     sh "kubectl rollout restart deployment/airflow-webserver"
@@ -100,7 +97,7 @@ pipeline {
             echo "SUCCESS: Build ${env.BUILD_NUMBER} is LIVE on Kubernetes port 30007."
         }
         failure {
-            echo "FAILURE: Deployment failed. Check Jenkins logs for details."
+            echo "FAILURE: Deployment failed. Review Jenkins console output."
         }
     }
 }

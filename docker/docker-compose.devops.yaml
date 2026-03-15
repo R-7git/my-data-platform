@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  # 1. CI/CD Orchestrator
+  # 1. CI/CD Orchestrator - Updated with Terraform & Ansible installation
   jenkins:
     image: jenkins/jenkins:lts
     container_name: devops-jenkins
@@ -12,7 +12,17 @@ services:
       - "50000:50000"
     volumes:
       - jenkins_data:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock # Allows Jenkins to run Docker commands
+      - /var/run/docker.sock:/var/run/docker.sock 
+    # Install Terraform and Ansible on container start
+    entrypoint: >
+      /bin/sh -c "
+      apt-get update && apt-get install -y wget unzip ansible &&
+      wget https://releases.hashicorp.com &&
+      unzip terraform_1.7.0_linux_amd64.zip &&
+      mv terraform /usr/local/bin/ &&
+      rm terraform_1.7.0_linux_amd64.zip &&
+      exec /usr/bin/tini -- /usr/local/bin/jenkins.sh
+      "
 
   # 2. Monitoring - Metrics Collector
   prometheus:
@@ -28,25 +38,23 @@ services:
     image: grafana/grafana:latest
     container_name: devops-grafana
     ports:
-      - "3001:3000" # Shifted to 3001 because Metabase uses 3000
+      - "3001:3000"
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
     depends_on:
       - prometheus
 
   # 4. Artifact Repository
-    # 4. Artifact Repository
   jfrog:
     image: releases-docker.jfrog.io/jfrog/artifactory-oss:latest
     container_name: devops-artifactory
     restart: always
     ports:
-      - "8084:8082" # UI Port
-      - "8085:8081" # API Port
+      - "8084:8082" 
+      - "8085:8081" 
     volumes:
       - jfrog_data:/var/opt/jfrog/artifactory
 
 volumes:
   jenkins_data:
-  jfrog_data: # Adding a volume to keep it stable
-
+  jfrog_data: 
