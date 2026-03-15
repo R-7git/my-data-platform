@@ -11,13 +11,13 @@ RUN apt-get update && apt-get install -y \
 RUN ARCH=$(uname -m) && \
     if [ "$ARCH" = "x86_64" ]; then TARGET="amd64"; else TARGET="arm64"; fi && \
     echo "Building for $TARGET..." && \
-    # Kubectl
+    # Install Kubectl
     K_VER=$(curl -L -s https://dl.k8s.io/release/stable.txt) && \
     curl -Lo /usr/local/bin/kubectl "https://dl.k8s.io" && \
     chmod +x /usr/local/bin/kubectl && \
-    # Terraform
+    # Install Terraform
     T_VER=1.5.7 && \
-    wget "https://releases.hashicorp.com{T_VER}_linux_$TARGET.zip" -O /tmp/terraform.zip && \
+    wget "https://releases.hashicorp.com{T_VER}/terraform_${T_VER}_linux_${TARGET}.zip" -O /tmp/terraform.zip && \
     unzip /tmp/terraform.zip -d /usr/local/bin/ && \
     rm /tmp/terraform.zip
 
