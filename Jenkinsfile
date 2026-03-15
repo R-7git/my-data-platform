@@ -59,28 +59,30 @@ pipeline {
             }
         }
 
+
         stage('Deploy to K8s & Auto-Trigger DAG') {
             steps {
                 dir('k8s') {
-                    // 1. Update Kubernetes manifests
                     sh "kubectl apply -f airflow-deployment.yaml"
                     sh "kubectl apply -f airflow-service.yaml"
                     
-                    // 2. Restart to pull the new image
+                    // Restart and wait for the NEW pod
                     sh "kubectl rollout restart deployment/airflow-platform"
-
-                    // 3. Wait for the new pod to reach "Ready" status (better than just sleeping)
                     sh "kubectl rollout status deployment/airflow-platform --timeout=90s"
                     
-                    // 4. AUTO-TRIGGER: targeting the deployment directly
-                    // Uses container 'webserver' as defined in your multi-container pod
+                    // --- FIXED: Find the NEWEST pod and trigger the DAG ---
                     sh """
-                    kubectl exec deployment/airflow-platform -c webserver -- \
-                    airflow dags trigger 2_enterprise_elt_pipeline
+                    NEW_POD=\$(kubectl get pods -l app=airflow --sort-by=.metadata.creationTimestamp -o jsonpath='{.items[-1].metadata.name}')
+                    echo "Triggering DAG on new pod: \$NEW_POD"
+                    
+                    # Try triggering. If 'webserver' fails, it will try the default container
+                    kubectl exec \$NEW_POD -c webserver -- airflow dags trigger 2_enterprise_elt_pipeline || \
+                    kubectl exec \$NEW_POD -- airflow dags trigger 2_enterprise_elt_pipeline
                     """
                 }
             }
         }
+
 
         stage('Cleanup') {
             steps {
