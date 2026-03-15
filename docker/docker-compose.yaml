@@ -13,8 +13,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  # 2. The Local Data Lake - UPDATED for K8s Connectivit
-
+  # 2. The Local Data Lake - FIXED for K8s Connectivity & Disk Space
   minio:
     image: minio/minio
     container_name: docker-minio-1
@@ -22,14 +21,13 @@ services:
     environment:
       - MINIO_ROOT_USER=minioadmin
       - MINIO_ROOT_PASSWORD=minioadmin
-      # --- ADD THIS LINE ---
-      - MINIO_STORAGE_CLASS_STANDARD=capacity_usage_stop_at=100
+      # CORRECT FIX: Allows upload even if disk is 99% full
+      - MINIO_DISK_USAGE_FATAL_THRESHOLD=99
     ports:
       - "9002:9000"
       - "9003:9001"
     volumes:
       - ../data:/data
-
 
   # 3. The Orchestrator (Webserver)
   airflow-webserver:
