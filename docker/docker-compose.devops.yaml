@@ -1,7 +1,5 @@
-version: '3.8'
-
 services:
-  # 1. CI/CD Orchestrator - Configured for Kubernetes & Docker Persistence
+  # 1. CI/CD Orchestrator - Automatically installs kubectl on startup
   jenkins:
     image: jenkins/jenkins:lts
     container_name: devops-jenkins
@@ -12,12 +10,17 @@ services:
       - "50000:50000"
     volumes:
       - jenkins_data:/var/jenkins_home
-      - /var/run/docker.sock:/var/run/docker.sock 
-      # PERSISTENCE FIX: Map your host kubeconfig to Jenkins root
+      - /var/run/docker.sock:/var/run/docker.sock
+      # PERSISTENCE: Mounts your local Mac/Linux K8s config
       - ~/.kube:/root/.kube:ro
-      # Allow Jenkins to use the host's kubectl binary if not installed in image
-      - /usr/local/bin/kubectl:/usr/local/bin/kubectl:ro
-    entrypoint: /usr/bin/tini -- /usr/local/bin/jenkins.sh
+    # This command installs kubectl then starts Jenkins
+    entrypoint: >
+      /bin/sh -c "
+      curl -LO 'https://dl.k8s.io(curl -L -s https://dl.k8s.io)/bin/linux/amd64/kubectl' &&
+      install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl &&
+      rm kubectl &&
+      /usr/bin/tini -- /usr/local/bin/jenkins.sh
+      "
 
   # 2. Monitoring - Metrics Collector
   prometheus:
