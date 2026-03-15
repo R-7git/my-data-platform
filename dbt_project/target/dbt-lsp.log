@@ -2136,3 +2136,25 @@ describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
 10:12:15.104495 [debug]: Finished analyzing [  0.01s] model ANALYTICS.stg_customers [success]
 10:12:15.104500 [info ]: Finished analyzing [  0.01s] (1 nodes, 0 skipped, 0 errors)
 10:12:15.114062 [info ]: Cached model count updated: 1 models (accurate)
+10:24:14.535886 [info ]: Started loading project
+10:24:14.539083 [info ]: Loading profiles.yml
+10:24:14.579083 [info ]: Started parsing
+10:24:14.604551 [info ]: Finished loading project [  0.07s]
+10:24:14.607109 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:24:14.609804 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:24:14.611093 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:24:14.611614 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:24:14.612369 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:24:14.612553 [info ]: Finished parsing [  0.03s]
+10:24:14.613129 [info ]: Cached model count updated: 1 models (estimate)
+10:24:14.613137 [info ]: Cached model count updated: 1 models (accurate)
+10:24:14.613162 [info ]: Started scheduling
+10:24:14.613189 [info ]: Finished scheduling [  0.00s]
+10:24:14.613195 [debug]: Incremental compilation - 0 nodes selected: {}
+10:24:14.613202 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:24:14.613206 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:24:14.613411 [info ]: Started deferring state
+10:24:14.613416 [info ]: Finished deferring state [  0.00s]
+10:24:14.685606 [info ]: Started building task graph
+10:24:14.685647 [info ]: Finished building task graph [  0.00s]
+10:24:14.689882 [info ]: Cached model count updated: 1 models (accurate)

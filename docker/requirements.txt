@@ -1,3 +1,4 @@
+# --- DEVOPS TOOLS ---
 ansible>=2.9.0
 ansible-core>=2.11.0
 cffi
@@ -8,7 +9,13 @@ packaging
 pycparser
 PyYAML
 resolvelib
-# Add these since your DAGs need them
+
+# --- AIRFLOW PROVIDERS ---
 boto3
 faker
 apache-airflow-providers-snowflake
+
+# --- THE FIX: PIN DBT VERSIONS ---
+# This forces Kubernetes to use the same version as your VS Code
+dbt-core>=1.10.0
+dbt-snowflake>=1.10.0
