@@ -36,6 +36,10 @@ spec:
           value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5432/airflow"
         - name: AIRFLOW__CORE__LOAD_EXAMPLES
           value: "False"
+        # FIXED: Static Secret Key prevents CSRF errors on restart
+        - name: AIRFLOW__WEBSERVER__SECRET_KEY
+          value: "this_is_a_very_secure_key_for_local_dev"
+
       # --- THE SCHEDULER ---
       - name: scheduler
         image: rs121093/my-data-platform-airflow:latest
@@ -48,10 +52,14 @@ spec:
         env:
         - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
           value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5432/airflow"
+        # FIXED: Secret Key must match webserver
+        - name: AIRFLOW__WEBSERVER__SECRET_KEY
+          value: "this_is_a_very_secure_key_for_local_dev"
+
       volumes:
       - name: dags-data
         hostPath:
-          path: /Users/ms/Desktop/my-data-platform/dags # <--- UPDATE THIS PATH
+          path: /Users/ms/Desktop/my-data-platform/dags 
       - name: dbt-data
         hostPath:
-          path: /Users/ms/Desktop/my-data-platform/dbt_project # <--- UPDATE THIS PATH
+          path: /Users/ms/Desktop/my-data-platform/dbt_project 
