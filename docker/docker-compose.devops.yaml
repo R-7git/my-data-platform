@@ -1,5 +1,7 @@
+version: "3.9"
+
 services:
-  # 1. CI/CD Orchestrator - Universal Architecture Detection
+  # 1. CI/CD Orchestrator - Jenkins (Universal Architecture)
   jenkins:
     image: jenkins/jenkins:lts
     container_name: devops-jenkins
@@ -16,44 +18,56 @@ services:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
     entrypoint: >
       /bin/bash -c "
-      # Detect the architecture the container is ACTUALLY using
-      REAL_ARCH=\$$(uname -m);
-      if [ \"\$$REAL_ARCH\" = \"x86_64\" ]; then TARGET=\"amd64\"; else TARGET=\"arm64\"; fi;
-      echo \"Container is running as \$$REAL_ARCH. Downloading kubectl for \$$TARGET...\";
+      # Detect architecture
+      REAL_ARCH=$(uname -m);
+      if [ \"$REAL_ARCH\" = \"x86_64\" ]; then TARGET=amd64; else TARGET=arm64; fi;
+      echo 'Container architecture:' $REAL_ARCH ', downloading kubectl for' $TARGET;
       
-      curl -fsSL \"https://dl.k8s.io\$$TARGET/kubectl\" -o /usr/local/bin/kubectl;
+      # Download latest stable kubectl for the correct architecture
+      KUBECTL_VERSION=$(curl -L -s https://dl.k8s.io/release/stable.txt);
+      curl -LO https://dl.k8s.io/release/$KUBECTL_VERSION/bin/linux/$TARGET/kubectl -o /usr/local/bin/kubectl;
       chmod +x /usr/local/bin/kubectl;
       
       exec /usr/bin/tini -- /usr/local/bin/jenkins.sh
       "
 
-  # [Rest of your services: prometheus, grafana, jfrog, node-exporter remain the same]
+  # 2. Monitoring & Artifacts
   prometheus:
     image: prom/prometheus:latest
     container_name: devops-prometheus
-    ports: ["9090:9090"]
-    volumes: ["./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml"]
-    depends_on: [node-exporter]
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - node-exporter
 
   node-exporter:
     image: prom/node-exporter:latest
     container_name: devops-node-exporter
     restart: unless-stopped
-    ports: ["9100:9100"]
+    ports:
+      - "9100:9100"
 
   grafana:
     image: grafana/grafana:latest
     container_name: devops-grafana
-    ports: ["3001:3000"]
-    environment: ["GF_SECURITY_ADMIN_PASSWORD=admin"]
-    depends_on: [prometheus]
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on:
+      - prometheus
 
   jfrog:
     image: releases-docker.jfrog.io/jfrog/artifactory-oss:latest
     container_name: devops-artifactory
     restart: always
-    ports: ["8082:8082", "8081:8081"]
-    volumes: ["jfrog_data:/var/opt/jfrog/artifactory"]
+    ports:
+      - "8082:8082"
+      - "8081:8081"
+    volumes:
+      - jfrog_data:/var/opt/jfrog/artifactory
 
 volumes:
   jenkins_data:
