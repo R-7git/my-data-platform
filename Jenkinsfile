@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         // --- TOOL PATHS ---
-        // Ensures Jenkins can find the terraform and ansible binaries in /usr/local/bin
-        PATH = "/usr/local/bin:${env.PATH}"
+        // Ensures Jenkins can find terraform, ansible, and the docker-cli in /usr/local/bin
+        PATH = "/usr/local/bin:/usr/bin:/bin:${env.PATH}"
 
         // --- DOCKER HUB CONFIG ---
         DOCKERHUB_CREDENTIALS = 'dockerhub-pass'
@@ -27,7 +27,6 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 dir('terraform') {
-                    // This will now work because terraform is in /usr/local/bin
                     sh 'terraform init'
                     sh 'terraform plan'
                 }
@@ -36,9 +35,16 @@ pipeline {
 
         stage('Build Airflow Image') {
             steps {
-                sh "docker build -t ${IMAGE_NAME}:latest -f docker/Dockerfile ."
-                sh "docker tag ${IMAGE_NAME}:latest ${DOCKER_USER}/${IMAGE_NAME}:latest"
-                sh "docker tag ${IMAGE_NAME}:latest ${ARTIFACTORY_URL}/${JFROG_REPO}/${IMAGE_NAME}:${env.BUILD_NUMBER}"
+                script {
+                    // Build the local image
+                    sh "docker build -t ${IMAGE_NAME}:latest -f docker/Dockerfile ."
+                    
+                    // Tag for Public Docker Hub
+                    sh "docker tag ${IMAGE_NAME}:latest ${DOCKER_USER}/${IMAGE_NAME}:latest"
+                    
+                    // Tag for Private Artifactory with versioning
+                    sh "docker tag ${IMAGE_NAME}:latest ${ARTIFACTORY_URL}/${JFROG_REPO}/${IMAGE_NAME}:${env.BUILD_NUMBER}"
+                }
             }
         }
 
@@ -49,6 +55,7 @@ pipeline {
                                      passwordVariable: 'JF_PASS', 
                                      usernameVariable: 'JF_USER')]) {
                         
+                        // Login and Push to private JFrog repository
                         sh "echo ${JF_PASS} | docker login ${ARTIFACTORY_URL} -u ${JF_USER} --password-stdin"
                         sh "docker push ${ARTIFACTORY_URL}/${JFROG_REPO}/${IMAGE_NAME}:${env.BUILD_NUMBER}"
                     }
@@ -59,6 +66,7 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
+                    // Push the latest tag to public Docker Hub
                     docker.withRegistry('', "${DOCKERHUB_CREDENTIALS}") {
                         sh "docker push ${DOCKER_USER}/${IMAGE_NAME}:latest"
                     }
@@ -69,7 +77,7 @@ pipeline {
         stage('Configure Server (Ansible)') {
             steps {
                 dir('ansible') {
-                    // This will now work because ansible is installed in Jenkins
+                    // Standardizes the target server environment
                     sh "ansible-playbook -i inventory.ini setup_data_node.yml"
                 }
             }
@@ -78,15 +86,17 @@ pipeline {
         stage('Deploy to K8s') {
             steps {
                 dir('k8s') {
+                    // Update Kubernetes with new manifests and force image pull
                     sh "kubectl apply -f airflow-deployment.yaml"
                     sh "kubectl apply -f airflow-service.yaml"
-                    sh "kubectl rollout restart deployment/airflow-webserver"
+                    sh "kubectl rollout restart deployment/airflow-platform"
                 }
             }
         }
 
         stage('Cleanup') {
             steps {
+                // Housekeeping: Remove intermediate build layers
                 sh "docker image prune -f"
             }
         }
