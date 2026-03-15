@@ -1,5 +1,5 @@
 services:
-  # 1. CI/CD Orchestrator - Stable Entrypoint for Mac M2
+  # 1. CI/CD Orchestrator - Universal Architecture Detection
   jenkins:
     image: jenkins/jenkins:lts
     container_name: devops-jenkins
@@ -14,15 +14,20 @@ services:
       - ~/.kube:/root/.kube:ro
     environment:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
-    # Simplified entrypoint to prevent shell crashes
     entrypoint: >
       /bin/bash -c "
-      curl -fsSL https://dl.k8s.io -o /usr/local/bin/kubectl &&
-      chmod +x /usr/local/bin/kubectl &&
+      # Detect the architecture the container is ACTUALLY using
+      REAL_ARCH=\$$(uname -m);
+      if [ \"\$$REAL_ARCH\" = \"x86_64\" ]; then TARGET=\"amd64\"; else TARGET=\"arm64\"; fi;
+      echo \"Container is running as \$$REAL_ARCH. Downloading kubectl for \$$TARGET...\";
+      
+      curl -fsSL \"https://dl.k8s.io\$$TARGET/kubectl\" -o /usr/local/bin/kubectl;
+      chmod +x /usr/local/bin/kubectl;
+      
       exec /usr/bin/tini -- /usr/local/bin/jenkins.sh
       "
 
-  # 2. Monitoring & Artifacts (Standard configs)
+  # [Rest of your services: prometheus, grafana, jfrog, node-exporter remain the same]
   prometheus:
     image: prom/prometheus:latest
     container_name: devops-prometheus
