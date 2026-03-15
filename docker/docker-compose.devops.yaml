@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  # 1. CI/CD Orchestrator - Updated with Terraform & Ansible installation
+  # 1. CI/CD Orchestrator - Fully Loaded with Docker, K8s, Terraform, and Ansible
   jenkins:
     image: jenkins/jenkins:lts
     container_name: devops-jenkins
@@ -13,14 +13,28 @@ services:
     volumes:
       - jenkins_data:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock 
-    # Install Terraform and Ansible on container start
-    # Using the direct binary URL to avoid downloading HTML index pages
     entrypoint: >
       /bin/sh -c "
-      apt-get update && apt-get install -y wget unzip ansible &&
+      apt-get update && 
+      apt-get install -y wget unzip ansible ca-certificates curl gnupg &&
+      
+      # 1. Install Docker CLI
+      install -m 0755 -d /etc/apt/keyrings &&
+      curl -fsSL https://download.docker.com | gpg --dearmor -o /etc/apt/keyrings/docker.gpg &&
+      chmod a+r /etc/apt/keyrings/docker.gpg &&
+      echo \"deb [arch=\$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com bookworm stable\" | tee /etc/apt/sources.list.d/docker.list > /dev/null &&
+      apt-get update && apt-get install -y docker-ce-cli &&
+      
+      # 2. Install kubectl
+      curl -LO \"https://dl.k8s.io\$(curl -L -s https://dl.k8s.iostable.txt)/bin/linux/amd64/kubectl\" &&
+      install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl &&
+      
+      # 3. Install Terraform
       wget https://releases.hashicorp.com/terraform/1.7.0/terraform_1.7.0_linux_amd64.zip -O /tmp/terraform.zip &&
       unzip -o /tmp/terraform.zip -d /usr/local/bin/ &&
       rm /tmp/terraform.zip &&
+      
+      # 4. Launch Jenkins
       exec /usr/bin/tini -- /usr/local/bin/jenkins.sh
       "
 
