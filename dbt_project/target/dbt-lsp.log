@@ -1,0 +1,66 @@
+==================== 2026-03-15T06:51:34.893124Z | 938d14c2-9196-4d8f-9b0f-419d0a496ec3 ====================
+06:51:34.893330 [info ]: Starting dbt LSP server
+06:51:34.893402 [info ]: Connecting to LSP client on port 8000
+06:51:34.893649 [info ]: Successfully connected to LSP client
+06:51:34.893659 [info ]: Creating LSP service...
+06:51:34.938017 [info ]: Creating LSP server...
+06:51:34.938038 [info ]: Starting LSP server...
+06:51:34.954969 [info ]: Loading profiles.yml
+06:51:34.974078 [info ]: Started loading project
+06:51:34.974341 [info ]: Loading profiles.yml
+06:51:35.133687 [debug]:    Started loading packages
+06:51:35.134518 [debug]:     Loaded [  0.00s] packages
+06:51:35.135895 [info ]: Started parsing
+06:51:35.150545 [error]: dbt1013: Invalid model definition `my_transformation.materialized`: invalid type: string "table", expected struct ProjectModelConfig at line 23 column 19
+  --> dbt_project.yml:23:19
+06:51:35.150711 [error]: dbt1013: Invalid model definition `my_transformation.snowflake_warehouse`: invalid type: string "ELT_WH", expected struct ProjectModelConfig at line 24 column 26
+  --> dbt_project.yml:24:26
+06:51:35.150713 [info ]: Finished loading project [  0.18s]
+06:51:35.154178 [debug]: Finished parsing models/schema.yml [  0.00s]
+06:51:35.154676 [debug]: Finished parsing models/sources.yml [  0.00s]
+06:51:35.158798 [error]: dbt0102: Deprecated test configs: ["severity"] at top-level detected. Please migrate under the 'config' field.
+  --> models/schema.yml:12:25
+06:51:35.158856 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+06:51:35.159673 [error]: dbt0102: Deprecated test configs: ["severity"] and arguments: ["values"] at top-level detected. Please migrate to the new format: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/schema.yml:21:25
+06:51:35.161329 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+06:51:35.161743 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+06:51:35.161973 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+06:51:35.162340 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+06:51:35.163472 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+06:51:35.163969 [info ]: Finished parsing [  0.03s]
+06:51:35.164173 [info ]: Cached model count updated: 1 models (estimate)
+06:51:35.164186 [info ]: Cached model count updated: 1 models (accurate)
+06:51:35.164304 [info ]: Started scheduling
+06:51:35.164554 [info ]: Finished scheduling [  0.00s]
+06:51:35.164598 [info ]: Started scheduling
+06:51:35.164611 [info ]: Finished scheduling [  0.00s]
+06:51:35.165004 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+06:51:35.165551 [info ]: Started deferring state
+06:51:35.165559 [info ]: Finished deferring state [  0.00s]
+06:51:35.168382 [debug]:    Started downloading relations (1 items)
+06:51:43.885075 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+06:51:44.693548 [debug]:   Finished [  9.53s] downloading relations (1 items)
+06:51:44.693758 [info ]: Started downloading schemas
+06:51:45.458480 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+06:51:45.474019 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."LANDING"."CUSTOMERS"
+06:51:45.996698 [info ]: Downloaded RAW_LAKE.ANALYTICS.stg_customers (schema)
+06:51:45.999552 [info ]: Downloaded RAW_LAKE.LANDING.customers (schema)
+06:51:46.092986 [info ]: Started building task graph
+06:51:46.093389 [info ]: Finished building task graph [  0.00s]
+06:51:46.094053 [info ]: Started rendering (1 nodes)
+06:51:46.094170 [info ]: Started model ANALYTICS.stg_customers
+06:51:46.094256 [debug]: Started rendering model ANALYTICS.stg_customers
+06:51:46.094315 [info ]: Finished downloading schemas [  1.40s]
+06:51:46.097618 [debug]: Compiled SQL for node model.my_transformation.stg_customers at target/.lsp/compiled/models/marts/stg_customers.sql
+06:51:46.097765 [debug]: Finished rendering [  0.00s] model ANALYTICS.stg_customers [success]
+06:51:46.097771 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+06:51:46.097793 [info ]: Started analyzing (1 nodes)
+06:51:46.097797 [debug]: Started analyzing model ANALYTICS.stg_customers
+06:51:46.140983 [info ]:  Succeeded [  0.05s] model ANALYTICS.stg_customers (incremental)
+06:51:46.141016 [debug]: Finished analyzing [  0.04s] model ANALYTICS.stg_customers [success]
+06:51:46.141021 [info ]: Finished analyzing [  0.04s] (1 nodes, 0 skipped, 0 errors)
+06:51:46.150819 [info ]: Cached model count updated: 1 models (accurate)
