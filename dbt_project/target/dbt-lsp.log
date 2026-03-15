@@ -1008,3 +1008,1131 @@ describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
 09:54:06.076670 [info ]: Started building task graph
 09:54:06.076690 [info ]: Finished building task graph [  0.00s]
 09:54:06.079174 [info ]: Cached model count updated: 1 models (accurate)
+09:58:57.360139 [info ]: Started loading project
+09:58:57.361868 [info ]: Loading profiles.yml
+09:58:57.391162 [info ]: Started parsing
+09:58:57.414595 [info ]: Finished loading project [  0.05s]
+09:58:57.415173 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+09:58:57.418472 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+09:58:57.419741 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+09:58:57.420034 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+09:58:57.420242 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+09:58:57.421234 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+09:58:57.421485 [info ]: Finished parsing [  0.03s]
+09:58:57.422212 [info ]: Cached model count updated: 1 models (estimate)
+09:58:57.422222 [info ]: Cached model count updated: 1 models (accurate)
+09:58:57.422268 [info ]: Started scheduling
+09:58:57.422330 [info ]: Finished scheduling [  0.00s]
+09:58:57.422336 [debug]: Incremental compilation - 0 nodes selected: {}
+09:58:57.422352 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+09:58:57.422363 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+09:58:57.422650 [info ]: Started deferring state
+09:58:57.422657 [info ]: Finished deferring state [  0.00s]
+09:58:57.503842 [info ]: Started building task graph
+09:58:57.503900 [info ]: Finished building task graph [  0.00s]
+09:58:57.508366 [info ]: Cached model count updated: 1 models (accurate)
+09:59:41.851575 [info ]: Loading profiles.yml
+09:59:41.866805 [info ]: Started loading project
+09:59:41.867127 [info ]: Loading profiles.yml
+09:59:41.869918 [info ]: Started loading project
+09:59:41.870058 [info ]: Loading profiles.yml
+09:59:41.870086 [info ]: Finished loading project [  0.00s]
+09:59:42.024724 [debug]:    Started loading packages
+09:59:42.025782 [debug]:     Loaded [  0.00s] packages
+09:59:42.026855 [info ]: Started parsing
+09:59:42.053733 [info ]: Finished loading project [  0.18s]
+09:59:42.055083 [debug]: Finished parsing models/sources.yml [  0.00s]
+09:59:42.055259 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+09:59:42.060145 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+09:59:42.061050 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+09:59:42.061324 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+09:59:42.061513 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+09:59:42.061679 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+09:59:42.062781 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+09:59:42.063024 [info ]: Finished parsing [  0.04s]
+09:59:42.063165 [info ]: Cached model count updated: 1 models (estimate)
+09:59:42.063173 [info ]: Cached model count updated: 1 models (accurate)
+09:59:42.063205 [info ]: Started scheduling
+09:59:42.063241 [info ]: Finished scheduling [  0.00s]
+09:59:42.063249 [info ]: Started scheduling
+09:59:42.063259 [info ]: Finished scheduling [  0.00s]
+09:59:42.065981 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+09:59:42.067022 [info ]: Started deferring state
+09:59:42.067029 [info ]: Finished deferring state [  0.00s]
+09:59:42.067598 [debug]:    Started downloading relations (1 items)
+09:59:42.854458 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+09:59:42.963810 [info ]: Loading profiles.yml
+09:59:43.627380 [debug]:     Failed [  1.56s] downloading relations (error: Adapter operation was cancelled)
+09:59:43.627416 [info ]: Started downloading schemas
+09:59:44.288981 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+09:59:44.956069 [info ]: Waiting for lease on 'target' directory
+09:59:45.388937 [info ]: Finished downloading schemas [  1.76s]
+09:59:45.475247 [info ]: Started loading project
+09:59:45.476119 [info ]: Loading profiles.yml
+09:59:45.627219 [debug]:    Started loading packages
+09:59:45.628372 [debug]:     Loaded [  0.00s] packages
+09:59:45.628947 [info ]: Started parsing
+09:59:45.643609 [info ]: Finished loading project [  0.17s]
+09:59:45.643877 [debug]: Finished parsing models/sources.yml [  0.00s]
+09:59:45.644056 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+09:59:45.646275 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+09:59:45.647022 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+09:59:45.647435 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+09:59:45.647737 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+09:59:45.648086 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+09:59:45.649531 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+09:59:45.649745 [info ]: Finished parsing [  0.02s]
+09:59:45.649889 [info ]: Cached model count updated: 1 models (estimate)
+09:59:45.649898 [info ]: Cached model count updated: 1 models (accurate)
+09:59:45.649913 [info ]: Started scheduling
+09:59:45.649944 [info ]: Finished scheduling [  0.00s]
+09:59:45.649954 [info ]: Started scheduling
+09:59:45.649964 [info ]: Finished scheduling [  0.00s]
+09:59:45.649984 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+09:59:45.650263 [info ]: Started deferring state
+09:59:45.650270 [info ]: Finished deferring state [  0.00s]
+09:59:45.650453 [debug]:    Started downloading relations (1 items)
+09:59:46.492960 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+09:59:47.026577 [debug]:   Finished [  1.38s] downloading relations (1 items)
+09:59:47.026743 [info ]: Started downloading schemas
+09:59:47.664297 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+09:59:47.984398 [info ]: Downloaded RAW_LAKE.ANALYTICS.stg_customers (schema)
+09:59:48.068794 [info ]: Started building task graph
+09:59:48.070112 [info ]: Finished building task graph [  0.00s]
+09:59:48.072596 [info ]: Started rendering (1 nodes)
+09:59:48.073476 [info ]: Started model ANALYTICS.stg_customers
+09:59:48.074700 [debug]: Started rendering model ANALYTICS.stg_customers
+09:59:48.075112 [info ]: Finished downloading schemas [  1.05s]
+09:59:48.090493 [debug]: Compiled SQL for node model.my_transformation.stg_customers at target/.lsp/compiled/models/marts/stg_customers.sql
+09:59:48.091349 [debug]: Finished rendering [  0.02s] model ANALYTICS.stg_customers [success]
+09:59:48.091360 [info ]: Finished rendering [  0.02s] (1 nodes, 0 skipped, 0 errors)
+09:59:48.091533 [info ]: Started analyzing (1 nodes)
+09:59:48.091541 [debug]: Started analyzing model ANALYTICS.stg_customers
+09:59:48.149743 [info ]:  Succeeded [  0.07s] model ANALYTICS.stg_customers (incremental)
+09:59:48.149765 [debug]: Finished analyzing [  0.06s] model ANALYTICS.stg_customers [success]
+09:59:48.149770 [info ]: Finished analyzing [  0.06s] (1 nodes, 0 skipped, 0 errors)
+09:59:48.152769 [info ]: Cached model count updated: 1 models (accurate)
+10:01:22.335916 [info ]: Started loading project
+10:01:22.337300 [info ]: Loading profiles.yml
+10:01:22.341793 [info ]: Started parsing
+10:01:22.361480 [info ]: Finished loading project [  0.03s]
+10:01:22.362745 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:01:22.367006 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:01:22.367147 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:01:22.369335 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:01:22.370005 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:01:22.370491 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:01:22.371656 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:01:22.371977 [info ]: Finished parsing [  0.03s]
+10:01:22.372716 [info ]: Cached model count updated: 1 models (estimate)
+10:01:22.372725 [info ]: Cached model count updated: 1 models (accurate)
+10:01:22.372764 [info ]: Started scheduling
+10:01:22.372813 [info ]: Finished scheduling [  0.00s]
+10:01:22.372818 [debug]: Incremental compilation - 0 nodes selected: {}
+10:01:22.372835 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:01:22.372839 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:01:22.373142 [info ]: Started deferring state
+10:01:22.373151 [info ]: Finished deferring state [  0.00s]
+10:01:22.441585 [info ]: Started building task graph
+10:01:22.441648 [info ]: Finished building task graph [  0.00s]
+10:01:22.445036 [info ]: Cached model count updated: 1 models (accurate)
+10:01:23.890153 [info ]: Started loading project
+10:01:23.890673 [info ]: Loading profiles.yml
+10:01:23.894140 [info ]: Started parsing
+10:01:23.911861 [info ]: Finished loading project [  0.02s]
+10:01:23.912380 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:01:23.915180 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:01:23.915263 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:01:23.916996 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:01:23.917491 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:01:23.917743 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:01:23.919000 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:01:23.919271 [info ]: Finished parsing [  0.03s]
+10:01:23.920207 [info ]: Cached model count updated: 1 models (estimate)
+10:01:23.920215 [info ]: Cached model count updated: 1 models (accurate)
+10:01:23.920246 [info ]: Started scheduling
+10:01:23.920275 [info ]: Finished scheduling [  0.00s]
+10:01:23.920282 [debug]: Incremental compilation - 0 nodes selected: {}
+10:01:23.920294 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:01:23.920304 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:01:23.920617 [info ]: Started deferring state
+10:01:23.920625 [info ]: Finished deferring state [  0.00s]
+10:01:23.998716 [info ]: Started building task graph
+10:01:23.998743 [info ]: Finished building task graph [  0.00s]
+10:01:24.001002 [info ]: Cached model count updated: 1 models (accurate)
+10:01:24.292633 [info ]: Waiting for lease on 'target' directory
+10:01:24.398485 [info ]: Started loading project
+10:01:24.398824 [info ]: Loading profiles.yml
+10:01:24.404486 [info ]: Started parsing
+10:01:24.418520 [info ]: Finished loading project [  0.02s]
+10:01:24.418854 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:01:24.421402 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:01:24.421480 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:01:24.422825 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:01:24.423066 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:01:24.423476 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:01:24.424736 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:01:24.424858 [info ]: Finished parsing [  0.02s]
+10:01:24.425718 [info ]: Cached model count updated: 1 models (estimate)
+10:01:24.425727 [info ]: Cached model count updated: 1 models (accurate)
+10:01:24.425745 [info ]: Started scheduling
+10:01:24.425765 [info ]: Finished scheduling [  0.00s]
+10:01:24.425770 [debug]: Incremental compilation - 0 nodes selected: {}
+10:01:24.425779 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:01:24.425783 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:01:24.426031 [info ]: Started deferring state
+10:01:24.426039 [info ]: Finished deferring state [  0.00s]
+10:01:24.494102 [info ]: Started building task graph
+10:01:24.494131 [info ]: Finished building task graph [  0.00s]
+10:01:24.496793 [info ]: Cached model count updated: 1 models (accurate)
+10:01:24.498056 [info ]: Waiting for lease on 'target' directory
+10:01:24.911434 [info ]: Cached model count updated: 1 models (accurate)
+10:01:24.913000 [info ]: Waiting for lease on 'target' directory
+10:01:25.425270 [info ]: Started loading project
+10:01:25.425644 [info ]: Loading profiles.yml
+10:01:25.428010 [info ]: Started parsing
+10:01:25.439864 [info ]: Finished loading project [  0.01s]
+10:01:25.440717 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:01:25.443364 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:01:25.443468 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:01:25.444951 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:01:25.445238 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:01:25.445471 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:01:25.446508 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:01:25.446757 [info ]: Finished parsing [  0.02s]
+10:01:25.447649 [info ]: Cached model count updated: 1 models (estimate)
+10:01:25.447662 [info ]: Cached model count updated: 1 models (accurate)
+10:01:25.447681 [info ]: Started scheduling
+10:01:25.447706 [info ]: Finished scheduling [  0.00s]
+10:01:25.447711 [debug]: Incremental compilation - 0 nodes selected: {}
+10:01:25.447721 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:01:25.447725 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:01:25.448213 [info ]: Started deferring state
+10:01:25.448223 [info ]: Finished deferring state [  0.00s]
+10:01:25.514704 [info ]: Started building task graph
+10:01:25.514733 [info ]: Finished building task graph [  0.00s]
+10:01:25.516246 [info ]: Cached model count updated: 1 models (accurate)
+10:01:26.406648 [info ]: Started loading project
+10:01:26.407178 [info ]: Loading profiles.yml
+10:01:26.410129 [info ]: Started parsing
+10:01:26.422975 [info ]: Finished loading project [  0.02s]
+10:01:26.423790 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:01:26.425850 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:01:26.425936 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:01:26.427436 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:01:26.427704 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:01:26.427942 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:01:26.429193 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:01:26.429527 [info ]: Finished parsing [  0.02s]
+10:01:26.430183 [info ]: Cached model count updated: 1 models (estimate)
+10:01:26.430192 [info ]: Cached model count updated: 1 models (accurate)
+10:01:26.430210 [info ]: Started scheduling
+10:01:26.430234 [info ]: Finished scheduling [  0.00s]
+10:01:26.430242 [debug]: Incremental compilation - 0 nodes selected: {}
+10:01:26.430250 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:01:26.430254 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:01:26.430512 [info ]: Started deferring state
+10:01:26.430520 [info ]: Finished deferring state [  0.00s]
+10:01:26.503148 [info ]: Started building task graph
+10:01:26.503181 [info ]: Finished building task graph [  0.00s]
+10:01:26.505841 [info ]: Cached model count updated: 1 models (accurate)
+10:01:30.311272 [info ]: Loading profiles.yml
+10:01:30.318923 [info ]: Started loading project
+10:01:30.319251 [info ]: Loading profiles.yml
+10:01:30.321227 [info ]: Started loading project
+10:01:30.321364 [info ]: Loading profiles.yml
+10:01:30.321381 [info ]: Finished loading project [  0.00s]
+10:01:30.466938 [debug]:    Started loading packages
+10:01:30.468270 [debug]:     Loaded [  0.00s] packages
+10:01:30.468955 [info ]: Started parsing
+10:01:30.488008 [info ]: Finished loading project [  0.17s]
+10:01:30.488650 [debug]: Finished parsing models/sources.yml [  0.00s]
+10:01:30.488794 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:01:30.492850 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:01:30.492951 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:01:30.494074 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+10:01:30.494512 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:01:30.494797 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:01:30.494986 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:01:30.496081 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:01:30.496280 [info ]: Finished parsing [  0.03s]
+10:01:30.496400 [info ]: Cached model count updated: 1 models (estimate)
+10:01:30.496409 [info ]: Cached model count updated: 1 models (accurate)
+10:01:30.496431 [info ]: Started scheduling
+10:01:30.496470 [info ]: Finished scheduling [  0.00s]
+10:01:30.496480 [info ]: Started scheduling
+10:01:30.496492 [info ]: Finished scheduling [  0.00s]
+10:01:30.496555 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+10:01:30.496821 [info ]: Started deferring state
+10:01:30.496827 [info ]: Finished deferring state [  0.00s]
+10:01:30.497062 [debug]:    Started downloading relations (1 items)
+10:01:30.650630 [info ]: Loading profiles.yml
+10:01:31.175158 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+10:01:31.314341 [info ]: Loading profiles.yml
+10:01:31.843854 [debug]:     Failed [  1.35s] downloading relations (error: Adapter operation was cancelled)
+10:01:31.843891 [info ]: Started downloading schemas
+10:01:32.397992 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+10:01:32.959412 [info ]: Waiting for lease on 'target' directory
+10:01:33.376447 [info ]: Started loading project
+10:01:33.376819 [info ]: Loading profiles.yml
+10:01:33.514372 [debug]:    Started loading packages
+10:01:33.514976 [debug]:     Loaded [  0.00s] packages
+10:01:33.515452 [info ]: Started parsing
+10:01:33.519489 [info ]: Finished downloading schemas [  1.68s]
+10:01:33.527996 [info ]: Finished loading project [  0.15s]
+10:01:33.528447 [debug]: Finished parsing models/sources.yml [  0.00s]
+10:01:33.528747 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:01:33.530819 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:01:33.530884 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:01:33.531878 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+10:01:33.532299 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:01:33.532502 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:01:33.532700 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:01:33.533818 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:01:33.534007 [info ]: Finished parsing [  0.02s]
+10:01:33.534107 [info ]: Cached model count updated: 1 models (estimate)
+10:01:33.534113 [info ]: Cached model count updated: 1 models (accurate)
+10:01:33.534127 [info ]: Started scheduling
+10:01:33.534154 [info ]: Finished scheduling [  0.00s]
+10:01:33.534162 [info ]: Started scheduling
+10:01:33.534173 [info ]: Finished scheduling [  0.00s]
+10:01:33.534190 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+10:01:33.534451 [info ]: Started deferring state
+10:01:33.534457 [info ]: Finished deferring state [  0.00s]
+10:01:33.534642 [debug]:    Started downloading relations (1 items)
+10:01:34.354007 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+10:01:34.758870 [debug]:   Finished [  1.22s] downloading relations (1 items)
+10:01:34.758924 [info ]: Started downloading schemas
+10:01:35.369427 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+10:01:35.691420 [info ]: Downloaded RAW_LAKE.ANALYTICS.stg_customers (schema)
+10:01:35.794204 [info ]: Started building task graph
+10:01:35.795402 [info ]: Finished building task graph [  0.00s]
+10:01:35.797860 [info ]: Started rendering (1 nodes)
+10:01:35.798713 [info ]: Started model ANALYTICS.stg_customers
+10:01:35.799557 [debug]: Started rendering model ANALYTICS.stg_customers
+10:01:35.799990 [info ]: Finished downloading schemas [  1.04s]
+10:01:35.813698 [debug]: Compiled SQL for node model.my_transformation.stg_customers at target/.lsp/compiled/models/marts/stg_customers.sql
+10:01:35.814168 [debug]: Finished rendering [  0.01s] model ANALYTICS.stg_customers [success]
+10:01:35.814178 [info ]: Finished rendering [  0.02s] (1 nodes, 0 skipped, 0 errors)
+10:01:35.814318 [info ]: Started analyzing (1 nodes)
+10:01:35.814325 [debug]: Started analyzing model ANALYTICS.stg_customers
+10:01:35.867265 [info ]:  Succeeded [  0.07s] model ANALYTICS.stg_customers (incremental)
+10:01:35.867294 [debug]: Finished analyzing [  0.05s] model ANALYTICS.stg_customers [success]
+10:01:35.867299 [info ]: Finished analyzing [  0.05s] (1 nodes, 0 skipped, 0 errors)
+10:01:35.870042 [info ]: Cached model count updated: 1 models (accurate)
+10:01:37.865512 [info ]: Loading profiles.yml
+10:01:37.872829 [info ]: Started loading project
+10:01:37.873078 [info ]: Loading profiles.yml
+10:01:37.874973 [info ]: Started loading project
+10:01:37.875159 [info ]: Loading profiles.yml
+10:01:37.875176 [info ]: Finished loading project [  0.00s]
+10:01:38.013980 [debug]:    Started loading packages
+10:01:38.014573 [debug]:     Loaded [  0.00s] packages
+10:01:38.015450 [info ]: Started parsing
+10:01:38.033844 [info ]: Finished loading project [  0.16s]
+10:01:38.034282 [debug]: Finished parsing models/sources.yml [  0.00s]
+10:01:38.034411 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:01:38.036566 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:01:38.036637 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:01:38.038042 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+10:01:38.038418 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:01:38.038786 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:01:38.039114 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:01:38.040473 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:01:38.040681 [info ]: Finished parsing [  0.03s]
+10:01:38.040832 [info ]: Cached model count updated: 1 models (estimate)
+10:01:38.040840 [info ]: Cached model count updated: 1 models (accurate)
+10:01:38.040869 [info ]: Started scheduling
+10:01:38.040903 [info ]: Finished scheduling [  0.00s]
+10:01:38.040911 [info ]: Started scheduling
+10:01:38.040921 [info ]: Finished scheduling [  0.00s]
+10:01:38.040979 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+10:01:38.041432 [info ]: Started deferring state
+10:01:38.041445 [info ]: Finished deferring state [  0.00s]
+10:01:38.041814 [debug]:    Started downloading relations (1 items)
+10:01:38.901124 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+10:01:39.445390 [debug]:   Finished [  1.40s] downloading relations (1 items)
+10:01:39.445549 [info ]: Started downloading schemas
+10:01:40.049482 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+10:01:40.398468 [info ]: Waiting for lease on 'target' directory
+10:01:40.921361 [info ]: Waiting for lease on 'target' directory
+10:01:41.139892 [info ]: Finished downloading schemas [  1.69s]
+10:01:41.442582 [info ]: Started loading project
+10:01:41.443422 [info ]: Loading profiles.yml
+10:01:41.593427 [debug]:    Started loading packages
+10:01:41.593519 [debug]:     Failed [  0.00s] packages (error: Operation cancelled)
+10:01:41.593623 [info ]: Finished loading project [  0.15s]
+10:01:41.593668 [info ]: Waiting for lease on 'target' directory
+10:01:42.008048 [info ]: Started loading project
+10:01:42.008654 [info ]: Loading profiles.yml
+10:01:42.156571 [debug]:    Started loading packages
+10:01:42.157160 [debug]:     Loaded [  0.00s] packages
+10:01:42.157604 [info ]: Started parsing
+10:01:42.170848 [info ]: Finished loading project [  0.16s]
+10:01:42.171136 [debug]: Finished parsing models/sources.yml [  0.00s]
+10:01:42.171294 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:01:42.173167 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:01:42.173225 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:01:42.174096 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+10:01:42.174494 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:01:42.174716 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:01:42.175057 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:01:42.176146 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:01:42.176381 [info ]: Finished parsing [  0.02s]
+10:01:42.176500 [info ]: Cached model count updated: 1 models (estimate)
+10:01:42.176509 [info ]: Cached model count updated: 1 models (accurate)
+10:01:42.176523 [info ]: Started scheduling
+10:01:42.176551 [info ]: Finished scheduling [  0.00s]
+10:01:42.176559 [info ]: Started scheduling
+10:01:42.176569 [info ]: Finished scheduling [  0.00s]
+10:01:42.176586 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+10:01:42.176845 [info ]: Started deferring state
+10:01:42.176852 [info ]: Finished deferring state [  0.00s]
+10:01:42.177029 [debug]:    Started downloading relations (1 items)
+10:01:42.896976 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+10:01:43.344418 [debug]:   Finished [  1.17s] downloading relations (1 items)
+10:01:43.344490 [info ]: Started downloading schemas
+10:01:44.077126 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+10:01:44.510394 [info ]: Downloaded RAW_LAKE.ANALYTICS.stg_customers (schema)
+10:01:44.596323 [info ]: Started building task graph
+10:01:44.596406 [info ]: Finished building task graph [  0.00s]
+10:01:44.596587 [info ]: Started rendering (1 nodes)
+10:01:44.596607 [info ]: Started model ANALYTICS.stg_customers
+10:01:44.596628 [debug]: Started rendering model ANALYTICS.stg_customers
+10:01:44.596670 [info ]: Finished downloading schemas [  1.25s]
+10:01:44.597896 [debug]: Compiled SQL for node model.my_transformation.stg_customers at target/.lsp/compiled/models/marts/stg_customers.sql
+10:01:44.597986 [debug]: Finished rendering [  0.00s] model ANALYTICS.stg_customers [success]
+10:01:44.597993 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+10:01:44.598005 [info ]: Started analyzing (1 nodes)
+10:01:44.598009 [debug]: Started analyzing model ANALYTICS.stg_customers
+10:01:44.600704 [info ]:  Succeeded [  0.00s] model ANALYTICS.stg_customers (incremental)
+10:01:44.600717 [debug]: Finished analyzing [  0.00s] model ANALYTICS.stg_customers [success]
+10:01:44.600720 [info ]: Finished analyzing [  0.00s] (1 nodes, 0 skipped, 0 errors)
+10:01:44.610604 [info ]: Cached model count updated: 1 models (accurate)
+10:01:52.796960 [info ]: Loading profiles.yml
+10:01:52.809878 [info ]: Started loading project
+10:01:52.810290 [info ]: Loading profiles.yml
+10:01:52.812513 [info ]: Started loading project
+10:01:52.812704 [info ]: Loading profiles.yml
+10:01:52.812728 [info ]: Finished loading project [  0.00s]
+10:01:52.958992 [debug]:    Started loading packages
+10:01:52.959512 [debug]:     Loaded [  0.00s] packages
+10:01:52.960058 [info ]: Started parsing
+10:01:52.975612 [info ]: Finished loading project [  0.16s]
+10:01:52.976225 [debug]: Finished parsing models/sources.yml [  0.00s]
+10:01:52.976362 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:01:52.978413 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:01:52.978477 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:01:52.979443 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+10:01:52.979837 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:01:52.980083 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:01:52.980319 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:01:52.981573 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:01:52.981816 [info ]: Finished parsing [  0.02s]
+10:01:52.981925 [info ]: Cached model count updated: 1 models (estimate)
+10:01:52.981933 [info ]: Cached model count updated: 1 models (accurate)
+10:01:52.981958 [info ]: Started scheduling
+10:01:52.981995 [info ]: Finished scheduling [  0.00s]
+10:01:52.982004 [info ]: Started scheduling
+10:01:52.982014 [info ]: Finished scheduling [  0.00s]
+10:01:52.982055 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+10:01:52.982325 [info ]: Started deferring state
+10:01:52.982331 [info ]: Finished deferring state [  0.00s]
+10:01:52.982614 [debug]:    Started downloading relations (1 items)
+10:01:54.162428 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+10:01:54.994932 [debug]:   Finished [  2.01s] downloading relations (1 items)
+10:01:54.994990 [info ]: Started downloading schemas
+10:01:55.691116 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+10:01:56.002294 [info ]: Downloaded RAW_LAKE.ANALYTICS.stg_customers (schema)
+10:01:56.095079 [info ]: Started building task graph
+10:01:56.095154 [info ]: Finished building task graph [  0.00s]
+10:01:56.095768 [info ]: Started rendering (1 nodes)
+10:01:56.095789 [info ]: Started model ANALYTICS.stg_customers
+10:01:56.095800 [debug]: Started rendering model ANALYTICS.stg_customers
+10:01:56.095843 [info ]: Finished downloading schemas [  1.10s]
+10:01:56.097511 [debug]: Compiled SQL for node model.my_transformation.stg_customers at target/.lsp/compiled/models/marts/stg_customers.sql
+10:01:56.097567 [info ]: Started analyzing (1 nodes)
+10:01:56.097571 [debug]: Finished rendering [  0.00s] model ANALYTICS.stg_customers [success]
+10:01:56.097574 [debug]: Started analyzing model ANALYTICS.stg_customers
+10:01:56.097579 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+10:01:56.099966 [info ]:  Succeeded [  0.00s] model ANALYTICS.stg_customers (incremental)
+10:01:56.099981 [debug]: Finished analyzing [  0.00s] model ANALYTICS.stg_customers [success]
+10:01:56.099985 [info ]: Finished analyzing [  0.00s] (1 nodes, 0 skipped, 0 errors)
+10:01:56.108640 [info ]: Cached model count updated: 1 models (accurate)
+10:02:18.740403 [info ]: Started loading project
+10:02:18.742554 [info ]: Loading profiles.yml
+10:02:18.747197 [info ]: Started parsing
+10:02:18.777149 [info ]: Finished loading project [  0.04s]
+10:02:18.779138 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:02:18.782339 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:02:18.782416 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:02:18.784088 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:02:18.784342 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:02:18.784681 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:02:18.785933 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:02:18.786164 [info ]: Finished parsing [  0.04s]
+10:02:18.787290 [info ]: Cached model count updated: 1 models (estimate)
+10:02:18.787301 [info ]: Cached model count updated: 1 models (accurate)
+10:02:18.787382 [info ]: Started scheduling
+10:02:18.787475 [info ]: Finished scheduling [  0.00s]
+10:02:18.787491 [debug]: Incremental compilation - 0 nodes selected: {}
+10:02:18.787506 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:02:18.787510 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:02:18.788025 [info ]: Started deferring state
+10:02:18.788034 [info ]: Finished deferring state [  0.00s]
+10:02:18.857443 [info ]: Started building task graph
+10:02:18.857478 [info ]: Finished building task graph [  0.00s]
+10:02:18.860129 [info ]: Cached model count updated: 1 models (accurate)
+10:03:33.678107 [info ]: Started loading project
+10:03:33.678703 [info ]: Loading profiles.yml
+10:03:33.682081 [info ]: Started parsing
+10:03:33.698516 [info ]: Finished loading project [  0.02s]
+10:03:33.698935 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:03:33.701088 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:21:23
+10:03:33.701160 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:03:33.702583 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:03:33.702933 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:03:33.703246 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:03:33.704357 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:03:33.704598 [info ]: Finished parsing [  0.02s]
+10:03:33.705210 [info ]: Cached model count updated: 1 models (estimate)
+10:03:33.705224 [info ]: Cached model count updated: 1 models (accurate)
+10:03:33.705262 [info ]: Started scheduling
+10:03:33.705290 [info ]: Finished scheduling [  0.00s]
+10:03:33.705295 [debug]: Incremental compilation - 0 nodes selected: {}
+10:03:33.705302 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:03:33.705307 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:03:33.705527 [info ]: Started deferring state
+10:03:33.705533 [info ]: Finished deferring state [  0.00s]
+10:03:33.778276 [info ]: Started building task graph
+10:03:33.778306 [info ]: Finished building task graph [  0.00s]
+10:03:33.781324 [info ]: Cached model count updated: 1 models (accurate)
+10:03:45.649068 [info ]: Started loading project
+10:03:45.649607 [info ]: Loading profiles.yml
+10:03:45.653848 [info ]: Started parsing
+10:03:45.677590 [info ]: Finished loading project [  0.03s]
+10:03:45.678195 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:03:45.681134 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:21:23
+10:03:45.681216 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:03:45.682681 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:03:45.682958 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:03:45.683240 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:03:45.684622 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:03:45.684927 [info ]: Finished parsing [  0.03s]
+10:03:45.685660 [info ]: Cached model count updated: 1 models (estimate)
+10:03:45.685670 [info ]: Cached model count updated: 1 models (accurate)
+10:03:45.685706 [info ]: Started scheduling
+10:03:45.685740 [info ]: Finished scheduling [  0.00s]
+10:03:45.685748 [debug]: Incremental compilation - 0 nodes selected: {}
+10:03:45.685757 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:03:45.685764 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:03:45.686038 [info ]: Started deferring state
+10:03:45.686047 [info ]: Finished deferring state [  0.00s]
+10:03:45.751906 [info ]: Started building task graph
+10:03:45.751927 [info ]: Finished building task graph [  0.00s]
+10:03:45.754238 [info ]: Cached model count updated: 1 models (accurate)
+10:04:48.519558 [info ]: Started loading project
+10:04:48.522428 [info ]: Loading profiles.yml
+10:04:48.526124 [info ]: Started parsing
+10:04:48.539914 [info ]: Finished loading project [  0.02s]
+10:04:48.540349 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:04:48.543864 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:04:48.544945 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:04:48.545189 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:04:48.545465 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:04:48.546611 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:04:48.546867 [info ]: Finished parsing [  0.02s]
+10:04:48.547494 [info ]: Cached model count updated: 1 models (estimate)
+10:04:48.547504 [info ]: Cached model count updated: 1 models (accurate)
+10:04:48.547536 [info ]: Started scheduling
+10:04:48.547565 [info ]: Finished scheduling [  0.00s]
+10:04:48.547569 [debug]: Incremental compilation - 0 nodes selected: {}
+10:04:48.547577 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:04:48.547581 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:04:48.547819 [info ]: Started deferring state
+10:04:48.547827 [info ]: Finished deferring state [  0.00s]
+10:04:48.616938 [info ]: Started building task graph
+10:04:48.616974 [info ]: Finished building task graph [  0.00s]
+10:04:48.619273 [info ]: Cached model count updated: 1 models (accurate)
+10:04:48.788437 [info ]: Waiting for lease on 'target' directory
+10:04:49.111130 [info ]: Cached model count updated: 1 models (accurate)
+10:04:49.113222 [info ]: Waiting for lease on 'target' directory
+10:04:49.634191 [info ]: Cached model count updated: 1 models (accurate)
+10:04:49.635708 [info ]: Waiting for lease on 'target' directory
+10:04:50.151526 [info ]: Started loading project
+10:04:50.152167 [info ]: Loading profiles.yml
+10:04:50.155227 [info ]: Started parsing
+10:04:50.169435 [info ]: Finished loading project [  0.02s]
+10:04:50.170077 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:04:50.172636 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:04:50.173532 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:04:50.173921 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:04:50.174235 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:04:50.175460 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:04:50.175814 [info ]: Finished parsing [  0.02s]
+10:04:50.176533 [info ]: Cached model count updated: 1 models (estimate)
+10:04:50.176544 [info ]: Cached model count updated: 1 models (accurate)
+10:04:50.176565 [info ]: Started scheduling
+10:04:50.176592 [info ]: Finished scheduling [  0.00s]
+10:04:50.176600 [debug]: Incremental compilation - 0 nodes selected: {}
+10:04:50.176611 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:04:50.176617 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:04:50.176884 [info ]: Started deferring state
+10:04:50.176891 [info ]: Finished deferring state [  0.00s]
+10:04:50.254388 [info ]: Started building task graph
+10:04:50.254417 [info ]: Finished building task graph [  0.00s]
+10:04:50.256736 [info ]: Cached model count updated: 1 models (accurate)
+10:07:57.710087 [info ]: Loading profiles.yml
+10:07:57.732403 [info ]: Started loading project
+10:07:57.732686 [info ]: Loading profiles.yml
+10:07:57.734512 [info ]: Started loading project
+10:07:57.734710 [info ]: Loading profiles.yml
+10:07:57.734728 [info ]: Finished loading project [  0.00s]
+10:07:57.887660 [debug]:    Started loading packages
+10:07:57.889292 [debug]:     Loaded [  0.00s] packages
+10:07:57.889961 [info ]: Started parsing
+10:07:57.913618 [info ]: Finished loading project [  0.18s]
+10:07:57.914575 [debug]: Finished parsing models/sources.yml [  0.00s]
+10:07:57.915029 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:07:57.917885 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:07:57.918876 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+10:07:57.919339 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:07:57.919587 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:07:57.919964 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:07:57.921823 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:07:57.922040 [info ]: Finished parsing [  0.03s]
+10:07:57.922171 [info ]: Cached model count updated: 1 models (estimate)
+10:07:57.922180 [info ]: Cached model count updated: 1 models (accurate)
+10:07:57.922218 [info ]: Started scheduling
+10:07:57.922276 [info ]: Finished scheduling [  0.00s]
+10:07:57.922289 [info ]: Started scheduling
+10:07:57.922301 [info ]: Finished scheduling [  0.00s]
+10:07:57.922384 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+10:07:57.922676 [info ]: Started deferring state
+10:07:57.922683 [info ]: Finished deferring state [  0.00s]
+10:07:57.923090 [debug]:    Started downloading relations (1 items)
+10:07:59.026181 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+10:07:59.830076 [debug]:   Finished [  1.91s] downloading relations (1 items)
+10:07:59.830174 [info ]: Started downloading schemas
+10:08:00.669433 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+10:08:01.289809 [info ]: Downloaded RAW_LAKE.ANALYTICS.stg_customers (schema)
+10:08:01.376713 [info ]: Started building task graph
+10:08:01.376802 [info ]: Finished building task graph [  0.00s]
+10:08:01.377013 [info ]: Started rendering (1 nodes)
+10:08:01.377027 [info ]: Started model ANALYTICS.stg_customers
+10:08:01.377043 [debug]: Started rendering model ANALYTICS.stg_customers
+10:08:01.377082 [info ]: Finished downloading schemas [  1.55s]
+10:08:01.378184 [debug]: Compiled SQL for node model.my_transformation.stg_customers at target/.lsp/compiled/models/marts/stg_customers.sql
+10:08:01.378229 [debug]: Finished rendering [  0.00s] model ANALYTICS.stg_customers [success]
+10:08:01.378236 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+10:08:01.378245 [info ]: Started analyzing (1 nodes)
+10:08:01.378250 [debug]: Started analyzing model ANALYTICS.stg_customers
+10:08:01.380616 [info ]:  Succeeded [  0.00s] model ANALYTICS.stg_customers (incremental)
+10:08:01.380638 [debug]: Finished analyzing [  0.00s] model ANALYTICS.stg_customers [success]
+10:08:01.380642 [info ]: Finished analyzing [  0.00s] (1 nodes, 0 skipped, 0 errors)
+10:08:01.386248 [info ]: Cached model count updated: 1 models (accurate)
+10:08:11.887959 [info ]: Started loading project
+10:08:11.888521 [info ]: Loading profiles.yml
+10:08:11.897519 [info ]: Started parsing
+10:08:11.915567 [info ]: Finished loading project [  0.03s]
+10:08:11.916074 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:08:11.921596 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:08:11.921666 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:08:11.922943 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:08:11.923193 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:08:11.923465 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:08:11.924386 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:08:11.924752 [info ]: Finished parsing [  0.03s]
+10:08:11.925397 [info ]: Cached model count updated: 1 models (estimate)
+10:08:11.925405 [info ]: Cached model count updated: 1 models (accurate)
+10:08:11.925437 [info ]: Started scheduling
+10:08:11.925469 [info ]: Finished scheduling [  0.00s]
+10:08:11.925476 [debug]: Incremental compilation - 0 nodes selected: {}
+10:08:11.925485 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:08:11.925491 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:08:11.925727 [info ]: Started deferring state
+10:08:11.925734 [info ]: Finished deferring state [  0.00s]
+10:08:12.005792 [info ]: Started building task graph
+10:08:12.005827 [info ]: Finished building task graph [  0.00s]
+10:08:12.008199 [info ]: Cached model count updated: 1 models (accurate)
+10:08:12.911970 [info ]: Started loading project
+10:08:12.912593 [info ]: Loading profiles.yml
+10:08:12.916996 [info ]: Started parsing
+10:08:12.933316 [info ]: Finished loading project [  0.02s]
+10:08:12.933880 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:08:12.937367 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:08:12.937462 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:08:12.939283 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:08:12.939640 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:08:12.939897 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:08:12.941098 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:08:12.941397 [info ]: Finished parsing [  0.02s]
+10:08:12.942407 [info ]: Cached model count updated: 1 models (estimate)
+10:08:12.942418 [info ]: Cached model count updated: 1 models (accurate)
+10:08:12.942448 [info ]: Started scheduling
+10:08:12.942481 [info ]: Finished scheduling [  0.00s]
+10:08:12.942490 [debug]: Incremental compilation - 0 nodes selected: {}
+10:08:12.942500 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:08:12.942508 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:08:12.942806 [info ]: Started deferring state
+10:08:12.942815 [info ]: Finished deferring state [  0.00s]
+10:08:13.016158 [info ]: Started building task graph
+10:08:13.016194 [info ]: Finished building task graph [  0.00s]
+10:08:13.018866 [info ]: Cached model count updated: 1 models (accurate)
+10:08:15.063737 [info ]: Loading profiles.yml
+10:08:15.067385 [info ]: Started loading project
+10:08:15.067682 [info ]: Loading profiles.yml
+10:08:15.069073 [info ]: Started loading project
+10:08:15.069234 [info ]: Loading profiles.yml
+10:08:15.069249 [info ]: Finished loading project [  0.00s]
+10:08:15.217273 [debug]:    Started loading packages
+10:08:15.217832 [debug]:     Loaded [  0.00s] packages
+10:08:15.218278 [info ]: Started parsing
+10:08:15.231404 [info ]: Finished loading project [  0.16s]
+10:08:15.231899 [debug]: Finished parsing models/sources.yml [  0.00s]
+10:08:15.232029 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:08:15.233960 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:08:15.234019 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:08:15.235110 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+10:08:15.235420 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:08:15.235732 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:08:15.235910 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:08:15.237009 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:08:15.237251 [info ]: Finished parsing [  0.02s]
+10:08:15.237369 [info ]: Cached model count updated: 1 models (estimate)
+10:08:15.237377 [info ]: Cached model count updated: 1 models (accurate)
+10:08:15.237392 [info ]: Started scheduling
+10:08:15.237420 [info ]: Finished scheduling [  0.00s]
+10:08:15.237429 [info ]: Started scheduling
+10:08:15.237438 [info ]: Finished scheduling [  0.00s]
+10:08:15.237480 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+10:08:15.237758 [info ]: Started deferring state
+10:08:15.237764 [info ]: Finished deferring state [  0.00s]
+10:08:15.237944 [debug]:    Started downloading relations (1 items)
+10:08:15.401174 [info ]: Loading profiles.yml
+10:08:15.965968 [info ]: Loading profiles.yml
+10:08:16.204492 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+10:08:17.171165 [debug]:     Failed [  1.93s] downloading relations (error: Adapter operation was cancelled)
+10:08:17.171342 [info ]: Started downloading schemas
+10:08:17.867797 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+10:08:18.584799 [info ]: Waiting for lease on 'target' directory
+10:08:18.700107 [info ]: Started loading project
+10:08:18.700587 [info ]: Loading profiles.yml
+10:08:18.869011 [debug]:    Started loading packages
+10:08:18.869686 [debug]:     Loaded [  0.00s] packages
+10:08:18.870191 [info ]: Started parsing
+10:08:18.884349 [info ]: Finished loading project [  0.18s]
+10:08:18.885400 [debug]: Finished parsing models/sources.yml [  0.00s]
+10:08:18.885755 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:08:18.889716 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:08:18.889861 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:08:18.890983 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+10:08:18.891404 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:08:18.891763 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:08:18.892052 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:08:18.893340 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:08:18.893634 [info ]: Finished parsing [  0.02s]
+10:08:18.893795 [info ]: Cached model count updated: 1 models (estimate)
+10:08:18.893803 [info ]: Cached model count updated: 1 models (accurate)
+10:08:18.893830 [info ]: Started scheduling
+10:08:18.893872 [info ]: Finished scheduling [  0.00s]
+10:08:18.893880 [info ]: Started scheduling
+10:08:18.893889 [info ]: Finished scheduling [  0.00s]
+10:08:18.893935 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+10:08:18.894608 [info ]: Started deferring state
+10:08:18.894615 [info ]: Finished deferring state [  0.00s]
+10:08:18.894892 [debug]:    Started downloading relations (1 items)
+10:08:18.975696 [info ]: Finished downloading schemas [  1.80s]
+10:08:19.535134 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+10:08:20.173611 [debug]:     Failed [  1.28s] downloading relations (error: Adapter operation was cancelled)
+10:08:20.173740 [info ]: Started downloading schemas
+10:08:20.299198 [info ]: Loading profiles.yml
+10:08:21.020863 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+10:08:21.874841 [info ]: Waiting for lease on 'target' directory
+10:08:22.111803 [info ]: Finished downloading schemas [  1.94s]
+10:08:22.285865 [info ]: Started loading project
+10:08:22.286296 [info ]: Loading profiles.yml
+10:08:22.426762 [debug]:    Started loading packages
+10:08:22.427419 [debug]:     Loaded [  0.00s] packages
+10:08:22.427891 [info ]: Started parsing
+10:08:22.440658 [info ]: Finished loading project [  0.15s]
+10:08:22.441042 [debug]: Finished parsing models/sources.yml [  0.00s]
+10:08:22.441179 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:08:22.443248 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:08:22.443318 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:08:22.444326 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+10:08:22.444710 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:08:22.445079 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:08:22.445419 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:08:22.446637 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:08:22.446959 [info ]: Finished parsing [  0.02s]
+10:08:22.447115 [info ]: Cached model count updated: 1 models (estimate)
+10:08:22.447122 [info ]: Cached model count updated: 1 models (accurate)
+10:08:22.447140 [info ]: Started scheduling
+10:08:22.447173 [info ]: Finished scheduling [  0.00s]
+10:08:22.447182 [info ]: Started scheduling
+10:08:22.447194 [info ]: Finished scheduling [  0.00s]
+10:08:22.447215 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+10:08:22.447572 [info ]: Started deferring state
+10:08:22.447578 [info ]: Finished deferring state [  0.00s]
+10:08:22.447808 [debug]:    Started downloading relations (1 items)
+10:08:23.055955 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+10:08:23.373572 [debug]:     Failed [  0.93s] downloading relations (error: Adapter operation was cancelled)
+10:08:23.373662 [info ]: Started downloading schemas
+10:08:23.848430 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+10:08:24.329311 [info ]: Waiting for lease on 'target' directory
+10:08:24.848031 [info ]: Started loading project
+10:08:24.848711 [info ]: Loading profiles.yml
+10:08:24.946387 [info ]: Finished downloading schemas [  1.57s]
+10:08:24.999458 [debug]:    Started loading packages
+10:08:25.000018 [debug]:     Loaded [  0.00s] packages
+10:08:25.000501 [info ]: Started parsing
+10:08:25.012857 [info ]: Finished loading project [  0.16s]
+10:08:25.013186 [debug]: Finished parsing models/sources.yml [  0.00s]
+10:08:25.013309 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:08:25.015240 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:08:25.015293 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:08:25.016296 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+10:08:25.016705 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:08:25.016984 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:08:25.017280 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:08:25.018464 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:08:25.018653 [info ]: Finished parsing [  0.02s]
+10:08:25.018762 [info ]: Cached model count updated: 1 models (estimate)
+10:08:25.018771 [info ]: Cached model count updated: 1 models (accurate)
+10:08:25.018785 [info ]: Started scheduling
+10:08:25.018813 [info ]: Finished scheduling [  0.00s]
+10:08:25.018822 [info ]: Started scheduling
+10:08:25.018833 [info ]: Finished scheduling [  0.00s]
+10:08:25.018860 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+10:08:25.019105 [info ]: Started deferring state
+10:08:25.019111 [info ]: Finished deferring state [  0.00s]
+10:08:25.019275 [debug]:    Started downloading relations (1 items)
+10:08:25.658177 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+10:08:26.049795 [debug]:     Failed [  1.03s] downloading relations (error: Adapter operation was cancelled)
+10:08:26.050323 [info ]: Started downloading schemas
+10:08:26.502283 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+10:08:26.963132 [info ]: Waiting for lease on 'target' directory
+10:08:27.374825 [info ]: Started loading project
+10:08:27.375116 [info ]: Loading profiles.yml
+10:08:27.504019 [debug]:    Started loading packages
+10:08:27.504687 [debug]:     Loaded [  0.00s] packages
+10:08:27.505163 [info ]: Started parsing
+10:08:27.518955 [info ]: Finished loading project [  0.14s]
+10:08:27.519286 [debug]: Finished parsing models/sources.yml [  0.00s]
+10:08:27.519416 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:08:27.521437 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:22:23
+10:08:27.521505 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:08:27.522536 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+10:08:27.522867 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:08:27.523233 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:08:27.523489 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:08:27.524565 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:08:27.524807 [info ]: Finished parsing [  0.02s]
+10:08:27.524909 [info ]: Cached model count updated: 1 models (estimate)
+10:08:27.524917 [info ]: Cached model count updated: 1 models (accurate)
+10:08:27.524934 [info ]: Started scheduling
+10:08:27.524963 [info ]: Finished scheduling [  0.00s]
+10:08:27.524971 [info ]: Started scheduling
+10:08:27.524980 [info ]: Finished scheduling [  0.00s]
+10:08:27.524998 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+10:08:27.525276 [info ]: Started deferring state
+10:08:27.525282 [info ]: Finished deferring state [  0.00s]
+10:08:27.525483 [debug]:    Started downloading relations (1 items)
+10:08:27.601973 [info ]: Finished downloading schemas [  1.55s]
+10:08:28.069620 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+10:08:28.342615 [debug]:   Finished [  0.82s] downloading relations (1 items)
+10:08:28.342693 [info ]: Started downloading schemas
+10:08:29.060898 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+10:08:29.556703 [info ]: Downloaded RAW_LAKE.ANALYTICS.stg_customers (schema)
+10:08:29.634105 [info ]: Started building task graph
+10:08:29.634401 [info ]: Finished building task graph [  0.00s]
+10:08:29.634940 [info ]: Started rendering (1 nodes)
+10:08:29.634962 [info ]: Started model ANALYTICS.stg_customers
+10:08:29.634978 [debug]: Started rendering model ANALYTICS.stg_customers
+10:08:29.635018 [info ]: Finished downloading schemas [  1.29s]
+10:08:29.637597 [debug]: Compiled SQL for node model.my_transformation.stg_customers at target/.lsp/compiled/models/marts/stg_customers.sql
+10:08:29.637712 [info ]: Started analyzing (1 nodes)
+10:08:29.637723 [debug]: Started analyzing model ANALYTICS.stg_customers
+10:08:29.637742 [debug]: Finished rendering [  0.00s] model ANALYTICS.stg_customers [success]
+10:08:29.637749 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+10:08:29.641286 [info ]:  Succeeded [  0.01s] model ANALYTICS.stg_customers (incremental)
+10:08:29.641303 [debug]: Finished analyzing [  0.00s] model ANALYTICS.stg_customers [success]
+10:08:29.641306 [info ]: Finished analyzing [  0.00s] (1 nodes, 0 skipped, 0 errors)
+10:08:29.646093 [info ]: Cached model count updated: 1 models (accurate)
+10:10:00.719863 [info ]: Started loading project
+10:10:00.720396 [info ]: Loading profiles.yml
+10:10:00.723604 [info ]: Started parsing
+10:10:00.739862 [info ]: Finished loading project [  0.02s]
+10:10:00.740938 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:10:00.744127 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:18:23
+10:10:00.744191 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:10:00.745448 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:10:00.745679 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:10:00.745903 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:10:00.746888 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:10:00.747145 [info ]: Finished parsing [  0.02s]
+10:10:00.747733 [info ]: Cached model count updated: 1 models (estimate)
+10:10:00.747741 [info ]: Cached model count updated: 1 models (accurate)
+10:10:00.747768 [info ]: Started scheduling
+10:10:00.747797 [info ]: Finished scheduling [  0.00s]
+10:10:00.747804 [debug]: Incremental compilation - 0 nodes selected: {}
+10:10:00.747812 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:10:00.747818 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:10:00.748096 [info ]: Started deferring state
+10:10:00.748110 [info ]: Finished deferring state [  0.00s]
+10:10:00.816505 [info ]: Started building task graph
+10:10:00.816540 [info ]: Finished building task graph [  0.00s]
+10:10:00.819406 [info ]: Cached model count updated: 1 models (accurate)
+10:10:00.958509 [info ]: Waiting for lease on 'target' directory
+10:10:01.274049 [info ]: Started loading project
+10:10:01.274468 [info ]: Loading profiles.yml
+10:10:01.277038 [info ]: Started parsing
+10:10:01.289627 [info ]: Finished loading project [  0.02s]
+10:10:01.290073 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:10:01.293039 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:18:23
+10:10:01.293161 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:10:01.294957 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:10:01.295306 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:10:01.295586 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:10:01.296939 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:10:01.297241 [info ]: Finished parsing [  0.02s]
+10:10:01.298129 [info ]: Cached model count updated: 1 models (estimate)
+10:10:01.298139 [info ]: Cached model count updated: 1 models (accurate)
+10:10:01.298166 [info ]: Started scheduling
+10:10:01.298194 [info ]: Finished scheduling [  0.00s]
+10:10:01.298202 [debug]: Incremental compilation - 0 nodes selected: {}
+10:10:01.298212 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:10:01.298218 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:10:01.298553 [info ]: Started deferring state
+10:10:01.298560 [info ]: Finished deferring state [  0.00s]
+10:10:01.372403 [info ]: Started building task graph
+10:10:01.372433 [info ]: Finished building task graph [  0.00s]
+10:10:01.374735 [info ]: Cached model count updated: 1 models (accurate)
+10:10:04.681784 [info ]: Started loading project
+10:10:04.682078 [info ]: Loading profiles.yml
+10:10:04.683975 [info ]: Started parsing
+10:10:04.695108 [info ]: Finished loading project [  0.01s]
+10:10:04.695438 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:10:04.697201 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:18:23
+10:10:04.697254 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:10:04.698340 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:10:04.698587 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:10:04.698777 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:10:04.699771 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:10:04.700021 [info ]: Finished parsing [  0.02s]
+10:10:04.700662 [info ]: Cached model count updated: 1 models (estimate)
+10:10:04.700674 [info ]: Cached model count updated: 1 models (accurate)
+10:10:04.700693 [info ]: Started scheduling
+10:10:04.700719 [info ]: Finished scheduling [  0.00s]
+10:10:04.700728 [debug]: Incremental compilation - 0 nodes selected: {}
+10:10:04.700736 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:10:04.700742 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:10:04.701002 [info ]: Started deferring state
+10:10:04.701009 [info ]: Finished deferring state [  0.00s]
+10:10:04.776270 [info ]: Started building task graph
+10:10:04.776297 [info ]: Finished building task graph [  0.00s]
+10:10:04.778884 [info ]: Cached model count updated: 1 models (accurate)
+10:11:01.022464 [info ]: Loading profiles.yml
+10:11:01.043544 [info ]: Started loading project
+10:11:01.043850 [info ]: Loading profiles.yml
+10:11:01.046060 [info ]: Started loading project
+10:11:01.046230 [info ]: Loading profiles.yml
+10:11:01.046295 [info ]: Finished loading project [  0.00s]
+10:11:01.189297 [debug]:    Started loading packages
+10:11:01.189896 [debug]:     Loaded [  0.00s] packages
+10:11:01.190477 [info ]: Started parsing
+10:11:01.210436 [info ]: Finished loading project [  0.16s]
+10:11:01.211148 [debug]: Finished parsing models/sources.yml [  0.00s]
+10:11:01.211311 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:11:01.213604 [error]: dbt0102: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/staging/schema.yml:18:23
+10:11:01.213668 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:11:01.214763 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+10:11:01.215191 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:11:01.215507 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:11:01.215738 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:11:01.216906 [debug]: Finished parsing target/generic_tests/accepted_values_stg_customers_state__NY__CA__TX__FL.sql [  0.00s]
+10:11:01.217131 [info ]: Finished parsing [  0.03s]
+10:11:01.217243 [info ]: Cached model count updated: 1 models (estimate)
+10:11:01.217251 [info ]: Cached model count updated: 1 models (accurate)
+10:11:01.217275 [info ]: Started scheduling
+10:11:01.217315 [info ]: Finished scheduling [  0.00s]
+10:11:01.217324 [info ]: Started scheduling
+10:11:01.217334 [info ]: Finished scheduling [  0.00s]
+10:11:01.217406 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+10:11:01.217680 [info ]: Started deferring state
+10:11:01.217686 [info ]: Finished deferring state [  0.00s]
+10:11:01.218189 [debug]:    Started downloading relations (1 items)
+10:11:02.142151 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+10:11:02.691869 [debug]:   Finished [  1.47s] downloading relations (1 items)
+10:11:02.691922 [info ]: Started downloading schemas
+10:11:03.303419 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+10:11:03.610648 [info ]: Downloaded RAW_LAKE.ANALYTICS.stg_customers (schema)
+10:11:03.701199 [info ]: Started building task graph
+10:11:03.701263 [info ]: Finished building task graph [  0.00s]
+10:11:03.701361 [info ]: Started rendering (1 nodes)
+10:11:03.701372 [info ]: Started model ANALYTICS.stg_customers
+10:11:03.701388 [debug]: Started rendering model ANALYTICS.stg_customers
+10:11:03.701423 [info ]: Finished downloading schemas [  1.01s]
+10:11:03.702471 [debug]: Compiled SQL for node model.my_transformation.stg_customers at target/.lsp/compiled/models/marts/stg_customers.sql
+10:11:03.702525 [info ]: Started analyzing (1 nodes)
+10:11:03.702531 [debug]: Started analyzing model ANALYTICS.stg_customers
+10:11:03.702529 [debug]: Finished rendering [  0.00s] model ANALYTICS.stg_customers [success]
+10:11:03.702544 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+10:11:03.704799 [info ]:  Succeeded [  0.00s] model ANALYTICS.stg_customers (incremental)
+10:11:03.704816 [debug]: Finished analyzing [  0.00s] model ANALYTICS.stg_customers [success]
+10:11:03.704818 [info ]: Finished analyzing [  0.00s] (1 nodes, 0 skipped, 0 errors)
+10:11:03.708251 [info ]: Cached model count updated: 1 models (accurate)
+10:12:03.461696 [info ]: Started loading project
+10:12:03.462161 [info ]: Loading profiles.yml
+10:12:03.465253 [info ]: Started parsing
+10:12:03.477586 [info ]: Finished loading project [  0.02s]
+10:12:03.478016 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:12:03.480616 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:12:03.481549 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:12:03.482079 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:12:03.482976 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:12:03.483082 [info ]: Finished parsing [  0.02s]
+10:12:03.483683 [info ]: Cached model count updated: 1 models (estimate)
+10:12:03.483693 [info ]: Cached model count updated: 1 models (accurate)
+10:12:03.483733 [info ]: Started scheduling
+10:12:03.483766 [info ]: Finished scheduling [  0.00s]
+10:12:03.483771 [debug]: Incremental compilation - 0 nodes selected: {}
+10:12:03.483786 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:12:03.483793 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:12:03.484023 [info ]: Started deferring state
+10:12:03.484030 [info ]: Finished deferring state [  0.00s]
+10:12:03.550739 [info ]: Started building task graph
+10:12:03.550775 [info ]: Finished building task graph [  0.00s]
+10:12:03.552762 [info ]: Cached model count updated: 1 models (accurate)
+10:12:03.653938 [info ]: Waiting for lease on 'target' directory
+10:12:03.977427 [info ]: Cached model count updated: 1 models (accurate)
+10:12:03.979009 [info ]: Waiting for lease on 'target' directory
+10:12:04.497924 [info ]: Cached model count updated: 1 models (accurate)
+10:12:04.499306 [info ]: Waiting for lease on 'target' directory
+10:12:05.035168 [info ]: Cached model count updated: 1 models (accurate)
+10:12:05.042143 [info ]: Waiting for lease on 'target' directory
+10:12:05.563487 [info ]: Started loading project
+10:12:05.563920 [info ]: Loading profiles.yml
+10:12:05.566798 [info ]: Started parsing
+10:12:05.582107 [info ]: Finished loading project [  0.02s]
+10:12:05.582584 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:12:05.584970 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:12:05.586142 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:12:05.586529 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:12:05.587723 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:12:05.587981 [info ]: Finished parsing [  0.02s]
+10:12:05.588797 [info ]: Cached model count updated: 1 models (estimate)
+10:12:05.588811 [info ]: Cached model count updated: 1 models (accurate)
+10:12:05.588831 [info ]: Started scheduling
+10:12:05.588863 [info ]: Finished scheduling [  0.00s]
+10:12:05.588872 [debug]: Incremental compilation - 0 nodes selected: {}
+10:12:05.588882 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:12:05.588892 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:12:05.589193 [info ]: Started deferring state
+10:12:05.589204 [info ]: Finished deferring state [  0.00s]
+10:12:05.663954 [info ]: Started building task graph
+10:12:05.663984 [info ]: Finished building task graph [  0.00s]
+10:12:05.666612 [info ]: Cached model count updated: 1 models (accurate)
+10:12:06.392620 [info ]: Loading profiles.yml
+10:12:06.398681 [info ]: Started loading project
+10:12:06.399029 [info ]: Loading profiles.yml
+10:12:06.400995 [info ]: Started loading project
+10:12:06.401244 [info ]: Loading profiles.yml
+10:12:06.401277 [info ]: Finished loading project [  0.00s]
+10:12:06.556676 [debug]:    Started loading packages
+10:12:06.557254 [debug]:     Loaded [  0.00s] packages
+10:12:06.557720 [info ]: Started parsing
+10:12:06.571414 [info ]: Finished loading project [  0.17s]
+10:12:06.572476 [debug]: Finished parsing models/sources.yml [  0.00s]
+10:12:06.572640 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:12:06.574559 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:12:06.575584 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+10:12:06.575945 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:12:06.576296 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:12:06.577340 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:12:06.577630 [info ]: Finished parsing [  0.02s]
+10:12:06.577761 [info ]: Cached model count updated: 1 models (estimate)
+10:12:06.577772 [info ]: Cached model count updated: 1 models (accurate)
+10:12:06.577786 [info ]: Started scheduling
+10:12:06.577818 [info ]: Finished scheduling [  0.00s]
+10:12:06.577827 [info ]: Started scheduling
+10:12:06.577838 [info ]: Finished scheduling [  0.00s]
+10:12:06.577885 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+10:12:06.578206 [info ]: Started deferring state
+10:12:06.578214 [info ]: Finished deferring state [  0.00s]
+10:12:06.578406 [debug]:    Started downloading relations (1 items)
+10:12:08.993408 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+10:12:09.809834 [debug]:   Finished [  3.23s] downloading relations (1 items)
+10:12:09.812295 [info ]: Started downloading schemas
+10:12:14.657246 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+10:12:15.021318 [info ]: Downloaded RAW_LAKE.ANALYTICS.stg_customers (schema)
+10:12:15.097180 [info ]: Started building task graph
+10:12:15.097249 [info ]: Finished building task graph [  0.00s]
+10:12:15.097403 [info ]: Started rendering (1 nodes)
+10:12:15.097428 [info ]: Started model ANALYTICS.stg_customers
+10:12:15.097440 [debug]: Started rendering model ANALYTICS.stg_customers
+10:12:15.097472 [info ]: Finished downloading schemas [  5.29s]
+10:12:15.098745 [debug]: Compiled SQL for node model.my_transformation.stg_customers at target/.lsp/compiled/models/marts/stg_customers.sql
+10:12:15.098814 [debug]: Finished rendering [  0.00s] model ANALYTICS.stg_customers [success]
+10:12:15.098828 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+10:12:15.098854 [info ]: Started analyzing (1 nodes)
+10:12:15.098865 [debug]: Started analyzing model ANALYTICS.stg_customers
+10:12:15.104481 [info ]:  Succeeded [  0.01s] model ANALYTICS.stg_customers (incremental)
+10:12:15.104495 [debug]: Finished analyzing [  0.01s] model ANALYTICS.stg_customers [success]
+10:12:15.104500 [info ]: Finished analyzing [  0.01s] (1 nodes, 0 skipped, 0 errors)
+10:12:15.114062 [info ]: Cached model count updated: 1 models (accurate)

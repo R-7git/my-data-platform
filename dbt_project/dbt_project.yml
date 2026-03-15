@@ -18,9 +18,18 @@ clean-targets: ["target", "dbt_packages"]
 
 # Global settings for your models
 # ... (rest of file) ...
+# ... (Keep everything from the top down to clean-targets) ...
+
+# Global settings for your models
 models:
+  # This MUST match the 'name:' at the top of this file
   my_transformation:
-    # ADD THE '+' PREFIX BELOW
+    # Adding the '+' prefix ensures these are treated as configs, not folders
     +materialized: table
     +snowflake_warehouse: ELT_WH
+    
+    # Optional: If you have a staging folder, you can specify it here
+    staging:
+      +materialized: view  # Staging models are usually views for speed
+
 
