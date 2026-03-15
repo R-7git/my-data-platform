@@ -40,7 +40,7 @@ def enterprise_elt():
     def load_to_snowflake_stage(file_name: str):
         # A. Connect to MinIO (External Docker Compose Port)
         s3 = boto3.client('s3', 
-                          endpoint_url='http://host.docker.internal:9002',
+                          endpoint_url='http://minio-external:9002',
                           aws_access_key_id='minioadmin', 
                           aws_secret_access_key='minioadmin')
         

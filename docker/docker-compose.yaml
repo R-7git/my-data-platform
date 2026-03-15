@@ -13,11 +13,12 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  # 2. The Local Data Lake
+  # 2. The Local Data Lake - UPDATED for K8s Connectivity
   minio:
     image: minio/minio
     container_name: docker-minio-1
-    command: server /data --console-address ":9001"
+    # Added --address "0.0.0.0:9000" to ensure it accepts external connections
+    command: server /data --console-address ":9001" --address "0.0.0.0:9000"
     environment:
       - MINIO_ROOT_USER=minioadmin
       - MINIO_ROOT_PASSWORD=minioadmin
@@ -71,7 +72,7 @@ services:
       - postgres
       - minio
 
-  # 5. The Visualization Tool (Metabase) - NEW!
+  # 5. The Visualization Tool (Metabase)
   metabase:
     image: metabase/metabase:latest
     container_name: docker-metabase
@@ -83,4 +84,4 @@ services:
 
 volumes:
   postgres_data:
-  metabase_data: # <--- Stores your charts so they don't vanish on restart
+  metabase_data:
