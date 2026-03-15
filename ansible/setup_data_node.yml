@@ -1,0 +1,46 @@
+---
+- name: Prepare Server for Data Platform
+  hosts: data_platform
+  become: yes
+  
+  tasks:
+    - name: 1. Update system packages (Linux Only)
+      apt:
+        update_cache: yes
+      when: ansible_os_family == "Debian"
+
+    - name: 2. Install Docker Engine (Linux Only)
+      apt:
+        name: 
+          - docker.io
+          - docker-compose
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: 3. Ensure Docker service is running (Linux Only)
+      service:
+        name: docker
+        state: started
+        enabled: yes
+      when: ansible_os_family != "Darwin" # Skips this on Mac
+
+    - name: 4. Create Data Lake Directory Structure
+      file:
+        path: "{{ item }}"
+        state: directory
+        mode: '0775'
+        # On Mac, we use your user home; on Linux, we use /opt
+        owner: "{{ ansible_user_id }}"
+      loop:
+        - "/tmp/data-platform/raw-data"
+        - "/tmp/data-platform/logs"
+
+    - name: 5. Check if Docker is actually responding (Universal)
+      command: docker info
+      register: docker_check
+      changed_when: false
+
+    - name: 6. Show Docker Status
+      debug:
+        msg: "Docker is up and running on {{ ansible_os_family }}"
+      when: docker_check.rc == 0
