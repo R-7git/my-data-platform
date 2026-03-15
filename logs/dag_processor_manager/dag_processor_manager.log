@@ -17756,3 +17756,26 @@ File Path                            PID  Runtime      # DAGs    # Errors  Last 
 /opt/airflow/dags/utils/alerts.py    218  0.02s             0           0  0.19s           2026-03-15T14:11:19
 /opt/airflow/dags/elt_pipeline.py                           1           0  0.15s           2026-03-15T14:11:21
 ================================================================================
+[2026-03-15T14:12:44.907+0000] {manager.py:469} INFO - Processing files using up to 2 processes at a time 
+[2026-03-15T14:12:44.909+0000] {manager.py:470} INFO - Process each file at most once every 30 seconds
+[2026-03-15T14:12:44.911+0000] {manager.py:471} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2026-03-15T14:12:44.915+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-03-15T14:12:44.949+0000] {manager.py:741} INFO - There are 2 files in /opt/airflow/dags
+[2026-03-15T14:12:49.462+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/elt_pipeline.py    188  0.24s             0           0
+/opt/airflow/dags/utils/alerts.py    191  0.12s             0           0
+================================================================================
+[2026-03-15T14:13:19.565+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                          PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/utils/alerts.py                           0           0  0.38s           2026-03-15T14:12:49
+/opt/airflow/dags/elt_pipeline.py                           1           0  1.01s           2026-03-15T14:12:50
+================================================================================
