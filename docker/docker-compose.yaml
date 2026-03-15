@@ -1,7 +1,6 @@
 version: '3.8'
 
 services:
-  # 1. The Metadata Database
   postgres:
     image: postgres:13
     environment:
@@ -13,7 +12,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
-  # 2. The Local Data Lake - FIXED for K8s Connectivity & Disk Space
   minio:
     image: minio/minio
     container_name: docker-minio-1
@@ -21,7 +19,6 @@ services:
     environment:
       - MINIO_ROOT_USER=minioadmin
       - MINIO_ROOT_PASSWORD=minioadmin
-      # CORRECT FIX: Allows upload even if disk is 99% full
       - MINIO_DISK_USAGE_FATAL_THRESHOLD=99
     ports:
       - "9002:9000"
@@ -29,9 +26,10 @@ services:
     volumes:
       - ../data:/data
 
-  # 3. The Orchestrator (Webserver)
   airflow-webserver:
-    build: .
+    build: 
+      context: ..
+      dockerfile: docker/Dockerfile
     command: webserver
     ports:
       - "8081:8080"
@@ -41,9 +39,6 @@ services:
       - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=true
       - AIRFLOW__CORE__LOAD_EXAMPLES=false
       - AIRFLOW__WEBSERVER__SECRET_KEY=this_is_a_very_secure_key_for_local_dev
-      - AWS_ACCESS_KEY_ID=minioadmin
-      - AWS_SECRET_ACCESS_KEY=minioadmin
-      - AWS_DEFAULT_REGION=us-east-1
     volumes:
       - ../dags:/opt/airflow/dags
       - ../dbt_project:/opt/airflow/dbt_project
@@ -53,17 +48,15 @@ services:
       - postgres
       - minio
 
-  # 4. The Scheduler
   airflow-scheduler:
-    build: .
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
     command: scheduler
     environment:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
       - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
       - AIRFLOW__CORE__LOAD_EXAMPLES=false
-      - AIRFLOW__WEBSERVER__SECRET_KEY=this_is_a_very_secure_key_for_local_dev
-      - AWS_ACCESS_KEY_ID=minioadmin
-      - AWS_SECRET_ACCESS_KEY=minioadmin
     volumes: 
       - ../dags:/opt/airflow/dags
       - ../dbt_project:/opt/airflow/dbt_project
@@ -73,7 +66,6 @@ services:
       - postgres
       - minio
 
-  # 5. The Visualization Tool (Metabase)
   metabase:
     image: metabase/metabase:latest
     container_name: docker-metabase

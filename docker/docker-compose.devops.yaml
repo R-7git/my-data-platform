@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  # 1. CI/CD Orchestrator - Clean and Stable
+  # 1. CI/CD Orchestrator - Configured for Kubernetes & Docker Persistence
   jenkins:
     image: jenkins/jenkins:lts
     container_name: devops-jenkins
@@ -13,7 +13,10 @@ services:
     volumes:
       - jenkins_data:/var/jenkins_home
       - /var/run/docker.sock:/var/run/docker.sock 
-    # Use the default startup to ensure the container stays UP
+      # PERSISTENCE FIX: Map your host kubeconfig to Jenkins root
+      - ~/.kube:/root/.kube:ro
+      # Allow Jenkins to use the host's kubectl binary if not installed in image
+      - /usr/local/bin/kubectl:/usr/local/bin/kubectl:ro
     entrypoint: /usr/bin/tini -- /usr/local/bin/jenkins.sh
 
   # 2. Monitoring - Metrics Collector
@@ -52,8 +55,8 @@ services:
     container_name: devops-artifactory
     restart: always
     ports:
-      - "8084:8082" 
-      - "8085:8081" 
+      - "8082:8082" 
+      - "8081:8081" 
     volumes:
       - jfrog_data:/var/opt/jfrog/artifactory
 
