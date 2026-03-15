@@ -24,7 +24,7 @@ spec:
         # 1. We use host.docker.internal to reach the host machine
         # 2. We use port 5434 because that is what you mapped in docker-compose
         - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
-          value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5434/airflow"
+          value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5432/airflow"
         - name: AIRFLOW__CORE__LOAD_EXAMPLES
           value: "False"
         - name: AIRFLOW__WEBSERVER__SECRET_KEY
