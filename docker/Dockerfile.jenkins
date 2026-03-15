@@ -1,0 +1,25 @@
+FROM jenkins/jenkins:lts
+
+USER root
+
+# 1. Install System Dependencies
+RUN apt-get update && apt-get install -y \
+    curl wget unzip ca-certificates gnupg \
+    && rm -rf /var/lib/apt/lists/*
+
+# 2. Install kubectl & Terraform (Architecture Aware)
+RUN ARCH=$(uname -m) && \
+    if [ "$ARCH" = "x86_64" ]; then TARGET="amd64"; else TARGET="arm64"; fi && \
+    echo "Building for $TARGET..." && \
+    # Kubectl
+    K_VER=$(curl -L -s https://dl.k8s.io/release/stable.txt) && \
+    curl -Lo /usr/local/bin/kubectl "https://dl.k8s.io" && \
+    chmod +x /usr/local/bin/kubectl && \
+    # Terraform
+    T_VER=1.5.7 && \
+    wget "https://releases.hashicorp.com{T_VER}_linux_$TARGET.zip" -O /tmp/terraform.zip && \
+    unzip /tmp/terraform.zip -d /usr/local/bin/ && \
+    rm /tmp/terraform.zip
+
+# 3. Entrypoint to handle Docker Socket and start Jenkins
+ENTRYPOINT ["/bin/bash", "-c", "chmod 666 /var/run/docker.sock || true; exec /usr/bin/tini -- /usr/local/bin/jenkins.sh"]

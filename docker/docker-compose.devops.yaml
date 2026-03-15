@@ -1,8 +1,9 @@
 services:
-  # 1. CI/CD Orchestrator - Jenkins for ARM64
+  # 1. CI/CD Orchestrator - Built from Dockerfile.jenkins
   jenkins:
-    image: jenkins/jenkins:lts
-    platform: linux/arm64
+    build:
+      context: .
+      dockerfile: Dockerfile.jenkins
     container_name: devops-jenkins
     privileged: true
     user: root
@@ -15,32 +16,6 @@ services:
       - ~/.kube:/root/.kube:ro
     environment:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
-    entrypoint: >
-      /bin/bash -c '
-      set -e;
-      echo "Detecting container architecture...";
-      REAL_ARCH=$(uname -m);
-      if [ "$REAL_ARCH" = "x86_64" ]; then TARGET=amd64; else TARGET=arm64; fi;
-      echo "Architecture: $REAL_ARCH, downloading kubectl for $TARGET";
-
-      # Install kubectl
-      KUBECTL_VERSION=$(curl -L -s https://dl.k8s.io/release/stable.txt);
-      curl -Lo /usr/local/bin/kubectl https://dl.k8s.io/release/$KUBECTL_VERSION/bin/linux/$TARGET/kubectl;
-      chmod +x /usr/local/bin/kubectl;
-      echo "kubectl installed at /usr/local/bin/kubectl";
-
-      # Install Terraform (ARM64)
-      TERRAFORM_VERSION=1.5.7;
-      wget https://releases.hashicorp.com/terraform/$TERRAFORM_VERSION/terraform_${TERRAFORM_VERSION}_linux_$TARGET.zip -O /tmp/terraform.zip;
-      unzip -o /tmp/terraform.zip -d /usr/local/bin/;
-      rm /tmp/terraform.zip;
-      echo "Terraform $TERRAFORM_VERSION installed";
-
-      # Fix Docker socket permissions
-      chmod 666 /var/run/docker.sock;
-
-      exec /usr/bin/tini -- /usr/local/bin/jenkins.sh
-      '
 
   # 2. Monitoring & Exporters
   prometheus:
