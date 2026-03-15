@@ -17,10 +17,9 @@ services:
     entrypoint: >
       /bin/sh -c "
       apt-get update && apt-get install -y wget unzip ansible &&
-      wget https://releases.hashicorp.com/terraform/1.7.0/terraform_1.7.0_linux_amd64.zip &&
-      unzip terraform_1.7.0_linux_amd64.zip &&
-      mv terraform /usr/local/bin/ &&
-      rm terraform_1.7.0_linux_amd64.zip &&
+      wget https://releases.hashicorp.com/terraform/1.7.0/terraform_1.7.0_linux_amd64.zip -O terraform.zip &&
+      unzip terraform.zip -d /usr/local/bin/ &&
+      rm terraform.zip &&
       exec /usr/bin/tini -- /usr/local/bin/jenkins.sh
       "
 
