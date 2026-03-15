@@ -17,8 +17,10 @@ target-path: "target"  # Where compiled SQL goes
 clean-targets: ["target", "dbt_packages"]
 
 # Global settings for your models
+# ... (rest of file) ...
 models:
   my_transformation:
-    # Default to creating permanent tables (not views)
-    materialized: table
-    snowflake_warehouse: ELT_WH
+    # ADD THE '+' PREFIX BELOW
+    +materialized: table
+    +snowflake_warehouse: ELT_WH
+
