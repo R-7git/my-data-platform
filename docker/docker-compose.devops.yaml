@@ -1,5 +1,5 @@
 services:
-  # 1. CI/CD Orchestrator - Fixed variable escaping
+  # 1. CI/CD Orchestrator - Absolute Path Fix
   jenkins:
     image: jenkins/jenkins:lts
     container_name: devops-jenkins
@@ -16,54 +16,42 @@ services:
       - JAVA_OPTS=-Djenkins.install.runSetupWizard=false
     entrypoint: >
       /bin/bash -c "
-      BIN_ARCH=\$$(uname -m);
-      if [ \"\$$BIN_ARCH\" = \"x86_64\" ]; then TARGET_ARCH=\"amd64\"; else TARGET_ARCH=\"arm64\"; fi;
-      echo \"Detected architecture: \$$BIN_ARCH. Downloading kubectl for \$$TARGET_ARCH...\";
-      curl -fsSL \"https://dl.k8s.io\$$TARGET_ARCH/kubectl\" -o /usr/local/bin/kubectl;
+      # Detect arch and download to /usr/local/bin/
+      if [ \"$$(uname -m)\" = \"x86_64\" ]; then ARCH=\"amd64\"; else ARCH=\"arm64\"; fi;
+      curl -fsSL \"https://dl.k8s.io\" -o /usr/local/bin/kubectl;
       chmod +x /usr/local/bin/kubectl;
+      # Create a symlink to ensure it's in the default path
+      ln -s /usr/local/bin/kubectl /usr/bin/kubectl || true;
       exec /usr/bin/tini -- /usr/local/bin/jenkins.sh
       "
 
-  # 2. Monitoring - Metrics Collector
+  # Monitoring & Artifacts (Remaining services stay the same)
   prometheus:
     image: prom/prometheus:latest
     container_name: devops-prometheus
-    ports:
-      - "9090:9090"
-    volumes:
-      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
-    depends_on:
-      - node-exporter
+    ports: [ "9090:9090" ]
+    volumes: [ "./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml" ]
+    depends_on: [ node-exporter ]
 
-  # 3. Monitoring - Hardware Sensor
   node-exporter:
     image: prom/node-exporter:latest
     container_name: devops-node-exporter
     restart: unless-stopped
-    ports:
-      - "9100:9100"
+    ports: [ "9100:9100" ]
 
-  # 4. Monitoring - Dashboard
   grafana:
     image: grafana/grafana:latest
     container_name: devops-grafana
-    ports:
-      - "3001:3000"
-    environment:
-      - GF_SECURITY_ADMIN_PASSWORD=admin
-    depends_on:
-      - prometheus
+    ports: [ "3001:3000" ]
+    environment: [ "GF_SECURITY_ADMIN_PASSWORD=admin" ]
+    depends_on: [ prometheus ]
 
-  # 5. Artifact Repository
   jfrog:
     image: releases-docker.jfrog.io/jfrog/artifactory-oss:latest
     container_name: devops-artifactory
     restart: always
-    ports:
-      - "8082:8082" 
-      - "8081:8081" 
-    volumes:
-      - jfrog_data:/var/opt/jfrog/artifactory
+    ports: [ "8082:8082", "8081:8081" ]
+    volumes: [ "jfrog_data:/var/opt/jfrog/artifactory" ]
 
 volumes:
   jenkins_data:
