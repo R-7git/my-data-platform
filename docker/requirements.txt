@@ -15,7 +15,6 @@ boto3
 faker
 apache-airflow-providers-snowflake
 
-# --- THE FIX: PIN DBT VERSIONS ---
-# This forces Kubernetes to use the same version as your VS Code
-dbt-core>=1.10.0
-dbt-snowflake>=1.10.0
+# --- THE STABLE FIX: USE DBT 1.8 ---
+dbt-core~=1.8.0
+dbt-snowflake~=1.8.0

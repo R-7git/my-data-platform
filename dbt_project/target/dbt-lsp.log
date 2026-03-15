@@ -2158,3 +2158,140 @@ describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
 10:24:14.685606 [info ]: Started building task graph
 10:24:14.685647 [info ]: Finished building task graph [  0.00s]
 10:24:14.689882 [info ]: Cached model count updated: 1 models (accurate)
+10:32:52.037133 [info ]: Started loading project
+10:32:52.038640 [info ]: Loading profiles.yml
+10:32:52.050606 [info ]: Started parsing
+10:32:52.077596 [info ]: Finished loading project [  0.04s]
+10:32:52.078164 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:32:52.080309 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:32:52.081657 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:32:52.081854 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:32:52.082662 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:32:52.082911 [info ]: Finished parsing [  0.03s]
+10:32:52.084004 [info ]: Cached model count updated: 1 models (estimate)
+10:32:52.084018 [info ]: Cached model count updated: 1 models (accurate)
+10:32:52.084063 [info ]: Started scheduling
+10:32:52.084114 [info ]: Finished scheduling [  0.00s]
+10:32:52.084122 [debug]: Incremental compilation - 0 nodes selected: {}
+10:32:52.084137 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:32:52.084146 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:32:52.084463 [info ]: Started deferring state
+10:32:52.084472 [info ]: Finished deferring state [  0.00s]
+10:32:52.152905 [info ]: Started building task graph
+10:32:52.153080 [info ]: Finished building task graph [  0.00s]
+10:32:52.156261 [info ]: Cached model count updated: 1 models (accurate)
+10:32:52.956180 [info ]: Started loading project
+10:32:52.956918 [info ]: Loading profiles.yml
+10:32:52.960766 [info ]: Started parsing
+10:32:52.985626 [info ]: Finished loading project [  0.03s]
+10:32:52.986481 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:32:52.989605 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:32:52.991324 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:32:52.991555 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:32:52.992764 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:32:52.994075 [info ]: Finished parsing [  0.03s]
+10:32:52.994781 [info ]: Cached model count updated: 1 models (estimate)
+10:32:52.994791 [info ]: Cached model count updated: 1 models (accurate)
+10:32:52.994811 [info ]: Started scheduling
+10:32:52.994831 [info ]: Finished scheduling [  0.00s]
+10:32:52.994837 [debug]: Incremental compilation - 0 nodes selected: {}
+10:32:52.994845 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:32:52.994851 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:32:52.995096 [info ]: Started deferring state
+10:32:52.995103 [info ]: Finished deferring state [  0.00s]
+10:32:53.062020 [info ]: Started building task graph
+10:32:53.062050 [info ]: Finished building task graph [  0.00s]
+10:32:53.064570 [info ]: Cached model count updated: 1 models (accurate)
+10:32:53.227950 [info ]: Waiting for lease on 'target' directory
+10:32:53.542357 [info ]: Cached model count updated: 1 models (accurate)
+10:32:53.543254 [info ]: Waiting for lease on 'target' directory
+10:32:54.061068 [info ]: Cached model count updated: 1 models (accurate)
+10:32:54.062064 [info ]: Waiting for lease on 'target' directory
+10:32:54.585799 [info ]: Started loading project
+10:32:54.586162 [info ]: Loading profiles.yml
+10:32:54.588411 [info ]: Started parsing
+10:32:54.600156 [info ]: Finished loading project [  0.01s]
+10:32:54.600506 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:32:54.602667 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:32:54.603774 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:32:54.604018 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:32:54.605137 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:32:54.605398 [info ]: Finished parsing [  0.02s]
+10:32:54.606120 [info ]: Cached model count updated: 1 models (estimate)
+10:32:54.606130 [info ]: Cached model count updated: 1 models (accurate)
+10:32:54.606148 [info ]: Started scheduling
+10:32:54.606170 [info ]: Finished scheduling [  0.00s]
+10:32:54.606176 [debug]: Incremental compilation - 0 nodes selected: {}
+10:32:54.606185 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:32:54.606191 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:32:54.606480 [info ]: Started deferring state
+10:32:54.606486 [info ]: Finished deferring state [  0.00s]
+10:32:54.683076 [info ]: Started building task graph
+10:32:54.683104 [info ]: Finished building task graph [  0.00s]
+10:32:54.684747 [info ]: Cached model count updated: 1 models (accurate)
+10:32:56.477242 [info ]: Started loading project
+10:32:56.477685 [info ]: Loading profiles.yml
+10:32:56.486306 [info ]: Started parsing
+10:32:56.506502 [info ]: Finished loading project [  0.03s]
+10:32:56.506954 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:32:56.509047 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:32:56.510098 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:32:56.510484 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:32:56.511304 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:32:56.511537 [info ]: Finished parsing [  0.03s]
+10:32:56.512154 [info ]: Cached model count updated: 1 models (estimate)
+10:32:56.512168 [info ]: Cached model count updated: 1 models (accurate)
+10:32:56.512193 [info ]: Started scheduling
+10:32:56.512222 [info ]: Finished scheduling [  0.00s]
+10:32:56.512229 [debug]: Incremental compilation - 0 nodes selected: {}
+10:32:56.512237 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:32:56.512241 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:32:56.512470 [info ]: Started deferring state
+10:32:56.512477 [info ]: Finished deferring state [  0.00s]
+10:32:56.580519 [info ]: Started building task graph
+10:32:56.580556 [info ]: Finished building task graph [  0.00s]
+10:32:56.583074 [info ]: Cached model count updated: 1 models (accurate)
+10:33:06.023336 [info ]: Started loading project
+10:33:06.023865 [info ]: Loading profiles.yml
+10:33:06.027220 [info ]: Started parsing
+10:33:06.047197 [info ]: Finished loading project [  0.02s]
+10:33:06.047738 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:33:06.049772 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:33:06.050744 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:33:06.050982 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:33:06.051781 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:33:06.052085 [info ]: Finished parsing [  0.02s]
+10:33:06.052733 [info ]: Cached model count updated: 1 models (estimate)
+10:33:06.052743 [info ]: Cached model count updated: 1 models (accurate)
+10:33:06.052771 [info ]: Started scheduling
+10:33:06.052796 [info ]: Finished scheduling [  0.00s]
+10:33:06.052802 [debug]: Incremental compilation - 0 nodes selected: {}
+10:33:06.052810 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:33:06.052816 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:33:06.053066 [info ]: Started deferring state
+10:33:06.053073 [info ]: Finished deferring state [  0.00s]
+10:33:06.126008 [info ]: Started building task graph
+10:33:06.126049 [info ]: Finished building task graph [  0.00s]
+10:33:06.128810 [info ]: Cached model count updated: 1 models (accurate)
+10:36:11.637616 [info ]: Started loading project
+10:36:11.638361 [info ]: Loading profiles.yml
+10:36:11.642358 [info ]: Started parsing
+10:36:11.661036 [info ]: Finished loading project [  0.02s]
+10:36:11.661471 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+10:36:11.663989 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+10:36:11.665028 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+10:36:11.665331 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+10:36:11.667076 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+10:36:11.667145 [info ]: Finished parsing [  0.02s]
+10:36:11.667842 [info ]: Cached model count updated: 1 models (estimate)
+10:36:11.667851 [info ]: Cached model count updated: 1 models (accurate)
+10:36:11.667921 [info ]: Started scheduling
+10:36:11.668010 [info ]: Finished scheduling [  0.00s]
+10:36:11.668017 [debug]: Incremental compilation - 0 nodes selected: {}
+10:36:11.668027 [warn ]: dbt1600: The selection criterion '' does not match any enabled nodes
+10:36:11.668032 [warn ]: dbt1601: Nothing to do. Try checking your model configs and model specification args
+10:36:11.668446 [info ]: Started deferring state
+10:36:11.668453 [info ]: Finished deferring state [  0.00s]
+10:36:11.738505 [info ]: Started building task graph
+10:36:11.738539 [info ]: Finished building task graph [  0.00s]
+10:36:11.742013 [info ]: Cached model count updated: 1 models (accurate)
