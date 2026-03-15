@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: airflow-webserver
+  name: airflow-platform
 spec:
   replicas: 1
   selector:
@@ -12,29 +12,46 @@ spec:
       labels:
         app: airflow
     spec:
-      # --- NEW: Run Database Migration First ---
       initContainers:
       - name: init-db
         image: rs121093/my-data-platform-airflow:latest
-        command: ["airflow"]
-        args: ["db", "upgrade"]
+        command: ["airflow", "db", "upgrade"]
         env:
         - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
           value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5432/airflow"
-      # -----------------------------------------
       containers:
-      - name: airflow
+      # --- THE WEBSERVER ---
+      - name: webserver
         image: rs121093/my-data-platform-airflow:latest
-        command: ["airflow"]
-        args: ["webserver"]
+        command: ["airflow", "webserver"]
         ports:
         - containerPort: 8080
+        volumeMounts:
+        - name: dags-data
+          mountPath: /opt/airflow/dags
+        - name: dbt-data
+          mountPath: /opt/airflow/dbt_project
         env:
-        - name: AIRFLOW__CORE__EXECUTOR
-          value: "LocalExecutor"
         - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
           value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5432/airflow"
         - name: AIRFLOW__CORE__LOAD_EXAMPLES
           value: "False"
-        - name: AIRFLOW__WEBSERVER__SECRET_KEY
-          value: "this_is_a_very_secure_key_for_local_dev"
+      # --- THE SCHEDULER ---
+      - name: scheduler
+        image: rs121093/my-data-platform-airflow:latest
+        command: ["airflow", "scheduler"]
+        volumeMounts:
+        - name: dags-data
+          mountPath: /opt/airflow/dags
+        - name: dbt-data
+          mountPath: /opt/airflow/dbt_project
+        env:
+        - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
+          value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5432/airflow"
+      volumes:
+      - name: dags-data
+        hostPath:
+          path: /Users/ms/Desktop/my-data-platform/dags # <--- UPDATE THIS PATH
+      - name: dbt-data
+        hostPath:
+          path: /Users/ms/Desktop/my-data-platform/dbt_project # <--- UPDATE THIS PATH
