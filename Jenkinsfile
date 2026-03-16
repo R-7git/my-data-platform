@@ -10,10 +10,14 @@ pipeline {
         DOCKER_USER = 'rs121093'
         IMAGE_NAME = 'my-data-platform-airflow'
         
-        // --- JFROG CONFIG (BYPASSED) ---
-        ARTIFACTORY_URL = 'devops-artifactory:8081' 
-        JFROG_CREDS_ID  = 'jfrog-admin-creds'
-        JFROG_REPO      = 'docker-local'
+        // --- SNOWFALKE CONFIG (FOR TERRAFORM) ---
+        // These ID's must match the 'Secret Text' credentials you created in Jenkins UI
+        SNOW_PASS = credentials('snowflake-password') 
+        TF_VAR_snowflake_account = 'BKVGNQZ-UO15536'
+        TF_VAR_snowflake_user    = 'ROSHAN'
+        
+        // --- KUBECONFIG PERSISTENCE ---
+        KUBECONFIG = "/var/jenkins_home/.kube/config"
     }
 
     stages {
@@ -23,11 +27,14 @@ pipeline {
             }
         }
 
-        stage('Terraform Plan') {
+        stage('Terraform Snowflake Plan') {
             steps {
                 dir('terraform') {
-                    sh 'terraform init'
-                    sh 'terraform plan'
+                    // Injecting the sensitive password via TF_VAR_ for Snowflake provider
+                    withEnv(["TF_VAR_snowflake_password=${env.SNOW_PASS}"]) {
+                        sh 'terraform init'
+                        sh 'terraform plan'
+                    }
                 }
             }
         }
@@ -35,7 +42,8 @@ pipeline {
         stage('Build Airflow Image') {
             steps {
                 script {
-                    sh "docker build -t ${IMAGE_NAME}:latest -f docker/Dockerfile ."
+                    // Using --pull to ensure we get the latest base image for M2/ARM64
+                    sh "docker build --pull -t ${IMAGE_NAME}:latest -f docker/Dockerfile ."
                     sh "docker tag ${IMAGE_NAME}:latest ${DOCKER_USER}/${IMAGE_NAME}:latest"
                 }
             }
@@ -54,6 +62,7 @@ pipeline {
         stage('Configure Server (Ansible)') {
             steps {
                 dir('ansible') {
+                    // Ensure ansible is installed in your Dockerfile.jenkins or use a docker-run
                     sh "ansible-playbook -i inventory.ini setup_data_node.yml"
                 }
             }
@@ -68,10 +77,9 @@ pipeline {
                     
                     // 2. Restart and wait for the NEW pod to reach "Ready"
                     sh "kubectl rollout restart deployment/airflow-platform"
-                    sh "kubectl rollout status deployment/airflow-platform --timeout=90s"
+                    sh "kubectl rollout status deployment/airflow-platform --timeout=120s"
                     
                     // 3. FIXED: Cooldown and Reserialize
-                    // We wait 45s to ensure Airflow's internal file-scanner finds the DAG
                     sh """
                     NEW_POD=\$(kubectl get pods -l app=airflow --sort-by=.metadata.creationTimestamp -o jsonpath='{.items[-1].metadata.name}')
                     
@@ -82,8 +90,7 @@ pipeline {
                     kubectl exec \$NEW_POD -c webserver -- airflow dags reserialize || true
                     
                     echo "Triggering DAG: 2_enterprise_elt_pipeline"
-                    kubectl exec \$NEW_POD -c webserver -- airflow dags trigger 2_enterprise_elt_pipeline || \
-                    kubectl exec \$NEW_POD -- airflow dags trigger 2_enterprise_elt_pipeline
+                    kubectl exec \$NEW_POD -c webserver -- airflow dags trigger 2_enterprise_elt_pipeline
                     """
                 }
             }
@@ -98,10 +105,10 @@ pipeline {
 
     post {
         success {
-            echo "SUCCESS: Build ${env.BUILD_NUMBER} deployed and DAG triggered!"
+            echo "SUCCESS: Build ${env.BUILD_NUMBER} deployed to Snowflake and K8s!"
         }
         failure {
-            echo "FAILURE: Pipeline failed. Check Jenkins logs."
+            echo "FAILURE: Pipeline failed. Check Jenkins Console Output."
         }
     }
 }
