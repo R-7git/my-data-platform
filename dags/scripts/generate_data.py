@@ -9,12 +9,12 @@ from botocore.client import Config
 # --- UPDATED CONFIGURATION ---
 # Use host.docker.internal to reach Docker Compose from K8s
 # Port 9002 is the external port for MinIO in your docker-compose.yaml
-MINIO_URL = 'http://minio-external:9002' 
+MINIO_URL = 'http://minio-external:9002'  
 ACCESS_KEY = 'minioadmin'
 SECRET_KEY = 'minioadmin' 
 BUCKET_NAME = 'raw-data-lake'
 
-def generate_and_upload_customers(num_records=3000): 
+def generate_and_upload_customers(num_records=11000): 
     """
     Simulates an extraction from a CRM system.
     """
