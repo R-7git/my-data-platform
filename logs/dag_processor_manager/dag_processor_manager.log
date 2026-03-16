@@ -18092,3 +18092,17 @@ File Path                          PID    Runtime      # DAGs    # Errors  Last 
 /opt/airflow/dags/utils/alerts.py                           0           0  0.24s           2026-03-15T14:47:33
 /opt/airflow/dags/elt_pipeline.py                           1           0  0.25s           2026-03-15T14:47:08
 ================================================================================
+[2026-03-16T02:15:52.779+0000] {manager.py:469} INFO - Processing files using up to 2 processes at a time 
+[2026-03-16T02:15:52.808+0000] {manager.py:470} INFO - Process each file at most once every 30 seconds
+[2026-03-16T02:15:52.810+0000] {manager.py:471} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2026-03-16T02:15:52.810+0000] {manager.py:738} INFO - Searching for files in /opt/airflow/dags
+[2026-03-16T02:15:52.826+0000] {manager.py:741} INFO - There are 2 files in /opt/airflow/dags
+[2026-03-16T02:16:00.722+0000] {manager.py:879} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                            PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+---------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/elt_pipeline.py    190  0.28s             0           0
+/opt/airflow/dags/utils/alerts.py    193  0.18s             0           0
+================================================================================
