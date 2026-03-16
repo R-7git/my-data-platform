@@ -46,7 +46,7 @@ pipeline {
                         withEnv(["DBT_SNOWFLAKE_PASSWORD=${env.SNOW_PASS}"]) {
                             sh 'dbt deps'
                             // 1. Build models with CURRENT Snowflake data (the poisoned rows)
-                            sh 'dbt run --target dev'
+                            sh 'dbt run --target dev --full-refresh'
                             // 2. Test the new models (this WILL catch the duplicates)
                             sh 'dbt test --target dev'
                         }

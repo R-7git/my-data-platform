@@ -11,7 +11,7 @@ select
     -- Standardize State to Uppercase
     upper(state) as state,
     -- Convert String to Real Date
-    try_to_date(signup_date) as signup_date
+    try_to_date(signup_date) as signup_date 
 from {{ source('landing_zone', 'customers') }}
 
 {% if is_incremental() %}
