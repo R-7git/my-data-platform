@@ -49,15 +49,16 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    // Using standard shell login to bypass plugin issues
                     withCredentials([usernamePassword(credentialsId: "${DOCKERHUB_CREDENTIALS}", passwordVariable: 'D_PASS', usernameVariable: 'D_USER')]) {
-                        sh "echo ${D_PASS} | docker login -u ${D_USER} --password-stdin"
+                        // Using single quotes for the shell command to prevent Groovy interpolation issues
+                        sh 'echo "${D_PASS}" | docker login -u "${D_USER}" --password-stdin'
                         sh "docker push ${DOCKER_USER}/${IMAGE_NAME}:latest"
                         sh "docker logout"
                     }
                 }
             }
         }
+
 
         stage('Configure Server (Ansible)') {
             steps {
