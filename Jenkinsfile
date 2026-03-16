@@ -10,12 +10,12 @@ pipeline {
         DOCKER_USER = 'rs121093'
         IMAGE_NAME = 'my-data-platform-airflow'
         
-        // --- SNOWFLAKE CONFIG (FOR TERRAFORM) ---
+        // --- SNOWFLAKE CONFIG ---
         SNOW_PASS = credentials('snowflake-password') 
         TF_VAR_snowflake_account = 'BKVGNQZ-UO15536'
         TF_VAR_snowflake_user    = 'ROSHAN'
         
-        // --- KUBECONFIG PERSISTENCE ---
+        // --- KUBECONFIG ---
         KUBECONFIG = "/var/jenkins_home/.kube/config"
     }
 
@@ -37,6 +37,21 @@ pipeline {
             }
         }
 
+        // --- NEW SENIOR DATA QUALITY STAGE ---
+        stage('dbt Data Validation') {
+            steps {
+                dir('dbt_project') {
+                    script {
+                        // Using your Snowflake password to let dbt run tests
+                        withEnv(["DBT_SNOWFLAKE_PASSWORD=${env.SNOW_PASS}"]) {
+                            sh 'dbt deps'
+                            sh 'dbt test --target prod'
+                        }
+                    }
+                }
+            }
+        }
+
         stage('Build Airflow Image') {
             steps {
                 script {
@@ -50,7 +65,6 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: "${DOCKERHUB_CREDENTIALS}", passwordVariable: 'D_PASS', usernameVariable: 'D_USER')]) {
-                        // Using single quotes for the shell command to prevent Groovy interpolation issues
                         sh 'echo "${D_PASS}" | docker login -u "${D_USER}" --password-stdin'
                         sh "docker push ${DOCKER_USER}/${IMAGE_NAME}:latest"
                         sh "docker logout"
@@ -58,7 +72,6 @@ pipeline {
                 }
             }
         }
-
 
         stage('Configure Server (Ansible)') {
             steps {
@@ -102,10 +115,10 @@ pipeline {
 
     post {
         success {
-            echo "SUCCESS: Build ${env.BUILD_NUMBER} deployed to Snowflake and K8s!"
+            echo "SUCCESS: Build ${env.BUILD_NUMBER} passed Data Quality and deployed!"
         }
         failure {
-            echo "FAILURE: Pipeline failed. Check Jenkins Console Output."
+            echo "FAILURE: Pipeline failed. Check dbt test results or logs."
         }
     }
 }

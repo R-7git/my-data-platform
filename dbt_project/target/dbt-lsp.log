@@ -2319,3 +2319,57 @@ describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
 14:09:07.466985 [info ]: Started building task graph
 14:09:07.468990 [info ]: Finished building task graph [  0.00s]
 14:09:07.486239 [info ]: Cached model count updated: 1 models (accurate)
+==================== 2026-03-16T04:18:32.114346Z | 675270e2-144f-464e-9cb1-d4ec2b92521a ====================
+04:18:32.117603 [info ]: Starting dbt LSP server
+04:18:32.117802 [info ]: Connecting to LSP client on port 8000
+04:18:32.118440 [info ]: Successfully connected to LSP client
+04:18:32.118456 [info ]: Creating LSP service...
+04:18:32.187824 [info ]: Creating LSP server...
+04:18:32.187844 [info ]: Starting LSP server...
+04:18:32.322376 [info ]: Loading profiles.yml
+04:18:32.390790 [info ]: Started loading project
+04:18:32.391235 [info ]: Loading profiles.yml
+04:18:32.570435 [debug]:    Started loading packages
+04:18:32.571782 [debug]:     Loaded [  0.00s] packages
+04:18:32.580686 [info ]: Started parsing
+04:18:32.606754 [info ]: Finished loading project [  0.22s]
+04:18:32.617222 [debug]: Finished parsing models/sources.yml [  0.01s]
+04:18:32.617376 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+04:18:32.639503 [debug]: Finished parsing models/marts/stg_customers.sql [  0.01s]
+04:18:32.643340 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+04:18:32.644030 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+04:18:32.644303 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+04:18:32.645242 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+04:18:32.648400 [info ]: Finished parsing [  0.07s]
+04:18:32.649299 [info ]: Cached model count updated: 1 models (estimate)
+04:18:32.649309 [info ]: Cached model count updated: 1 models (accurate)
+04:18:32.651055 [info ]: Started scheduling
+04:18:32.652323 [info ]: Finished scheduling [  0.00s]
+04:18:32.652577 [info ]: Started scheduling
+04:18:32.652596 [info ]: Finished scheduling [  0.00s]
+04:18:32.655708 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+04:18:32.658194 [info ]: Started deferring state
+04:18:32.658201 [info ]: Finished deferring state [  0.00s]
+04:18:32.681478 [debug]:    Started downloading relations (1 items)
+04:18:33.709040 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+04:18:34.337883 [debug]:   Finished [  1.66s] downloading relations (1 items)
+04:18:34.337942 [info ]: Started downloading schemas
+04:18:34.818989 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+04:18:35.079310 [info ]: Downloaded RAW_LAKE.ANALYTICS.stg_customers (schema)
+04:18:35.192703 [info ]: Started building task graph
+04:18:35.196268 [info ]: Finished building task graph [  0.00s]
+04:18:35.200683 [info ]: Started rendering (1 nodes)
+04:18:35.201400 [info ]: Started model ANALYTICS.stg_customers
+04:18:35.202100 [debug]: Started rendering model ANALYTICS.stg_customers
+04:18:35.202306 [info ]: Finished downloading schemas [  0.86s]
+04:18:35.216307 [debug]: Compiled SQL for node model.my_transformation.stg_customers at target/.lsp/compiled/models/marts/stg_customers.sql
+04:18:35.217218 [debug]: Finished rendering [  0.02s] model ANALYTICS.stg_customers [success]
+04:18:35.217229 [info ]: Finished rendering [  0.02s] (1 nodes, 0 skipped, 0 errors)
+04:18:35.217357 [info ]: Started analyzing (1 nodes)
+04:18:35.217364 [debug]: Started analyzing model ANALYTICS.stg_customers
+04:18:35.303673 [info ]:  Succeeded [  0.10s] model ANALYTICS.stg_customers (incremental)
+04:18:35.303937 [debug]: Finished analyzing [  0.09s] model ANALYTICS.stg_customers [success]
+04:18:35.303950 [info ]: Finished analyzing [  0.09s] (1 nodes, 0 skipped, 0 errors)
+04:18:35.314694 [info ]: Cached model count updated: 1 models (accurate)
