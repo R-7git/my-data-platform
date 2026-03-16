@@ -2373,3 +2373,122 @@ describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
 04:18:35.303937 [debug]: Finished analyzing [  0.09s] model ANALYTICS.stg_customers [success]
 04:18:35.303950 [info ]: Finished analyzing [  0.09s] (1 nodes, 0 skipped, 0 errors)
 04:18:35.314694 [info ]: Cached model count updated: 1 models (accurate)
+05:02:48.978358 [info ]: Loading profiles.yml
+05:02:49.430192 [info ]: Started loading project
+05:02:49.432314 [info ]: Loading profiles.yml
+05:02:49.451637 [info ]: Started loading project
+05:02:49.451980 [info ]: Loading profiles.yml
+05:02:49.452107 [info ]: Finished loading project [  0.02s]
+05:02:49.685768 [debug]:    Started loading packages
+05:02:49.687245 [debug]:     Failed [  0.00s] packages (error: Operation cancelled)
+05:02:49.687772 [info ]: Finished loading project [  0.24s]
+05:02:49.688755 [info ]: Waiting for lease on 'target' directory
+05:02:50.096057 [info ]: Loading profiles.yml
+05:02:50.107861 [info ]: Waiting for lease on 'target' directory
+05:02:50.544357 [info ]: Loading profiles.yml
+05:02:50.621390 [info ]: Waiting for lease on 'target' directory
+05:02:51.131167 [info ]: Loading profiles.yml
+05:02:51.135271 [info ]: Waiting for lease on 'target' directory
+05:02:51.649498 [info ]: Started loading project
+05:02:51.650039 [info ]: Loading profiles.yml
+05:02:51.846057 [debug]:    Started loading packages
+05:02:51.846671 [debug]:     Loaded [  0.00s] packages
+05:02:51.855189 [info ]: Started parsing
+05:02:51.900870 [info ]: Finished loading project [  0.25s]
+05:02:51.916048 [debug]: Finished parsing models/sources.yml [  0.01s]
+05:02:51.916225 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+05:02:51.955191 [debug]: Finished parsing models/marts/stg_customers.sql [  0.03s]
+05:02:51.960236 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+05:02:51.961335 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+05:02:51.961576 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+05:02:51.962849 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+05:02:51.966475 [info ]: Finished parsing [  0.11s]
+05:02:51.967624 [info ]: Cached model count updated: 1 models (estimate)
+05:02:51.967634 [info ]: Cached model count updated: 1 models (accurate)
+05:02:51.969202 [info ]: Started scheduling
+05:02:51.970845 [info ]: Finished scheduling [  0.00s]
+05:02:51.971172 [info ]: Started scheduling
+05:02:51.971190 [info ]: Finished scheduling [  0.00s]
+05:02:51.975574 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+05:02:51.978496 [info ]: Started deferring state
+05:02:51.978505 [info ]: Finished deferring state [  0.00s]
+05:02:51.996955 [debug]:    Started downloading relations (1 items)
+05:02:52.783680 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+05:02:53.278034 [debug]:   Finished [  1.28s] downloading relations (1 items)
+05:02:53.278264 [info ]: Started downloading schemas
+05:02:53.869897 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+05:02:54.272921 [info ]: Downloaded RAW_LAKE.ANALYTICS.stg_customers (schema)
+05:02:54.354795 [info ]: Started building task graph
+05:02:54.358584 [info ]: Finished building task graph [  0.00s]
+05:02:54.362010 [info ]: Started rendering (1 nodes)
+05:02:54.362588 [info ]: Started model ANALYTICS.stg_customers
+05:02:54.363100 [debug]: Started rendering model ANALYTICS.stg_customers
+05:02:54.363378 [info ]: Finished downloading schemas [  1.09s]
+05:02:54.375082 [debug]: Compiled SQL for node model.my_transformation.stg_customers at target/.lsp/compiled/models/marts/stg_customers.sql
+05:02:54.375368 [debug]: Finished rendering [  0.01s] model ANALYTICS.stg_customers [success]
+05:02:54.375379 [info ]: Finished rendering [  0.01s] (1 nodes, 0 skipped, 0 errors)
+05:02:54.375401 [info ]: Started analyzing (1 nodes)
+05:02:54.375407 [debug]: Started analyzing model ANALYTICS.stg_customers
+05:02:54.437738 [info ]:  Succeeded [  0.07s] model ANALYTICS.stg_customers (incremental)
+05:02:54.437774 [debug]: Finished analyzing [  0.06s] model ANALYTICS.stg_customers [success]
+05:02:54.437785 [info ]: Finished analyzing [  0.06s] (1 nodes, 0 skipped, 0 errors)
+05:02:54.443664 [info ]: Cached model count updated: 1 models (accurate)
+05:03:10.532254 [info ]: Loading profiles.yml
+05:03:10.548175 [info ]: Started loading project
+05:03:10.548420 [info ]: Loading profiles.yml
+05:03:10.550275 [info ]: Started loading project
+05:03:10.550419 [info ]: Loading profiles.yml
+05:03:10.550438 [info ]: Finished loading project [  0.00s]
+05:03:10.700675 [debug]:    Started loading packages
+05:03:10.700773 [debug]:     Failed [  0.00s] packages (error: Operation cancelled)
+05:03:10.700876 [info ]: Finished loading project [  0.15s]
+05:03:10.702594 [info ]: Waiting for lease on 'target' directory
+05:03:11.058305 [info ]: Loading profiles.yml
+05:03:11.129217 [info ]: Started loading project
+05:03:11.129517 [info ]: Loading profiles.yml
+05:03:11.283270 [debug]:    Started loading packages
+05:03:11.283961 [debug]:     Loaded [  0.00s] packages
+05:03:11.284531 [info ]: Started parsing
+05:03:11.312412 [info ]: Finished loading project [  0.18s]
+05:03:11.312946 [debug]: Finished parsing models/sources.yml [  0.00s]
+05:03:11.313068 [debug]: Finished parsing models/staging/schema.yml [  0.00s]
+05:03:11.315303 [debug]: Finished parsing models/marts/stg_customers.sql [  0.00s]
+05:03:11.316657 [debug]: Finished parsing tests/assert_signup_date_in_past.sql [  0.00s]
+05:03:11.317065 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+05:03:11.317394 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+05:03:11.318415 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+05:03:11.318708 [info ]: Finished parsing [  0.03s]
+05:03:11.319006 [info ]: Cached model count updated: 1 models (estimate)
+05:03:11.319016 [info ]: Cached model count updated: 1 models (accurate)
+05:03:11.319053 [info ]: Started scheduling
+05:03:11.319121 [info ]: Finished scheduling [  0.00s]
+05:03:11.319134 [info ]: Started scheduling
+05:03:11.319146 [info ]: Finished scheduling [  0.00s]
+05:03:11.319232 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "RAW_LAKE", schema: "LANDING", table: "CUSTOMERS" }) and interval: None
+05:03:11.319540 [info ]: Started deferring state
+05:03:11.319547 [info ]: Finished deferring state [  0.00s]
+05:03:11.320003 [debug]:    Started downloading relations (1 items)
+05:03:11.940438 [debug]: Query executed on node unknown:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+05:03:12.309956 [debug]:   Finished [  0.99s] downloading relations (1 items)
+05:03:12.309984 [info ]: Started downloading schemas
+05:03:12.925926 [debug]: Query executed on node unknown:
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+05:03:13.359421 [info ]: Downloaded RAW_LAKE.ANALYTICS.stg_customers (schema)
+05:03:13.444675 [info ]: Started building task graph
+05:03:13.444768 [info ]: Finished building task graph [  0.00s]
+05:03:13.444932 [info ]: Started rendering (1 nodes)
+05:03:13.444957 [info ]: Started model ANALYTICS.stg_customers
+05:03:13.444973 [debug]: Started rendering model ANALYTICS.stg_customers
+05:03:13.445024 [info ]: Finished downloading schemas [  1.14s]
+05:03:13.446385 [debug]: Compiled SQL for node model.my_transformation.stg_customers at target/.lsp/compiled/models/marts/stg_customers.sql
+05:03:13.446452 [debug]: Finished rendering [  0.00s] model ANALYTICS.stg_customers [success]
+05:03:13.446462 [info ]: Finished rendering [  0.00s] (1 nodes, 0 skipped, 0 errors)
+05:03:13.446472 [info ]: Started analyzing (1 nodes)
+05:03:13.446475 [debug]: Started analyzing model ANALYTICS.stg_customers
+05:03:13.451740 [info ]:  Succeeded [  0.01s] model ANALYTICS.stg_customers (incremental)
+05:03:13.451758 [debug]: Finished analyzing [  0.01s] model ANALYTICS.stg_customers [success]
+05:03:13.451763 [info ]: Finished analyzing [  0.01s] (1 nodes, 0 skipped, 0 errors)
+05:03:13.455683 [info ]: Cached model count updated: 1 models (accurate)

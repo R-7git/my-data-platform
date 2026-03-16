@@ -2,20 +2,15 @@ pipeline {
     agent any
 
     environment {
-        // --- TOOL PATHS ---
         PATH = "/usr/local/bin:/usr/bin:/bin:${env.PATH}"
-
-        // --- DOCKER HUB CONFIG ---
         DOCKERHUB_CREDENTIALS = 'dockerhub-pass'
         DOCKER_USER = 'rs121093'
         IMAGE_NAME = 'my-data-platform-airflow'
         
-        // --- SNOWFLAKE CONFIG ---
         SNOW_PASS = credentials('snowflake-password') 
         TF_VAR_snowflake_account = 'BKVGNQZ-UO15536'
         TF_VAR_snowflake_user    = 'ROSHAN'
         
-        // --- KUBECONFIG ---
         KUBECONFIG = "/var/jenkins_home/.kube/config"
     }
 
@@ -37,15 +32,14 @@ pipeline {
             }
         }
 
-        // --- NEW SENIOR DATA QUALITY STAGE ---
         stage('dbt Data Validation') {
             steps {
                 dir('dbt_project') {
                     script {
-                        // Using your Snowflake password to let dbt run tests
+                        // Changed target to 'dev' to match your profiles.yml
                         withEnv(["DBT_SNOWFLAKE_PASSWORD=${env.SNOW_PASS}"]) {
                             sh 'dbt deps'
-                            sh 'dbt test --target prod'
+                            sh 'dbt test --target dev'
                         }
                     }
                 }
