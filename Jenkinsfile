@@ -2,15 +2,20 @@ pipeline {
     agent any
 
     environment {
+        // --- TOOL PATHS ---
         PATH = "/usr/local/bin:/usr/bin:/bin:${env.PATH}"
+
+        // --- DOCKER HUB CONFIG ---
         DOCKERHUB_CREDENTIALS = 'dockerhub-pass'
         DOCKER_USER = 'rs121093'
         IMAGE_NAME = 'my-data-platform-airflow'
         
+        // --- SNOWFLAKE CONFIG ---
         SNOW_PASS = credentials('snowflake-password') 
         TF_VAR_snowflake_account = 'BKVGNQZ-UO15536'
         TF_VAR_snowflake_user    = 'ROSHAN'
         
+        // --- KUBECONFIG ---
         KUBECONFIG = "/var/jenkins_home/.kube/config"
     }
 
@@ -32,13 +37,17 @@ pipeline {
             }
         }
 
-        stage('dbt Data Validation') {
+        // --- SENIOR DATA TRANSFORMATION & VALIDATION ---
+        stage('dbt Transformation & Validation') {
             steps {
                 dir('dbt_project') {
                     script {
-                        // Changed target to 'dev' to match your profiles.yml
+                        // Pass the Snowflake password to dbt
                         withEnv(["DBT_SNOWFLAKE_PASSWORD=${env.SNOW_PASS}"]) {
                             sh 'dbt deps'
+                            // 1. Build models with CURRENT Snowflake data (the poisoned rows)
+                            sh 'dbt run --target dev'
+                            // 2. Test the new models (this WILL catch the duplicates)
                             sh 'dbt test --target dev'
                         }
                     }
@@ -112,7 +121,7 @@ pipeline {
             echo "SUCCESS: Build ${env.BUILD_NUMBER} passed Data Quality and deployed!"
         }
         failure {
-            echo "FAILURE: Pipeline failed. Check dbt test results or logs."
+            echo "FAILURE: Pipeline failed. Check dbt logs for data quality errors."
         }
     }
 }

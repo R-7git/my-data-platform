@@ -2492,3 +2492,36 @@ describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
 05:03:13.451758 [debug]: Finished analyzing [  0.01s] model ANALYTICS.stg_customers [success]
 05:03:13.451763 [info ]: Finished analyzing [  0.01s] (1 nodes, 0 skipped, 0 errors)
 05:03:13.455683 [info ]: Cached model count updated: 1 models (accurate)
+05:21:00.815671 [info ]: Started loading project
+05:21:00.834957 [info ]: Loading profiles.yml
+05:21:00.900973 [info ]: Started parsing
+05:21:00.942330 [info ]: Finished loading project [  0.13s]
+05:21:00.957264 [debug]: Finished parsing models/staging/schema.yml [  0.01s]
+05:21:00.996639 [debug]: Finished parsing models/marts/stg_customers.sql [  0.02s]
+05:21:01.003380 [debug]: Finished parsing target/generic_tests/unique_stg_customers_customer_id.sql [  0.00s]
+05:21:01.003799 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_customer_id.sql [  0.00s]
+05:21:01.005187 [debug]: Finished parsing target/generic_tests/not_null_stg_customers_email.sql [  0.00s]
+05:21:01.010058 [info ]: Finished parsing [  0.11s]
+05:21:01.013039 [info ]: Cached model count updated: 1 models (estimate)
+05:21:01.013050 [info ]: Cached model count updated: 1 models (accurate)
+05:21:01.014681 [info ]: Started scheduling
+05:21:01.017356 [info ]: Finished scheduling [  0.00s]
+05:21:01.017372 [debug]: Incremental compilation - 1 nodes selected: {"model.my_transformation.stg_customers"}
+05:21:01.021924 [info ]: Started deferring state
+05:21:01.022092 [info ]: Finished deferring state [  0.00s]
+05:21:01.112983 [info ]: Started building task graph
+05:21:01.116002 [info ]: Finished building task graph [  0.00s]
+05:21:01.121008 [info ]: Started rendering (1 nodes)
+05:21:01.121790 [info ]: Started model ANALYTICS.stg_customers
+05:21:01.122628 [debug]: Started rendering model ANALYTICS.stg_customers
+05:21:02.081249 [debug]: Query executed on node model.my_transformation.stg_customers:
+SHOW OBJECTS IN SCHEMA "RAW_LAKE"."ANALYTICS" LIMIT 10000
+05:21:02.086623 [debug]: Compiled SQL for node model.my_transformation.stg_customers at target/.lsp/compiled/models/marts/stg_customers.sql
+05:21:02.088116 [debug]: Finished rendering [  0.97s] model ANALYTICS.stg_customers [success]
+05:21:02.088133 [info ]: Finished rendering [  0.97s] (1 nodes, 0 skipped, 0 errors)
+05:21:02.088285 [info ]: Started analyzing (1 nodes)
+05:21:02.088296 [debug]: Started analyzing model ANALYTICS.stg_customers
+05:21:02.173482 [info ]:  Succeeded [  1.05s] model ANALYTICS.stg_customers (incremental)
+05:21:02.173642 [debug]: Finished analyzing [  0.09s] model ANALYTICS.stg_customers [success]
+05:21:02.173649 [info ]: Finished analyzing [  0.09s] (1 nodes, 0 skipped, 0 errors)
+05:21:02.186618 [info ]: Cached model count updated: 1 models (accurate)
