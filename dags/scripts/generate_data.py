@@ -11,10 +11,10 @@ from botocore.client import Config
 # Port 9002 is the external port for MinIO in your docker-compose.yaml
 MINIO_URL = 'http://minio-external:9002' 
 ACCESS_KEY = 'minioadmin'
-SECRET_KEY = 'minioadmin'
+SECRET_KEY = 'minioadmin' 
 BUCKET_NAME = 'raw-data-lake'
 
-def generate_and_upload_customers(num_records=3000):
+def generate_and_upload_customers(num_records=3000): 
     """
     Simulates an extraction from a CRM system.
     """
