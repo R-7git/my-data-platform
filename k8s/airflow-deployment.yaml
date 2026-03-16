@@ -4,6 +4,9 @@ metadata:
   name: airflow-platform
 spec:
   replicas: 1
+  # ADDED: Kill old pod before starting new one to save RAM
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: airflow
@@ -18,7 +21,7 @@ spec:
         command: ["airflow", "db", "upgrade"]
         env:
         - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
-          value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5432/airflow"
+          value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5434/airflow"
       containers:
       # --- THE WEBSERVER ---
       - name: webserver
@@ -33,10 +36,9 @@ spec:
           mountPath: /opt/airflow/dbt_project
         env:
         - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
-          value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5432/airflow"
+          value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5434/airflow"
         - name: AIRFLOW__CORE__LOAD_EXAMPLES
           value: "False"
-        # FIXED: Static Secret Key prevents CSRF errors on restart
         - name: AIRFLOW__WEBSERVER__SECRET_KEY
           value: "this_is_a_very_secure_key_for_local_dev"
 
@@ -51,8 +53,7 @@ spec:
           mountPath: /opt/airflow/dbt_project
         env:
         - name: AIRFLOW__DATABASE__SQL_ALCHEMY_CONN
-          value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5432/airflow"
-        # FIXED: Secret Key must match webserver
+          value: "postgresql+psycopg2://airflow:airflow@host.docker.internal:5434/airflow"
         - name: AIRFLOW__WEBSERVER__SECRET_KEY
           value: "this_is_a_very_secure_key_for_local_dev"
 
