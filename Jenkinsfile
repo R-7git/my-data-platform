@@ -10,8 +10,7 @@ pipeline {
         DOCKER_USER = 'rs121093'
         IMAGE_NAME = 'my-data-platform-airflow'
         
-        // --- SNOWFALKE CONFIG (FOR TERRAFORM) ---
-        // These ID's must match the 'Secret Text' credentials you created in Jenkins UI
+        // --- SNOWFLAKE CONFIG (FOR TERRAFORM) ---
         SNOW_PASS = credentials('snowflake-password') 
         TF_VAR_snowflake_account = 'BKVGNQZ-UO15536'
         TF_VAR_snowflake_user    = 'ROSHAN'
@@ -30,7 +29,6 @@ pipeline {
         stage('Terraform Snowflake Plan') {
             steps {
                 dir('terraform') {
-                    // Injecting the sensitive password via TF_VAR_ for Snowflake provider
                     withEnv(["TF_VAR_snowflake_password=${env.SNOW_PASS}"]) {
                         sh 'terraform init'
                         sh 'terraform plan'
@@ -42,7 +40,6 @@ pipeline {
         stage('Build Airflow Image') {
             steps {
                 script {
-                    // Using --pull to ensure we get the latest base image for M2/ARM64
                     sh "docker build --pull -t ${IMAGE_NAME}:latest -f docker/Dockerfile ."
                     sh "docker tag ${IMAGE_NAME}:latest ${DOCKER_USER}/${IMAGE_NAME}:latest"
                 }
@@ -52,8 +49,11 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    docker.withRegistry('', "${DOCKERHUB_CREDENTIALS}") {
+                    // Using standard shell login to bypass plugin issues
+                    withCredentials([usernamePassword(credentialsId: "${DOCKERHUB_CREDENTIALS}", passwordVariable: 'D_PASS', usernameVariable: 'D_USER')]) {
+                        sh "echo ${D_PASS} | docker login -u ${D_USER} --password-stdin"
                         sh "docker push ${DOCKER_USER}/${IMAGE_NAME}:latest"
+                        sh "docker logout"
                     }
                 }
             }
@@ -62,7 +62,6 @@ pipeline {
         stage('Configure Server (Ansible)') {
             steps {
                 dir('ansible') {
-                    // Ensure ansible is installed in your Dockerfile.jenkins or use a docker-run
                     sh "ansible-playbook -i inventory.ini setup_data_node.yml"
                 }
             }
@@ -71,15 +70,12 @@ pipeline {
         stage('Deploy to K8s & Auto-Trigger DAG') {
             steps {
                 dir('k8s') {
-                    // 1. Update Kubernetes manifests
                     sh "kubectl apply -f airflow-deployment.yaml"
                     sh "kubectl apply -f airflow-service.yaml"
                     
-                    // 2. Restart and wait for the NEW pod to reach "Ready"
                     sh "kubectl rollout restart deployment/airflow-platform"
                     sh "kubectl rollout status deployment/airflow-platform --timeout=120s"
                     
-                    // 3. FIXED: Cooldown and Reserialize
                     sh """
                     NEW_POD=\$(kubectl get pods -l app=airflow --sort-by=.metadata.creationTimestamp -o jsonpath='{.items[-1].metadata.name}')
                     
