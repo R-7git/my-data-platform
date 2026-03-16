@@ -3,6 +3,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:13
+    container_name: airflow-postgres
     environment:
       - POSTGRES_USER=airflow
       - POSTGRES_PASSWORD=airflow
@@ -30,6 +31,7 @@ services:
     build: 
       context: ..
       dockerfile: docker/Dockerfile
+    container_name: airflow-webserver
     command: webserver
     ports:
       - "8085:8080"
@@ -39,6 +41,7 @@ services:
       - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=true
       - AIRFLOW__CORE__LOAD_EXAMPLES=false
       - AIRFLOW__WEBSERVER__SECRET_KEY=this_is_a_very_secure_key_for_local_dev
+      - AIRFLOW__METRICS__PROMETHEUS_EXPORT_ENABLED=true
     volumes:
       - ../dags:/opt/airflow/dags
       - ../dbt_project:/opt/airflow/dbt_project
@@ -52,6 +55,7 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
+    container_name: airflow-scheduler
     command: scheduler
     environment:
       - AIRFLOW__CORE__EXECUTOR=LocalExecutor
@@ -71,7 +75,7 @@ services:
     container_name: docker-metabase
     restart: always
     ports:
-      - "3000:3000"
+      - "3005:3000" # Using 3005 to avoid any potential 3000 conflicts with Grafana
     volumes:
       - metabase_data:/metabase.db
 

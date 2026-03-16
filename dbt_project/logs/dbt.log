@@ -3707,3 +3707,144 @@ drop view if exists RAW_LAKE.ANALYTICS.stg_customers__dbt_tmp cascade
 [0m02:19:54.857983 [debug] [MainThread]: Command `dbt run` succeeded at 02:19:54.857894 after 5.03 seconds
 [0m02:19:54.858454 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa3d9b9a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa2d188e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff81718b20>]}
 [0m02:19:54.858743 [debug] [MainThread]: Flushing usage events
+[0m02:26:37.324235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa612aaf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa40f9760>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa40f94c0>]}
+
+
+============================== 02:26:37.380100 | 55ebd84c-3a8c-4564-8ede-e05d5574a4f3 ==============================
+[0m02:26:37.380100 [info ] [MainThread]: Running with dbt=1.8.7
+[0m02:26:37.380690 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/opt/airflow/dbt_project', 'debug': 'False', 'version_check': 'True', 'log_path': '/opt/airflow/dbt_project/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run --project-dir /opt/airflow/dbt_project --profiles-dir /opt/airflow/dbt_project', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m02:26:38.180847 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '55ebd84c-3a8c-4564-8ede-e05d5574a4f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa37e8610>]}
+[0m02:26:38.253731 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '55ebd84c-3a8c-4564-8ede-e05d5574a4f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7f625940>]}
+[0m02:26:38.256022 [info ] [MainThread]: Registered adapter: snowflake=1.8.4
+[0m02:26:38.285378 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m02:26:38.428943 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m02:26:38.429523 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m02:26:38.434226 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.my_transformation.staging
+[0m02:26:38.495200 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '55ebd84c-3a8c-4564-8ede-e05d5574a4f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa1419430>]}
+[0m02:26:38.601531 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '55ebd84c-3a8c-4564-8ede-e05d5574a4f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa132a850>]}
+[0m02:26:38.602181 [info ] [MainThread]: Found 1 model, 4 data tests, 1 source, 454 macros
+[0m02:26:38.602717 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '55ebd84c-3a8c-4564-8ede-e05d5574a4f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa136fca0>]}
+[0m02:26:38.604682 [info ] [MainThread]: 
+[0m02:26:38.605394 [debug] [MainThread]: Acquiring new snowflake connection 'master'
+[0m02:26:38.607144 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_RAW_LAKE'
+[0m02:26:38.620606 [debug] [ThreadPool]: Using snowflake connection "list_RAW_LAKE"
+[0m02:26:38.621147 [debug] [ThreadPool]: On list_RAW_LAKE: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "snowflake_dbt", "target_name": "dev", "connection_name": "list_RAW_LAKE"} */
+show terse schemas in database RAW_LAKE
+    limit 10000
+[0m02:26:38.621598 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m02:26:39.312373 [debug] [ThreadPool]: SQL status: SUCCESS 4 in 0.691 seconds
+[0m02:26:39.316507 [debug] [ThreadPool]: On list_RAW_LAKE: Close
+[0m02:26:39.465253 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_RAW_LAKE, now list_RAW_LAKE_ANALYTICS)
+[0m02:26:39.475090 [debug] [ThreadPool]: Using snowflake connection "list_RAW_LAKE_ANALYTICS"
+[0m02:26:39.475542 [debug] [ThreadPool]: On list_RAW_LAKE_ANALYTICS: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "snowflake_dbt", "target_name": "dev", "connection_name": "list_RAW_LAKE_ANALYTICS"} */
+show objects in RAW_LAKE.ANALYTICS limit 10000
+[0m02:26:39.475971 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m02:26:39.838568 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.362 seconds
+[0m02:26:39.842408 [debug] [ThreadPool]: On list_RAW_LAKE_ANALYTICS: Close
+[0m02:26:39.972633 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '55ebd84c-3a8c-4564-8ede-e05d5574a4f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa132a760>]}
+[0m02:26:39.974014 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m02:26:39.974897 [info ] [MainThread]: 
+[0m02:26:39.991167 [debug] [Thread-1  ]: Began running node model.my_transformation.stg_customers
+[0m02:26:39.992192 [info ] [Thread-1  ]: 1 of 1 START sql incremental model ANALYTICS.stg_customers ..................... [RUN]
+[0m02:26:39.992877 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_RAW_LAKE_ANALYTICS, now model.my_transformation.stg_customers)
+[0m02:26:39.993240 [debug] [Thread-1  ]: Began compiling node model.my_transformation.stg_customers
+[0m02:26:40.006453 [debug] [Thread-1  ]: Writing injected SQL for node "model.my_transformation.stg_customers"
+[0m02:26:40.011763 [debug] [Thread-1  ]: Began executing node model.my_transformation.stg_customers
+[0m02:26:40.048443 [debug] [Thread-1  ]: Using snowflake connection "model.my_transformation.stg_customers"
+[0m02:26:40.049056 [debug] [Thread-1  ]: On model.my_transformation.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "snowflake_dbt", "target_name": "dev", "node_id": "model.my_transformation.stg_customers"} */
+create or replace  temporary view RAW_LAKE.ANALYTICS.stg_customers__dbt_tmp
+  
+   as (
+    
+
+select
+    customer_id,
+    first_name,
+    last_name,
+    email,
+    -- Standardize State to Uppercase
+    upper(state) as state,
+    -- Convert String to Real Date
+    try_to_date(signup_date) as signup_date
+from RAW_LAKE.LANDING.customers
+
+
+
+  -- The Logic:
+  -- 1. Look at "this" table (the one we are building).
+  -- 2. Find the Maximum (latest) signup_date we already processed.
+  -- 3. Only pull rows from the source that are NEWER than that date.
+  
+  where try_to_date(signup_date) > (select max(signup_date) from RAW_LAKE.ANALYTICS.stg_customers)
+
+
+  );
+[0m02:26:40.049775 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m02:26:40.517162 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.467 seconds
+[0m02:26:40.526668 [debug] [Thread-1  ]: Using snowflake connection "model.my_transformation.stg_customers"
+[0m02:26:40.527328 [debug] [Thread-1  ]: On model.my_transformation.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "snowflake_dbt", "target_name": "dev", "node_id": "model.my_transformation.stg_customers"} */
+describe table RAW_LAKE.ANALYTICS.stg_customers__dbt_tmp
+[0m02:26:40.622454 [debug] [Thread-1  ]: SQL status: SUCCESS 6 in 0.095 seconds
+[0m02:26:40.628235 [debug] [Thread-1  ]: Using snowflake connection "model.my_transformation.stg_customers"
+[0m02:26:40.628878 [debug] [Thread-1  ]: On model.my_transformation.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "snowflake_dbt", "target_name": "dev", "node_id": "model.my_transformation.stg_customers"} */
+describe table RAW_LAKE.ANALYTICS.stg_customers
+[0m02:26:40.707693 [debug] [Thread-1  ]: SQL status: SUCCESS 6 in 0.078 seconds
+[0m02:26:40.714094 [debug] [Thread-1  ]: Using snowflake connection "model.my_transformation.stg_customers"
+[0m02:26:40.714585 [debug] [Thread-1  ]: On model.my_transformation.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "snowflake_dbt", "target_name": "dev", "node_id": "model.my_transformation.stg_customers"} */
+describe table "RAW_LAKE"."ANALYTICS"."STG_CUSTOMERS"
+[0m02:26:40.792672 [debug] [Thread-1  ]: SQL status: SUCCESS 6 in 0.077 seconds
+[0m02:26:40.811696 [debug] [Thread-1  ]: Writing runtime sql for node "model.my_transformation.stg_customers"
+[0m02:26:40.813790 [debug] [Thread-1  ]: Using snowflake connection "model.my_transformation.stg_customers"
+[0m02:26:40.814075 [debug] [Thread-1  ]: On model.my_transformation.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "snowflake_dbt", "target_name": "dev", "node_id": "model.my_transformation.stg_customers"} */
+-- back compat for old kwarg name
+  
+  begin;
+[0m02:26:40.916908 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.102 seconds
+[0m02:26:40.917823 [debug] [Thread-1  ]: Using snowflake connection "model.my_transformation.stg_customers"
+[0m02:26:40.918429 [debug] [Thread-1  ]: On model.my_transformation.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "snowflake_dbt", "target_name": "dev", "node_id": "model.my_transformation.stg_customers"} */
+merge into RAW_LAKE.ANALYTICS.stg_customers as DBT_INTERNAL_DEST
+        using RAW_LAKE.ANALYTICS.stg_customers__dbt_tmp as DBT_INTERNAL_SOURCE
+        on (
+                DBT_INTERNAL_SOURCE.customer_id = DBT_INTERNAL_DEST.customer_id
+            )
+
+    
+    when matched then update set
+        "CUSTOMER_ID" = DBT_INTERNAL_SOURCE."CUSTOMER_ID","FIRST_NAME" = DBT_INTERNAL_SOURCE."FIRST_NAME","LAST_NAME" = DBT_INTERNAL_SOURCE."LAST_NAME","EMAIL" = DBT_INTERNAL_SOURCE."EMAIL","STATE" = DBT_INTERNAL_SOURCE."STATE","SIGNUP_DATE" = DBT_INTERNAL_SOURCE."SIGNUP_DATE"
+    
+
+    when not matched then insert
+        ("CUSTOMER_ID", "FIRST_NAME", "LAST_NAME", "EMAIL", "STATE", "SIGNUP_DATE")
+    values
+        ("CUSTOMER_ID", "FIRST_NAME", "LAST_NAME", "EMAIL", "STATE", "SIGNUP_DATE")
+
+;
+[0m02:26:41.505249 [debug] [Thread-1  ]: SQL status: SUCCESS 0 in 0.586 seconds
+[0m02:26:41.506868 [debug] [Thread-1  ]: Using snowflake connection "model.my_transformation.stg_customers"
+[0m02:26:41.507722 [debug] [Thread-1  ]: On model.my_transformation.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "snowflake_dbt", "target_name": "dev", "node_id": "model.my_transformation.stg_customers"} */
+COMMIT
+[0m02:26:41.713374 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.204 seconds
+[0m02:26:41.726364 [debug] [Thread-1  ]: Applying DROP to: RAW_LAKE.ANALYTICS.stg_customers__dbt_tmp
+[0m02:26:41.731917 [debug] [Thread-1  ]: Using snowflake connection "model.my_transformation.stg_customers"
+[0m02:26:41.732455 [debug] [Thread-1  ]: On model.my_transformation.stg_customers: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "snowflake_dbt", "target_name": "dev", "node_id": "model.my_transformation.stg_customers"} */
+drop view if exists RAW_LAKE.ANALYTICS.stg_customers__dbt_tmp cascade
+[0m02:26:41.845232 [debug] [Thread-1  ]: SQL status: SUCCESS 1 in 0.111 seconds
+[0m02:26:41.869299 [debug] [Thread-1  ]: On model.my_transformation.stg_customers: Close
+[0m02:26:42.016771 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '55ebd84c-3a8c-4564-8ede-e05d5574a4f3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa3818e50>]}
+[0m02:26:42.018533 [info ] [Thread-1  ]: 1 of 1 OK created sql incremental model ANALYTICS.stg_customers ................ [[32mSUCCESS 0[0m in 2.02s]
+[0m02:26:42.021434 [debug] [Thread-1  ]: Finished running node model.my_transformation.stg_customers
+[0m02:26:42.026084 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m02:26:42.026543 [debug] [MainThread]: Connection 'model.my_transformation.stg_customers' was properly closed.
+[0m02:26:42.026999 [info ] [MainThread]: 
+[0m02:26:42.027545 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 3.42 seconds (3.42s).
+[0m02:26:42.028211 [debug] [MainThread]: Command end result
+[0m02:26:42.062867 [info ] [MainThread]: 
+[0m02:26:42.063662 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m02:26:42.064029 [info ] [MainThread]: 
+[0m02:26:42.064508 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m02:26:42.067035 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.80159, "process_user_time": 3.03462, "process_kernel_time": 0.862302, "process_mem_max_rss": "186324", "process_in_blocks": "23256", "process_out_blocks": "4601"}
+[0m02:26:42.068181 [debug] [MainThread]: Command `dbt run` succeeded at 02:26:42.068090 after 4.80 seconds
+[0m02:26:42.068851 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa612aaf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffffa4cc8550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0xffff7f625700>]}
+[0m02:26:42.069207 [debug] [MainThread]: Flushing usage events
